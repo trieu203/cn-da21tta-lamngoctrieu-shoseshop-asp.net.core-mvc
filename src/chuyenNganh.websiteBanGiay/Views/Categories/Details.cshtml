@@ -1,0 +1,57 @@
+﻿@model chuyenNganh.websiteBanGiay.Data.Category
+
+@{
+    ViewData["Title"] = "Chi tiết danh mục";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center">Chi tiết danh mục</h1>
+
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4 class="card-title">Thông tin danh mục</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-3">
+                    Tên danh mục
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.CategoryName)
+                </dd>
+
+                <dt class="col-sm-3">
+                    Mô tả
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+                <dt class="col-sm-3">
+                    Ngày tạo
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.CreatedDate)
+                </dd>
+
+                <dt class="col-sm-3">
+                    Đường dẫn ảnh
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ImageUrl)
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a asp-action="Edit" asp-route-id="@Model?.CategoryId" class="btn btn-primary">
+            <i class="fas fa-edit"></i> Chỉnh sửa
+        </a>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Quay lại danh sách
+        </a>
+    </div>
+</div>
+
+<!-- Font Awesome để hiển thị icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">

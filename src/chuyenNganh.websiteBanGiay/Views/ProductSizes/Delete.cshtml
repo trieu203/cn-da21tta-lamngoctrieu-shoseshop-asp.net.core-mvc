@@ -1,0 +1,44 @@
+﻿@model chuyenNganh.websiteBanGiay.Data.ProductSize
+
+@{
+    ViewData["Title"] = "Xóa kích cỡ sản phẩm";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center text-danger">Xóa kích cỡ sản phẩm</h1>
+    <h3 class="text-center text-warning">Bạn có chắc chắn muốn xóa kích cỡ này?</h3>
+
+    <div class="card shadow-sm p-4 mt-4">
+        <h4 class="card-title mb-4">Thông tin kích cỡ</h4>
+
+        <dl class="row">
+            <!-- Size -->
+            <dt class="col-sm-3">Kích cỡ</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Size)</dd>
+
+            <!-- Quantity -->
+            <dt class="col-sm-3">Số lượng</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Quantity)</dd>
+
+            <!-- Price At Time -->
+            <dt class="col-sm-3">Giá tại thời điểm</dt>
+            <dd class="col-sm-9">@string.Format("{0:0,0} VND", Model.PriceAtTime)</dd>
+
+            <!-- Product Name -->
+            <dt class="col-sm-3">Tên sản phẩm</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Product.ProductName)</dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="ProductSizeId" />
+            <div class="mt-4 text-center">
+                <button type="submit" class="btn btn-danger">
+                    <i class="bi bi-trash"></i> Xóa
+                </button>
+                <a asp-action="Index" class="btn btn-secondary ml-3">
+                    <i class="bi bi-arrow-left"></i> Quay lại danh sách
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

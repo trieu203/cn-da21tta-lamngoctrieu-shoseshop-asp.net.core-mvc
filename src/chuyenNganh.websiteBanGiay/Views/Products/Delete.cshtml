@@ -1,0 +1,65 @@
+﻿@model chuyenNganh.websiteBanGiay.Data.Product
+
+@{
+    ViewData["Title"] = "Xóa sản phẩm";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center text-danger">Xóa sản phẩm</h1>
+
+    <h3 class="text-center text-warning">Bạn có chắc chắn muốn xóa sản phẩm này?</h3>
+
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4 class="card-title">Thông tin sản phẩm</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-3">Tên sản phẩm</dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ProductName)
+                </dd>
+
+                <dt class="col-sm-3">Giá</dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Price) VND
+                </dd>
+
+                <dt class="col-sm-3">Mô tả</dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+                <dt class="col-sm-3">Giảm giá (%)</dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Discount) %
+                </dd>
+
+                <dt class="col-sm-3">Ngày tạo</dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.CreatedDate)
+                </dd>
+
+                <dt class="col-sm-3">Ảnh sản phẩm</dt>
+                <dd class="col-sm-9">
+                    <img src="@Model.ImageUrl" alt="Ảnh sản phẩm" style="width: 200px; height: auto;">
+                </dd>
+
+                <dt class="col-sm-3">Danh mục</dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Category.CategoryName)
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <form asp-action="Delete" class="mt-4 text-center">
+        <input type="hidden" asp-for="ProductId" />
+        <div>
+            <input type="submit" value="Xóa" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+        </div>
+    </form>
+</div>
+
+<!-- Font Awesome để hiển thị icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
