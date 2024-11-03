@@ -514,3 +514,4 @@ D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websit
 D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\obj\Debug\net8.0\chuyenNganh.websiteBanGiay.pdb
 D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\obj\Debug\net8.0\chuyenNganh.websiteBanGiay.genruntimeconfig.cache
 D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\obj\Debug\net8.0\ref\chuyenNganh.websiteBanGiay.dll
+D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\obj\Debug\net8.0\chuyenNganh.websiteBanGiay.sourcelink.json

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0lsLlQBM+vJWdkTHjbfgEzPSvzCtM+9pSCzPLJBSifY=",
+  "Hash": "twh3IqafiBB/8pD2tf7MRanRsW0BrntBBbWdb5UtMRA=",
   "Source": "chuyenNganh.websiteBanGiay",
   "BasePath": "_content/chuyenNganh.websiteBanGiay",
   "Mode": "Default",
@@ -245,12 +245,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\addias.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\categories\\addias.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/addias.jpg",
+      "RelativePath": "img/categories/addias.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -261,15 +261,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\addias.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\categories\\addias.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\newbalance.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\categories\\newbalance.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/newbalance.jpg",
+      "RelativePath": "img/categories/newbalance.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -280,15 +280,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\newbalance.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\categories\\newbalance.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\nike.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\categories\\nike.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/nike.jpg",
+      "RelativePath": "img/categories/nike.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -299,15 +299,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\nike.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\categories\\nike.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\ontiger.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\categories\\ontiger.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/ontiger.jpg",
+      "RelativePath": "img/categories/ontiger.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -318,15 +318,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\ontiger.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\categories\\ontiger.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product01_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\categories\\puma.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product01_01.jpg",
+      "RelativePath": "img/categories/puma.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -337,15 +337,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product01_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\categories\\puma.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product02_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product01_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product02_01.jpg",
+      "RelativePath": "img/products/product01_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -356,15 +356,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product02_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product01_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product03_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product02_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product03_01.jpg",
+      "RelativePath": "img/products/product02_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -375,15 +375,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product03_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product02_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product04_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product03_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product04_01.jpg",
+      "RelativePath": "img/products/product03_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -394,15 +394,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product04_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product03_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product05_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product04_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product05_01.jpg",
+      "RelativePath": "img/products/product04_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -413,15 +413,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product05_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product04_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product06_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product05_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product06_01.jpg",
+      "RelativePath": "img/products/product05_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -432,15 +432,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product06_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product05_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product07_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product06_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product07_01.jpg",
+      "RelativePath": "img/products/product06_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -451,15 +451,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product07_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product06_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product08_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product07_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product08_01.jpg",
+      "RelativePath": "img/products/product07_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -470,15 +470,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product08_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product07_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product10_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product08_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product10_01.jpg",
+      "RelativePath": "img/products/product08_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -489,15 +489,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product10_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product08_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product11_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product10_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product11_01.jpg",
+      "RelativePath": "img/products/product10_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -508,15 +508,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product11_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product10_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product11_02.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product11_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product11_02.jpg",
+      "RelativePath": "img/products/product11_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -527,15 +527,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product11_02.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product11_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product11_03.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product11_02.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product11_03.jpg",
+      "RelativePath": "img/products/product11_02.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -546,15 +546,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product11_03.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product11_02.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product11_04.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product11_03.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product11_04.jpg",
+      "RelativePath": "img/products/product11_03.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -565,15 +565,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product11_04.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product11_03.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product11_05.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product11_04.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product11_05.jpg",
+      "RelativePath": "img/products/product11_04.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -584,15 +584,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product11_05.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product11_04.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product12_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product11_05.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product12_01.jpg",
+      "RelativePath": "img/products/product11_05.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -603,15 +603,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product12_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product11_05.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product12_02.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product12_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product12_02.jpg",
+      "RelativePath": "img/products/product12_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -622,15 +622,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product12_02.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product12_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product12_03.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product12_02.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product12_03.jpg",
+      "RelativePath": "img/products/product12_02.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -641,15 +641,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product12_03.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product12_02.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product12_04.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product12_03.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product12_04.jpg",
+      "RelativePath": "img/products/product12_03.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -660,15 +660,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product12_04.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product12_03.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product12_05.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product12_04.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product12_05.jpg",
+      "RelativePath": "img/products/product12_04.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -679,15 +679,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product12_05.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product12_04.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product13_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product12_05.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product13_01.jpg",
+      "RelativePath": "img/products/product12_05.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -698,15 +698,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product13_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product12_05.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product13_02.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product13_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product13_02.jpg",
+      "RelativePath": "img/products/product13_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -717,15 +717,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product13_02.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product13_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product13_03.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product13_02.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product13_03.jpg",
+      "RelativePath": "img/products/product13_02.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -736,15 +736,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product13_03.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product13_02.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product13_04.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product13_03.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product13_04.jpg",
+      "RelativePath": "img/products/product13_03.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -755,15 +755,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product13_04.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product13_03.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product14_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product13_04.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product14_01.jpg",
+      "RelativePath": "img/products/product13_04.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -774,15 +774,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product14_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product13_04.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product14_02.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product14_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product14_02.jpg",
+      "RelativePath": "img/products/product14_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -793,15 +793,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product14_02.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product14_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product14_03.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product14_02.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product14_03.jpg",
+      "RelativePath": "img/products/product14_02.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -812,15 +812,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product14_03.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product14_02.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product14_04.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product14_03.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product14_04.jpg",
+      "RelativePath": "img/products/product14_03.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -831,15 +831,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product14_04.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product14_03.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product14_05.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product14_04.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product14_05.jpg",
+      "RelativePath": "img/products/product14_04.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -850,15 +850,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product14_05.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product14_04.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product20_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product14_05.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product20_01.jpg",
+      "RelativePath": "img/products/product14_05.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -869,15 +869,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product20_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product14_05.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product20_02.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product20_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product20_02.jpg",
+      "RelativePath": "img/products/product20_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -888,15 +888,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product20_02.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product20_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product22_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product20_02.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product22_01.jpg",
+      "RelativePath": "img/products/product20_02.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -907,15 +907,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product22_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product20_02.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product22_02.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product21_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product22_02.jpg",
+      "RelativePath": "img/products/product21_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -926,15 +926,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product22_02.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product21_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product22_03.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product22_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product22_03.jpg",
+      "RelativePath": "img/products/product22_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -945,15 +945,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product22_03.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product22_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product22_04.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product22_02.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product22_04.jpg",
+      "RelativePath": "img/products/product22_02.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -964,15 +964,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product22_04.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product22_02.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product23_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product22_03.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product23_01.jpg",
+      "RelativePath": "img/products/product22_03.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -983,15 +983,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product23_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product22_03.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product23_02.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product22_04.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product23_02.jpg",
+      "RelativePath": "img/products/product22_04.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1002,15 +1002,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product23_02.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product22_04.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product23_03.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product23_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product23_03.jpg",
+      "RelativePath": "img/products/product23_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1021,15 +1021,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product23_03.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product23_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product23_04.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product23_02.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product23_04.jpg",
+      "RelativePath": "img/products/product23_02.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1040,15 +1040,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product23_04.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product23_02.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\product23_05.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product23_03.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/product23_05.jpg",
+      "RelativePath": "img/products/product23_03.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1059,15 +1059,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\product23_05.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product23_03.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\productpuma01_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product23_04.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/productpuma01_01.jpg",
+      "RelativePath": "img/products/product23_04.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1078,15 +1078,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\productpuma01_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product23_04.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\productpuma02_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product23_05.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/productpuma02_01.jpg",
+      "RelativePath": "img/products/product23_05.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1097,15 +1097,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\productpuma02_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\product23_05.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\productpuma03_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\productpuma01_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/productpuma03_01.jpg",
+      "RelativePath": "img/products/productpuma01_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1116,15 +1116,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\productpuma03_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\productpuma01_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\productpuma04_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\productpuma02_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/productpuma04_01.jpg",
+      "RelativePath": "img/products/productpuma02_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1135,15 +1135,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\productpuma04_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\productpuma02_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\productpuma05_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\productpuma03_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/productpuma05_01.jpg",
+      "RelativePath": "img/products/productpuma03_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1154,15 +1154,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\productpuma05_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\productpuma03_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\productpuma06_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\productpuma04_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/productpuma06_01.jpg",
+      "RelativePath": "img/products/productpuma04_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1173,15 +1173,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\productpuma06_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\productpuma04_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\productpuma07_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\productpuma05_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/productpuma07_01.jpg",
+      "RelativePath": "img/products/productpuma05_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1192,15 +1192,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\productpuma07_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\productpuma05_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\productpuma08_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\productpuma06_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/productpuma08_01.jpg",
+      "RelativePath": "img/products/productpuma06_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1211,15 +1211,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\productpuma08_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\productpuma06_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\productpuma09_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\productpuma07_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/productpuma09_01.jpg",
+      "RelativePath": "img/products/productpuma07_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1230,15 +1230,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\productpuma09_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\productpuma07_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\productpuma10_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\productpuma08_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/productpuma10_01.jpg",
+      "RelativePath": "img/products/productpuma08_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1249,15 +1249,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\productpuma10_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\productpuma08_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\producttiger01_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\productpuma09_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/producttiger01_01.jpg",
+      "RelativePath": "img/products/productpuma09_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1268,15 +1268,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\producttiger01_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\productpuma09_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\producttiger02_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\productpuma10_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/producttiger02_01.jpg",
+      "RelativePath": "img/products/productpuma10_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1287,15 +1287,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\producttiger02_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\productpuma10_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\producttiger03_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\producttiger01_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/producttiger03_01.jpg",
+      "RelativePath": "img/products/producttiger01_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1306,15 +1306,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\producttiger03_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\producttiger01_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\producttiger04_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\producttiger02_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/producttiger04_01.jpg",
+      "RelativePath": "img/products/producttiger02_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1325,15 +1325,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\producttiger04_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\producttiger02_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\producttiger05_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\producttiger03_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/producttiger05_01.jpg",
+      "RelativePath": "img/products/producttiger03_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1344,15 +1344,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\producttiger05_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\producttiger03_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\producttiger06_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\producttiger04_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/producttiger06_01.jpg",
+      "RelativePath": "img/products/producttiger04_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1363,15 +1363,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\producttiger06_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\producttiger04_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\producttiger07_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\producttiger05_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/producttiger07_01.jpg",
+      "RelativePath": "img/products/producttiger05_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1382,15 +1382,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\producttiger07_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\producttiger05_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\producttiger08_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\producttiger06_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/producttiger08_01.jpg",
+      "RelativePath": "img/products/producttiger06_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1401,15 +1401,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\producttiger08_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\producttiger06_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\producttiger09_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\producttiger07_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/producttiger09_01.jpg",
+      "RelativePath": "img/products/producttiger07_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1420,15 +1420,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\producttiger09_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\producttiger07_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\producttiger10_01.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\producttiger08_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/producttiger10_01.jpg",
+      "RelativePath": "img/products/producttiger08_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1439,15 +1439,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\producttiger10_01.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\producttiger08_01.jpg"
     },
     {
-      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\puma.jpg",
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\producttiger09_01.jpg",
       "SourceId": "chuyenNganh.websiteBanGiay",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
       "BasePath": "_content/chuyenNganh.websiteBanGiay",
-      "RelativePath": "img/puma.jpg",
+      "RelativePath": "img/products/producttiger09_01.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1458,7 +1458,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\puma.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\products\\producttiger09_01.jpg"
+    },
+    {
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\producttiger10_01.jpg",
+      "SourceId": "chuyenNganh.websiteBanGiay",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
+      "BasePath": "_content/chuyenNganh.websiteBanGiay",
+      "RelativePath": "img/products/producttiger10_01.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\products\\producttiger10_01.jpg"
     },
     {
       "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\js\\main.js",

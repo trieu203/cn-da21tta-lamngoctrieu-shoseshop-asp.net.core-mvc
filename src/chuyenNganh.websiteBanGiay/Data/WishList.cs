@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace chuyenNganh.websiteBanGiay.Data;
+﻿namespace chuyenNganh.websiteBanGiay.Data;
 
 public partial class WishList
 {

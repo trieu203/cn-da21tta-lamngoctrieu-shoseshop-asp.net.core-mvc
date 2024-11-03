@@ -9,5 +9,6 @@
         public string? ImageUrl { get; set; }
         public int WishListId { get; set; }
         public int CartId { get; set; }
+        public int? Rating { get; set; }
     }
 }
