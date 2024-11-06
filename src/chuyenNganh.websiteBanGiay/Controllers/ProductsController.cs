@@ -102,15 +102,38 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Products
+            var p = await _context.Products
                 .Include(p => p.Category)
-                .FirstOrDefaultAsync(m => m.ProductId == id);
-            if (product == null)
+                .Include(p => p.ProductSizes)
+                .Include(p => p.Reviews)
+                .Include(p => p.WishLists)
+                .Include(p => p.CartItems)
+                .SingleOrDefaultAsync(m => m.ProductId == id);
+
+            if (p == null)
             {
                 return NotFound();
             }
 
-            return View(product);
+            var result = new ProductVMDT
+            {
+                ProductId = p.ProductId,
+                ProductName = p.ProductName,
+                Description = p.Description,
+                Price = p.Price,
+                Discount = p.Discount,
+                ImageUrl = p.ImageUrl,
+                Size = p.ProductSizes.FirstOrDefault()?.Size,
+                Quantity = p.ProductSizes.FirstOrDefault()?.Quantity ?? 0,
+                WishListId = p.WishLists.FirstOrDefault()?.WishListId ?? 0,
+                CartId = p.CartItems.FirstOrDefault()?.CartId ?? 0,
+                Rating = p.Reviews.FirstOrDefault()?.Rating,
+                Comment = p.Reviews.FirstOrDefault()?.Comment,
+                UserName = p.Reviews.FirstOrDefault()?.User?.UserName,
+                Email = p.Reviews.FirstOrDefault()?.User?.Email,
+            };
+
+            return View(result);
         }
 
         // GET: Products/Create

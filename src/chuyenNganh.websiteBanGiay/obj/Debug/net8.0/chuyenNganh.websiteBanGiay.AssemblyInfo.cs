@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("chuyenNganh.websiteBanGiay")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8098d6b629ead4ac4f4c91d9ade1bc8cc196f756")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+563fa99f22de622bdd3b2a317338fd2a6edb2adf")]
 [assembly: System.Reflection.AssemblyProductAttribute("chuyenNganh.websiteBanGiay")]
 [assembly: System.Reflection.AssemblyTitleAttribute("chuyenNganh.websiteBanGiay")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
