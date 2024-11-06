@@ -42,11 +42,44 @@
   box-sizing: border-box;
 }
 
+
+/* Style Search */
+
+.form-control {
+    border-radius: 20px 0 0 20px;
+    border: 2px solid #ffc107; /* Màu viền vàng để phù hợp với màu của nút */
+    box-shadow: none; /* Loại bỏ bóng của input */
+    height: 40px; /* Tăng chiều cao của input để nhìn cân đối hơn */
+}
+
+#searchButton {
+    border-radius: 0 20px 20px 0;
+    background-color: #ffc107; /* Màu nền vàng */
+    color: white;
+    border: 2px solid #ffc107; /* Viền đồng màu với input */
+    padding: 0 15px;
+    height: 40px; /* Đảm bảo chiều cao của nút bằng với input */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Thêm hiệu ứng chuyển */
+}
+
+    #searchButton:hover {
+        background-color: #e0a800; /* Màu vàng đậm hơn khi hover */
+        border-color: #e0a800;
+        transform: scale(1.05); /* Phóng to nhẹ khi hover */
+    }
+
+.input-group .form-control:focus {
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.5); /* Tạo bóng vàng nhạt khi focus */
+}
+
+
+
+
 html {
-  font-family: sans-serif;
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {

@@ -25,17 +25,18 @@
         </div>
 
         <div class="col-lg-4 col-6 text-left">
-            <form action="">
+            <form asp-action="Search" asp-controller="Products">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for products">
+                    <input id="searchText" type="search" class="form-control" name="query" placeholder="Tìm kiếm sản phẩm">
                     <div class="input-group-append">
-                        <span class="input-group-text bg-transparent text-primary">
+                        <button type="submit" id="searchButton" class="btn btn-warning search-btn">
                             <i class="fa fa-search"></i>
-                        </span>
+                        </button>
                     </div>
                 </div>
             </form>
         </div>
+
         
         <div class="col-lg-4 col-6 text-right">
             <div class="d-inline-flex align-items-center">

@@ -55,6 +55,45 @@ namespace chuyenNganh.websiteBanGiay.Controllers
         }
 
 
+        public async Task<IActionResult> Search(string? query)
+        {
+            // Truy vấn cơ bản từ bảng Products
+            var productQuery = _context.Products.AsQueryable();
+
+            // Lọc theo Category nếu có
+            if (query != null)
+            {
+                productQuery = productQuery.Where(p => p.ProductName.Contains(query));
+            }
+
+            // Thực hiện truy vấn với Select để tạo ProductVM
+            var result = await productQuery
+                .Select(p => new ProductVM
+                {
+                    ProductId = p.ProductId,
+                    ProductName = p.ProductName,
+                    Price = p.Price,
+                    Discount = p.Discount,
+                    ImageUrl = p.ImageUrl,
+                    WishListId = _context.WishLists
+                                    .Where(w => w.ProductId == p.ProductId)
+                                    .Select(w => w.WishListId)
+                                    .FirstOrDefault(), // Lấy WishListId đầu tiên liên kết với sản phẩm, hoặc 0 nếu không có
+                    CartId = _context.Carts
+                                    .Where(c => c.CartItems.Any(ci => ci.ProductId == p.ProductId))
+                                    .Select(c => c.CartId)
+                                    .FirstOrDefault(), // Lấy CartId đầu tiên có sản phẩm này trong giỏ hàng
+                    Rating = _context.Reviews
+                                    .Where(r => r.ProductId == p.ProductId)
+                                    .Select(r => r.Rating)
+                                    .FirstOrDefault() // Lấy đánh giá đầu tiên cho sản phẩm, hoặc null nếu không có
+                })
+                .ToListAsync();
+
+            return View(result);
+        }
+
+
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
