@@ -38,6 +38,8 @@ app.UseRouting();
 
 app.UseSession();
 
+app.UseHttpsRedirection();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -15,17 +15,17 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             _context = context;
         }
 
-        const string Cart_Key = "MyCart";
+        
 
         public List<CartItem> Cart => HttpContext.Session.Get<List<CartItem>>
-            (Cart_Key) ?? new List<CartItem> ();
+            (Constand.Cart_Key) ?? new List<CartItem> ();
 
 
         // GET: Carts
         public IActionResult Index()
         {
             // Lấy giỏ hàng từ session hoặc tạo mới nếu chưa có
-            var gioHang = HttpContext.Session.Get<List<CartItem>>(Cart_Key) ?? new List<CartItem>();
+            var gioHang = HttpContext.Session.Get<List<CartItem>>(Constand.Cart_Key) ?? new List<CartItem>();
 
             // Truyền danh sách CartItem trực tiếp vào View
             return View(gioHang);
@@ -35,7 +35,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
         public async Task<IActionResult> AddToCart(int id, int quantity = 1)
         {
             // Lấy giỏ hàng từ session hoặc tạo mới nếu chưa có
-            var gioHang = HttpContext.Session.Get<List<CartItem>>(Cart_Key) ?? new List<CartItem>();
+            var gioHang = HttpContext.Session.Get<List<CartItem>>(Constand.Cart_Key) ?? new List<CartItem>();
 
             // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
             var item = gioHang.SingleOrDefault(p => p.ProductId == id);
@@ -55,6 +55,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                 {
                     CartItemId = gioHang.Count + 1,
                     ProductId = product.ProductId,
+                    ProductName = product.ProductName,
                     Quantity = quantity,
                     PriceAtTime = product.Price,
                     ImageUrl = product.ImageUrl,
@@ -69,7 +70,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             }
 
             // Cập nhật lại session
-            HttpContext.Session.Set(Cart_Key, gioHang);
+            HttpContext.Session.Set(Constand.Cart_Key, gioHang);
 
             // Chuyển hướng người dùng về trang giỏ hàng
             return RedirectToAction("Index");
@@ -81,13 +82,13 @@ namespace chuyenNganh.websiteBanGiay.Controllers
         [HttpPost]
         public IActionResult RemoveFromCart(int id)
         {
-            var gioHang = HttpContext.Session.Get<List<CartItem>>(Cart_Key) ?? new List<CartItem>();
+            var gioHang = HttpContext.Session.Get<List<CartItem>>(Constand.Cart_Key) ?? new List<CartItem>();
             var itemToRemove = gioHang.SingleOrDefault(x => x.CartItemId == id);
 
             if (itemToRemove != null)
             {
                 gioHang.Remove(itemToRemove);
-                HttpContext.Session.Set(Cart_Key, gioHang);
+                HttpContext.Session.Set(Constand.Cart_Key, gioHang);
             }
 
             return RedirectToAction("Index");

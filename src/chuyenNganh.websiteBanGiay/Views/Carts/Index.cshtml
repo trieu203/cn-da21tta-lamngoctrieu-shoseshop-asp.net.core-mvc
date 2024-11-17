@@ -9,11 +9,7 @@
 <div class="container-fluid">
     <div class="row px-xl-5">
         <div class="col-12">
-            <nav class="breadcrumb bg-light mb-30">
-                <a class="breadcrumb-item text-dark" href="#">Home</a>
-                <a class="breadcrumb-item text-dark" href="#">Shop</a>
-                <span class="breadcrumb-item active">Shopping Cart</span>
-            </nav>
+            
         </div>
     </div>
 </div>
@@ -25,11 +21,11 @@
             <table class="table table-light table-borderless table-hover text-center mb-0">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Products</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                        <th>Remove</th>
+                        <th>Sản phẩm</th>
+                        <th>Gía</th>
+                        <th>Số lượng</th>
+                        <th>Tổng tiền</th>
+                        <th>Xóa</th>
                     </tr>
                 </thead>
                 <tbody class="align-middle">
@@ -37,8 +33,8 @@
                     {
                         <tr>
                             <td class="align-middle">
-                                <img src="@Url.Content("~/img/products/" + item.ImageUrl)" alt="@item.ProductId" style="width: 50px; height: auto;">
-                                @item.ProductId
+                                <img src="~/img/products/@item.ImageUrl" asp-append-version="true" alt="@item.ProductId" style="width: 50px; height: auto;">
+                                @item.ProductName
                             </td>
                             <td class="align-middle">@item.PriceAtTime.ToString("N0") VND</td>
                             <td class="align-middle">
@@ -84,7 +80,7 @@
             <div class="bg-light p-30 mb-5">
                 <div class="border-bottom pb-2">
                     <div class="d-flex justify-content-between mb-3">
-                        <h6>Subtotal</h6>
+                        <h6>Tạm tính</h6>
                         <h6>@Model.Sum(x => x.PriceAtTime * x.Quantity).ToString("#,##0") VNĐ</h6>
                     </div>
                     <div class="d-flex justify-content-between">

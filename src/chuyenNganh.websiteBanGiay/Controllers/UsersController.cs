@@ -1,4 +1,5 @@
 ﻿using chuyenNganh.websiteBanGiay.Data;
+using chuyenNganh.websiteBanGiay.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +19,44 @@ namespace chuyenNganh.websiteBanGiay.Controllers
         {
             return View(await _context.Users.ToListAsync());
         }
+
+        public async Task<IActionResult> DangKy()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DangKy(RegisterVM model)
+        {
+            if (ModelState.IsValid)
+            {
+                string defaultRole = "User";
+                model.Role ??= defaultRole;
+                var user = new User
+                {
+                    UserName = model.UserName,
+                    Password = model.Password,
+                    Email = model.Email,
+                    FullName = model.FullName,
+                    SDT = model.SDT,
+                    Address = model.Address,
+                    ImageUrl = model.ImageUrl,
+                    GioiTinh = model.GioiTinh,
+                    NgaySinh = model.NgaySinh.HasValue
+                        ? model.NgaySinh.Value.ToDateTime(new TimeOnly(0, 0))
+                        : (DateTime?)null,
+                    CreatedDate = DateOnly.FromDateTime(DateTime.Now)
+                };
+
+                _context.Add(user);
+                await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Đăng ký thành công!";
+                return RedirectToAction("DangKy");
+            }
+            return View(model);
+        }
+
 
         // GET: Users/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -48,7 +87,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserId,UserName,Password,Email,FullName,Role,CreatedDate")] User user)
+        public async Task<IActionResult> Create([Bind("UserId,UserName,Password,Email,FullName,SDT,Address,ImageUrl,GioiTinh,NgaySinh,Role,CreatedDate")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +119,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UserId,UserName,Password,Email,FullName,Role,CreatedDate")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("UserId,UserName,Password,Email,FullName,SDT,Address,ImageUrl,GioiTinh,NgaySinh,Role,CreatedDate")] User user)
         {
             if (id != user.UserId)
             {

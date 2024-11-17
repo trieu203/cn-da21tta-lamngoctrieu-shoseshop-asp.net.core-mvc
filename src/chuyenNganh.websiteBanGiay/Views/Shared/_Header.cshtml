@@ -43,11 +43,11 @@
                 <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài khoản</button>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <button class="dropdown-item" type="button">Đăng nhập</button>
-                        <button class="dropdown-item" type="button">Đăng ký</button>
+                        <!-- Sử dụng thẻ <a> thay vì <button> -->
+                        <a asp-controller="Users" asp-action="DangNhap" class="dropdown-item">Đăng nhập</a>
+                        <a asp-controller="Users" asp-action="DangKy" class="dropdown-item">Đăng ký</a>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

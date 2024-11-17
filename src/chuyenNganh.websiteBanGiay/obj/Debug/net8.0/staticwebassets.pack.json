@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\chuyenNganh.websiteBanGiay.bundle.scp.css",
-      "PackagePath": "staticwebassets\\chuyenNganh.websiteBanGiay.bundle.scp.css"
+      "PackagePath": "staticwebassets\\chuyenNganh.websiteBanGiay.rwmunza3qg.bundle.scp.css"
     },
     {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\css\\bootstrap-grid.css",
@@ -983,6 +983,10 @@
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.chuyenNganh.websiteBanGiay.props",
       "PackagePath": "buildTransitive\\chuyenNganh.websiteBanGiay.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.chuyenNganh.websiteBanGiay.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.chuyenNganh.websiteBanGiay.Microsoft.AspNetCore.StaticWebAssets.props",
