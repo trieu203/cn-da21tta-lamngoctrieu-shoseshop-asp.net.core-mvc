@@ -23,21 +23,35 @@
 <div class="container-fluid pb-5">
     <div class="row px-xl-5">
         <div class="col-lg-5 mb-30">
-            <div id="product-carousel" class="carousel slide" data-ride="carousel">
-
-                <div class="carousel-inner bg-light">
-                    <div class="carousel-item active">
-                        <img class="w-100 h-100" src="/img/products/@Model.ImageUrl" alt="Product Image">
+            <div class="single_product_thumb">
+                <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <!-- Trigger Modal on Click -->
+                            <a class="product-img" href="#" data-toggle="modal" data-target="#imageModal" title="Click để xem rỏ hơn">
+                                <img class="d-block w-100" src="@Url.Content("~/img/Products/" + Model.ImageUrl + ".jpg")" alt="@Model.ProductName">
+                            </a>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-
-                <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
-                    <i class="fa fa-2x fa-angle-left text-dark"></i>
-                </a>
-                <a class="carousel-control-next" href="#product-carousel" data-slide="next">
-                    <i class="fa fa-2x fa-angle-right text-dark"></i>
-                </a>
+        <!-- Modal for Image Zoom -->
+        <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="imageModalLabel">@Model.ProductName</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <!-- Zoomed Image -->
+                        <img id="zoomedImage" class="img-fluid" src="@Url.Content("~/img/Products/" + Model.ImageUrl + ".jpg")" alt="@Model.ProductName">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -149,7 +163,7 @@
                             <div class="col-md-6">
                                 <h4 class="mb-4">1 review for "Product Name"</h4>
                                 <div class="media mb-4">
-                                    <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
+                                    <img src="~/img/users/user_boy.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
                                     <div class="media-body">
                                         <h6>John Doe<small> - <i>01 Jan 2045</i></small></h6>
                                         <div class="text-primary mb-2">

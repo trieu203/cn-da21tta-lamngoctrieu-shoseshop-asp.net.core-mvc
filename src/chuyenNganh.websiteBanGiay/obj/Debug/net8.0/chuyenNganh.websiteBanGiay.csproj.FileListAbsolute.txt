@@ -545,3 +545,4 @@ D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websit
 D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\bin\Debug\net8.0\AutoMapper.dll

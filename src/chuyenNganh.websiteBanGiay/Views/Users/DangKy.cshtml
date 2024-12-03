@@ -16,7 +16,7 @@
             </div>
         }
 
-        <form asp-action="DangKy" method="post">
+        <form asp-action="DangKy" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label asp-for="UserName" class="form-label"></label>
                 <input asp-for="UserName" class="form-control" />
@@ -54,9 +54,8 @@
             </div>
 
             <div class="mb-3">
-                <label asp-for="ImageUrl" class="form-label"></label>
-                <input asp-for="ImageUrl" class="form-control" />
-                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                <label for="Hình" class="form-label"></label>
+                <input type="file" name="Hình" class="form-control" />
             </div>
 
             <div class="mb-3">

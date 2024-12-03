@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "0v/QuqbPWj8=",
+  "dgSpecHash": "Rh7HwOrMFg0=",
   "success": true,
   "projectFilePath": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Trieu\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Trieu\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Trieu\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\Trieu\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

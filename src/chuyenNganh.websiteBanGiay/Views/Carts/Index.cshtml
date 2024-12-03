@@ -8,97 +8,149 @@
 <!-- Breadcrumb Start -->
 <div class="container-fluid">
     <div class="row px-xl-5">
-        <div class="col-12">
-            
-        </div>
+        <div class="col-12"></div>
     </div>
 </div>
 <!-- Breadcrumb End -->
 <!-- Cart Start -->
 <div class="container-fluid">
     <div class="row px-xl-5">
-        <div class="col-lg-8 table-responsive mb-5">
-            <table class="table table-light table-borderless table-hover text-center mb-0">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Sản phẩm</th>
-                        <th>Gía</th>
-                        <th>Số lượng</th>
-                        <th>Tổng tiền</th>
-                        <th>Xóa</th>
-                    </tr>
-                </thead>
-                <tbody class="align-middle">
-                    @foreach (var item in Model)
-                    {
+        @if (Model == null || !Model.Any())
+        {
+            <!-- Thông báo khi giỏ hàng trống -->
+            <div class="col-12 text-center py-5">
+                <h4 class="text-muted">Giỏ hàng của bạn đang trống.</h4>
+                <a asp-controller="Products" asp-action="Index" class="btn btn-primary mt-3">Quay lại mua sắm</a>
+            </div>
+        }
+        else
+        {
+            <!-- Hiển thị giỏ hàng -->
+            <div class="col-lg-8 table-responsive mb-5">
+                <table class="table table-light table-borderless table-hover text-center mb-0">
+                    <thead class="thead-dark">
                         <tr>
-                            <td class="align-middle">
-                                <img src="~/img/products/@item.ImageUrl" asp-append-version="true" alt="@item.ProductId" style="width: 50px; height: auto;">
-                                @item.ProductName
-                            </td>
-                            <td class="align-middle">@item.PriceAtTime.ToString("N0") VND</td>
-                            <td class="align-middle">
-                                <div class="input-group quantity mx-auto" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus">
-                                            <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" value="@item.Quantity">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="align-middle">@((item.PriceAtTime * item.Quantity).ToString("N0"))</td>
-                            <td class="align-middle">
-                                <form asp-action="RemoveFromCart" method="post">
-                                    <input type="hidden" name="id" value="@item.CartItemId" />
-                                    <button type="submit" class="btn btn-sm btn-danger">
-                                        <i class="fa fa-times"></i>
-                                    </button>
-                                </form>
-                            </td>
+                            <th>Sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Tổng tiền</th>
+                            <th>Xóa</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-        <!-- Cart Summary -->
-        <div class="col-lg-4">
-            <form class="mb-30" action="">
-                <div class="input-group">
-                    <input type="text" class="form-control border-0 p-4" placeholder="Coupon Code">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary">Apply Coupon</button>
+                    </thead>
+                    <tbody class="align-middle">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="align-middle">
+                                    <div class="d-flex align-items-center">
+                                        <img src="@Url.Content("~/img/products/" + item.ImageUrl + ".jpg")" style="width: 50px; height: auto;">
+                                        <span>@item.ProductName</span>
+                                    </div>
+                                </td>
+
+                                <td class="align-middle">@item.PriceAtTime.ToString("N0") VND</td>
+                                <td class="align-middle">
+                                    <div class="input-group quantity mx-auto" style="width: 100px;">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-primary btn-minus" data-id="@item.CartItemId" data-action="minus">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                        <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center quantity-input" data-id="@item.CartItemId" value="@item.Quantity">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-primary btn-plus" data-id="@item.CartItemId" data-action="plus">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="align-middle total-price">
+                                    @((item.PriceAtTime * item.Quantity).ToString("N0")) VND
+                                </td>
+                                <td class="align-middle">
+                                    <form asp-action="RemoveFromCart" method="post">
+                                        <input type="hidden" name="id" value="@item.CartItemId" />
+                                        <button type="submit" class="btn btn-sm btn-danger">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="col-lg-4">
+                <h5 class="section-title position-relative text-uppercase mb-3">
+                    <span class="bg-secondary pr-3">Giỏ hàng</span>
+                </h5>
+                <div class="bg-light p-30 mb-5">
+                    <div class="border-bottom pb-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h6>Tạm tính</h6>
+                            <h6 id="subtotal">@Model.Sum(x => x.PriceAtTime * x.Quantity).ToString("N0") VNĐ</h6>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-medium">Phí vận chuyển</h6>
+                            <h6 class="font-weight-medium">50,000 VNĐ</h6>
+                        </div>
                     </div>
-                </div>
-            </form>
-            <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Giỏ hàng</span></h5>
-            <div class="bg-light p-30 mb-5">
-                <div class="border-bottom pb-2">
-                    <div class="d-flex justify-content-between mb-3">
-                        <h6>Tạm tính</h6>
-                        <h6>@Model.Sum(x => x.PriceAtTime * x.Quantity).ToString("#,##0") VNĐ</h6>
+                    <div class="pt-2">
+                        <div class="d-flex justify-content-between mt-2">
+                            <h5>Tổng tiền:</h5>
+                            <h5 id="cart-total">
+                                @string.Format("{0:N0} VNĐ", Model.Sum(x => x.PriceAtTime * x.Quantity) + 50000)
+                            </h5>
+                        </div>
+                        <button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Tiến hành thanh toán</button>
                     </div>
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-medium">Phí vận chuyển</h6>
-                        <h6 class="font-weight-medium">50 000 VNĐ</h6>
-                    </div>
-                </div>
-                <div class="pt-2">
-                    <div class="d-flex justify-content-between mt-2">
-                        <h5>Tổng tiền:</h5>
-                        <h5>
-                            @string.Format("{0:#,##0} VNĐ", Model.Sum(x => x.PriceAtTime * x.Quantity) + 50000)
-                        </h5>
-                    </div>
-                    <button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Proceed To Checkout</button>
                 </div>
             </div>
-        </div>
+        }
     </div>
 </div>
 <!-- Cart End -->
+@section Scripts {
+    <script>
+        // Hàm cập nhật tổng tiền và số lượng
+        function updateTotal() {
+            let subtotal = 0;
+            let shippingFee = 50000; // Phí vận chuyển cố định
+            $(".quantity-input").each(function() {
+                let quantity = parseInt($(this).val());
+                let price = parseFloat($(this).closest("tr").find("td:eq(1)").text().replace(" VND", "").replace(/,/g, ""));
+                let totalPrice = price * quantity;
+                $(this).closest("tr").find(".total-price").text(totalPrice.toLocaleString() + " VND");
+                subtotal += totalPrice;
+            });
+
+            // Cập nhật tổng tiền
+            let totalAmount = subtotal + shippingFee;
+            $("#subtotal").text(subtotal.toLocaleString() + " VND");
+            $("#cart-total").text(totalAmount.toLocaleString() + " VND");
+        }
+
+        // Lắng nghe sự kiện thay đổi số lượng
+        $(".quantity-input").on("change", function() {
+            updateTotal();
+        });
+
+        // Lắng nghe sự kiện click vào nút cộng và trừ
+        $(".btn-minus, .btn-plus").on("click", function() {
+            let quantityInput = $(this).closest(".input-group").find(".quantity-input");
+            let quantity = parseInt(quantityInput.val());
+            if ($(this).hasClass("btn-plus")) {
+                quantity += 0;
+            } else if ($(this).hasClass("btn-minus") && quantity > 1) {
+                quantity -= 0;
+            }
+            quantityInput.val(quantity);
+            updateTotal(); // Cập nhật lại tổng tiền
+        });
+
+        // Cập nhật tổng tiền khi trang được tải lần đầu
+        updateTotal();
+    </script>
+}

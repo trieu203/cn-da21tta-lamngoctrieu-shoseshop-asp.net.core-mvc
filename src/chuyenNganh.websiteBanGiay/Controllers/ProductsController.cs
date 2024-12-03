@@ -16,19 +16,20 @@ namespace chuyenNganh.websiteBanGiay.Controllers
         }
 
 
-        public async Task<IActionResult> Index(int? Category)
+        public async Task<IActionResult> Index(int? Category, int page = 1, int pageSize = 9)
         {
-            // Truy vấn cơ bản từ bảng Products
             var productQuery = _context.Products.AsQueryable();
 
-            // Lọc theo Category nếu có
             if (Category.HasValue)
             {
                 productQuery = productQuery.Where(p => p.CategoryId == Category.Value);
             }
 
-            // Thực hiện truy vấn với Select để tạo ProductVM
-            var result = await productQuery
+            int totalItems = await productQuery.CountAsync();
+
+            var products = await productQuery
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
                 .Select(p => new ProductVM
                 {
                     ProductId = p.ProductId,
@@ -39,60 +40,59 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                     WishListId = _context.WishLists
                                     .Where(w => w.ProductId == p.ProductId)
                                     .Select(w => w.WishListId)
-                                    .FirstOrDefault(), // Lấy WishListId đầu tiên liên kết với sản phẩm, hoặc 0 nếu không có
+                                    .FirstOrDefault(),
                     CartId = _context.Carts
                                     .Where(c => c.CartItems.Any(ci => ci.ProductId == p.ProductId))
                                     .Select(c => c.CartId)
-                                    .FirstOrDefault(), // Lấy CartId đầu tiên có sản phẩm này trong giỏ hàng
+                                    .FirstOrDefault(),
                     Rating = _context.Reviews
                                     .Where(r => r.ProductId == p.ProductId)
                                     .Select(r => r.Rating)
-                                    .FirstOrDefault() // Lấy đánh giá đầu tiên cho sản phẩm, hoặc null nếu không có
+                                    .FirstOrDefault()
                 })
                 .ToListAsync();
 
-            return View(result);
+            var paginatedResult = new PaginatedList<ProductVM>(products, totalItems, page, pageSize);
+
+            ViewBag.CurrentCategory = Category;
+
+            return View(paginatedResult);
         }
 
 
-        public async Task<IActionResult> Search(string? query)
+        public async Task<IActionResult> Search(string? query, int page = 1, int pageSize = 9)
         {
-            // Truy vấn cơ bản từ bảng Products
+            // Khởi tạo truy vấn cơ bản
             var productQuery = _context.Products.AsQueryable();
 
-            // Lọc theo Category nếu có
-            if (query != null)
+            // Nếu có từ khóa tìm kiếm, áp dụng lọc theo tên sản phẩm
+            if (!string.IsNullOrWhiteSpace(query))
             {
                 productQuery = productQuery.Where(p => p.ProductName.Contains(query));
             }
 
-            // Thực hiện truy vấn với Select để tạo ProductVM
-            var result = await productQuery
+            // Tính toán tổng số sản phẩm và phân trang
+            int totalItems = await productQuery.CountAsync();
+
+            var products = await productQuery
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
                 .Select(p => new ProductVM
                 {
                     ProductId = p.ProductId,
                     ProductName = p.ProductName,
                     Price = p.Price,
                     Discount = p.Discount,
-                    ImageUrl = p.ImageUrl,
-                    WishListId = _context.WishLists
-                                    .Where(w => w.ProductId == p.ProductId)
-                                    .Select(w => w.WishListId)
-                                    .FirstOrDefault(), // Lấy WishListId đầu tiên liên kết với sản phẩm, hoặc 0 nếu không có
-                    CartId = _context.Carts
-                                    .Where(c => c.CartItems.Any(ci => ci.ProductId == p.ProductId))
-                                    .Select(c => c.CartId)
-                                    .FirstOrDefault(), // Lấy CartId đầu tiên có sản phẩm này trong giỏ hàng
-                    Rating = _context.Reviews
-                                    .Where(r => r.ProductId == p.ProductId)
-                                    .Select(r => r.Rating)
-                                    .FirstOrDefault() // Lấy đánh giá đầu tiên cho sản phẩm, hoặc null nếu không có
+                    ImageUrl = p.ImageUrl
                 })
                 .ToListAsync();
 
-            return View(result);
-        }
+            // Tạo đối tượng PaginatedList chứa sản phẩm đã phân trang
+            var paginatedResult = new PaginatedList<ProductVM>(products, totalItems, page, pageSize);
 
+            // Truyền đối tượng PaginatedList vào View
+            return View(paginatedResult);
+        }
 
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -114,6 +114,10 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             {
                 return NotFound();
             }
+
+            // Tính tổng số lượng tồn kho từ ProductSizes
+            ViewBag.QuantityAvailable = p.ProductSizes.Sum(ps => ps.Quantity);
+
 
             var result = new ProductVMDT
             {

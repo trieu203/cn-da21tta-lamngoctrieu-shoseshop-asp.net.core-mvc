@@ -4,16 +4,16 @@
     <div class="row px-xl-5">
         <div class="col-lg-3 d-none d-lg-block">
             <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
-                <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Hãng giày</h6>
-                <i class="fa fa-angle-down text-dark"></i>
+                <h6 title="Click để xem danh sách" class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Hãng giày</h6>
+                <i title="Click để xem danh sách" class="fa fa-angle-down text-dark"></i>
             </a>
             <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
                 <div class="navbar-nav w-100">
-                    <a href="" class="nav-item nav-link">Nike</a>
-                    <a href="" class="nav-item nav-link">Adidas</a>
-                    <a href="" class="nav-item nav-link">New Balance</a>
-                    <a href="" class="nav-item nav-link">Onitsuka Tiger</a>
-                    <a href="" class="nav-item nav-link">Puma</a>
+                    <a title="Click để xem chi tiết" href="@Url.Action("Details", "Categories", new { id = 1 })" class="nav-item nav-link">Nike</a>
+                    <a title="Click để xem chi tiết" href="@Url.Action("Details", "Categories", new { id = 2 })" class="nav-item nav-link">Adidas</a>
+                    <a title="Click để xem chi tiết" href="@Url.Action("Details", "Categories", new { id = 3 })" class="nav-item nav-link">New Balance</a>
+                    <a title="Click để xem chi tiết" href="@Url.Action("Details", "Categories", new { id = 4 })" class="nav-item nav-link">Onitsuka Tiger</a>
+                    <a title="Click để xem chi tiết" href="@Url.Action("Details", "Categories", new { id = 5 })" class="nav-item nav-link">Puma</a>
                 </div>
             </nav>
         </div>

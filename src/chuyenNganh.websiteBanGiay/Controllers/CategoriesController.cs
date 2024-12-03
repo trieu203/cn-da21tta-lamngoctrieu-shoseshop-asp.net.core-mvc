@@ -1,4 +1,5 @@
 ﻿using chuyenNganh.websiteBanGiay.Data;
+using chuyenNganh.websiteBanGiay.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,14 +28,25 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                 return NotFound();
             }
 
+            // Truy vấn danh mục
             var category = await _context.Categories
                 .FirstOrDefaultAsync(m => m.CategoryId == id);
+
             if (category == null)
             {
                 return NotFound();
             }
 
-            return View(category);
+            // Ánh xạ sang ViewModel
+            var categoryVM = new CategoryVM
+            {
+                CategoryId = category.CategoryId,
+                CategoryName = category.CategoryName,
+                Description = category.Description,
+                ImageUrl = category.ImageUrl 
+            };
+
+            return View(categoryVM);
         }
 
         // GET: Categories/Create

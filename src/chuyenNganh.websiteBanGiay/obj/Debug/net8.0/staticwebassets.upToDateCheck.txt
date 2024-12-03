@@ -73,6 +73,10 @@ wwwroot\img\products\producttiger07_01.jpg
 wwwroot\img\products\producttiger08_01.jpg
 wwwroot\img\products\producttiger09_01.jpg
 wwwroot\img\products\producttiger10_01.jpg
+wwwroot\img\sale\new.jpg
+wwwroot\img\sale\sale.jpg
+wwwroot\img\users\user_boy.jpg
+wwwroot\img\users\user_girl.jpg
 wwwroot\js\main.js
 wwwroot\js\site.js
 wwwroot\lib\animate\animate.min.css

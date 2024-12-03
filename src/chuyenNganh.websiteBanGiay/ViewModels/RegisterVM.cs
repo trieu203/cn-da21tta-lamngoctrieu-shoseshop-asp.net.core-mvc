@@ -13,7 +13,7 @@ namespace chuyenNganh.websiteBanGiay.ViewModels
 
         [Display(Name = "Mật khẩu")]
         [Required(ErrorMessage = "Mật khẩu là bắt buộc")]
-        [MaxLength(100, ErrorMessage = "Mật khẩu tối đa 100 ký tự")]
+        [MaxLength(20, ErrorMessage = "Mật khẩu tối đa 20 ký tự")]
         public string? Password { get; set; }
 
         [Display(Name = "Email")]
@@ -26,8 +26,8 @@ namespace chuyenNganh.websiteBanGiay.ViewModels
         public string? FullName { get; set; }
 
         [Display(Name = "Số điện thoại")]
-        [MaxLength(20, ErrorMessage = "Số điện thoại tối đa 20 ký tự")]
-        [RegularExpression(@"0[9875]\d{8}", ErrorMessage ="Chưa đúng SĐT Việt Nam")]
+        [MaxLength(10, ErrorMessage = "Số điện thoại tối đa 10 ký tự")]
+        [RegularExpression(@"^0(3[2-9]|5[6|8|9]|7[0|6|7|8|9]|8[1-5|8]|9[0|1|3|4|7|8|9])\d{7}$", ErrorMessage = "Chưa đúng định dạng số điện thoại Việt Nam")]
         public string? SDT { get; set; }
 
         [Display(Name = "Địa chỉ")]

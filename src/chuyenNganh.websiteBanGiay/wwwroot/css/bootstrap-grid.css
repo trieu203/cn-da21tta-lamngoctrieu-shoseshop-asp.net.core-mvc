@@ -14,7 +14,9 @@ html {
 *::after {
   box-sizing: inherit;
 }
-
+.d-block {
+    display: block !important;
+}
 .container,
 .container-fluid,
 .container-sm,

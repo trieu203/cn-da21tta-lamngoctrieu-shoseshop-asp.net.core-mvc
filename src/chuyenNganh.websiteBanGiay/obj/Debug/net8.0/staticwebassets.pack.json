@@ -305,6 +305,22 @@
       "PackagePath": "staticwebassets\\img\\products\\producttiger10_01.jpg"
     },
     {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\sale\\new.jpg",
+      "PackagePath": "staticwebassets\\img\\sale\\new.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\sale\\sale.jpg",
+      "PackagePath": "staticwebassets\\img\\sale\\sale.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\user_boy.jpg",
+      "PackagePath": "staticwebassets\\img\\users\\user_boy.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\user_girl.jpg",
+      "PackagePath": "staticwebassets\\img\\users\\user_girl.jpg"
+    },
+    {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\js\\main.js",
       "PackagePath": "staticwebassets\\js\\main.js"
     },

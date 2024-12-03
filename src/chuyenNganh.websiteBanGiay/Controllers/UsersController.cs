@@ -1,7 +1,10 @@
 ﻿using chuyenNganh.websiteBanGiay.Data;
 using chuyenNganh.websiteBanGiay.ViewModels;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace chuyenNganh.websiteBanGiay.Controllers
 {
@@ -25,14 +28,23 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Dangnhap()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> DangXuat()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Dangnhap", "Users");
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DangKy(RegisterVM model)
         {
             if (ModelState.IsValid)
             {
-                string defaultRole = "User";
-                model.Role ??= defaultRole;
                 var user = new User
                 {
                     UserName = model.UserName,
@@ -43,6 +55,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                     Address = model.Address,
                     ImageUrl = model.ImageUrl,
                     GioiTinh = model.GioiTinh,
+                    Role = model.Role = "User",
                     NgaySinh = model.NgaySinh.HasValue
                         ? model.NgaySinh.Value.ToDateTime(new TimeOnly(0, 0))
                         : (DateTime?)null,
@@ -56,6 +69,41 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             }
             return View(model);
         }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Dangnhap(LoginVM model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = _context.Users.FirstOrDefault(u => u.UserName == model.UserName && u.Password == model.Password);
+            if (user == null)
+            {
+                ModelState.AddModelError(string.Empty, "Tên đăng nhập hoặc mật khẩu không chính xác.");
+                return View(model);
+            }
+
+            // Tạo Claim để quản lý thông tin người dùng
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.Role, user.Role)
+            };
+
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            
+
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity));
+
+            return RedirectToAction("Index", "Home");
+        }
+
 
 
         // GET: Users/Details/5
