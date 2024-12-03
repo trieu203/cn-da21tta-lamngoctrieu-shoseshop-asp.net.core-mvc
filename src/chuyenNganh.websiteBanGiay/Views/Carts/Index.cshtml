@@ -112,6 +112,7 @@
     </div>
 </div>
 <!-- Cart End -->
+
 @section Scripts {
     <script>
         // Hàm cập nhật tổng tiền và số lượng
@@ -137,16 +138,31 @@
             updateTotal();
         });
 
-        // Lắng nghe sự kiện click vào nút cộng và trừ
+                 // Lắng nghe sự kiện click vào nút cộng và trừ
         $(".btn-minus, .btn-plus").on("click", function() {
             let quantityInput = $(this).closest(".input-group").find(".quantity-input");
             let quantity = parseInt(quantityInput.val());
+
+            // Nếu là nút cộng
             if ($(this).hasClass("btn-plus")) {
-                quantity += 0;
-            } else if ($(this).hasClass("btn-minus") && quantity > 1) {
-                quantity -= 0;
+                if (quantity < 20) {
+                    quantity += 0;  // Tăng số lượng
+                }
             }
-            quantityInput.val(quantity);
+            // Nếu là nút trừ
+            else if ($(this).hasClass("btn-minus") && quantity > 1) {
+                quantity -= 0;  // Giảm số lượng
+            }
+
+            quantityInput.val(quantity); // Cập nhật lại giá trị trong input
+
+            // Kiểm tra và vô hiệu hóa nút cộng nếu số lượng đã đạt tối đa là 20
+            if (quantity >= 20) {
+                $(this).closest(".input-group").find(".btn-plus").prop("disabled", true);  // Vô hiệu hóa nút cộng
+            } else {
+                $(this).closest(".input-group").find(".btn-plus").prop("disabled", false); // Bật lại nút cộng khi số lượng nhỏ hơn 20
+            }
+
             updateTotal(); // Cập nhật lại tổng tiền
         });
 
@@ -154,3 +170,4 @@
         updateTotal();
     </script>
 }
+

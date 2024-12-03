@@ -21,7 +21,7 @@
                             <img class="img-fluid w-100" src="@Url.Content("~/img/products/" + item.ImageUrl + ".jpg")" alt="@item.ProductName">
                         </a>
                         <div class="product-action">
-                            <a title="Thêm vào giỏ hàng" asp-action="AddToCart" asp-controller="Carts" asp-route-id="@item.ProductId" class="btn btn-outline-dark btn-square"><i class="fa fa-shopping-cart"></i></a>
+                            <a title="Thêm vào giỏ hàng" asp-action="Details" asp-controller="Products" asp-route-id="@item.ProductId" class="btn btn-outline-dark btn-square"><i class="fa fa-shopping-cart"></i></a>
                             <a title="Thêm vào danh sách yêu thích" class="btn btn-outline-dark btn-square" href="#"><i class="far fa-heart"></i></a>
                         </div>
                     </div>

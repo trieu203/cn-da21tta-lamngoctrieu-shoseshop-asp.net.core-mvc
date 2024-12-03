@@ -964,13 +964,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\main.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"f6ozz250gy"},{"Name":"integrity","Value":"sha256-2f9c0CKtu13j4LKJsMtqJ7QIl5JtV/ob6H7LGjpVe5E="},{"Name":"label","Value":"_content/chuyenNganh.websiteBanGiay/js/main.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2632"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00222f9c0CKtu13j4LKJsMtqJ7QIl5JtV/ob6H7LGjpVe5E=\u0022"},{"Name":"Last-Modified","Value":"Sat, 30 Nov 2024 12:41:47 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2632"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00222f9c0CKtu13j4LKJsMtqJ7QIl5JtV/ob6H7LGjpVe5E=\u0022"},{"Name":"Last-Modified","Value":"Tue, 03 Dec 2024 04:09:49 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/chuyenNganh.websiteBanGiay/js/main.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\main.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2f9c0CKtu13j4LKJsMtqJ7QIl5JtV/ob6H7LGjpVe5E="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2632"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00222f9c0CKtu13j4LKJsMtqJ7QIl5JtV/ob6H7LGjpVe5E=\u0022"},{"Name":"Last-Modified","Value":"Sat, 30 Nov 2024 12:41:47 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2632"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00222f9c0CKtu13j4LKJsMtqJ7QIl5JtV/ob6H7LGjpVe5E=\u0022"},{"Name":"Last-Modified","Value":"Tue, 03 Dec 2024 04:09:49 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/chuyenNganh.websiteBanGiay/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>

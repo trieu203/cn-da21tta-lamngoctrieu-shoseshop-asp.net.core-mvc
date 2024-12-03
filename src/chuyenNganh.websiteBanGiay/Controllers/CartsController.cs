@@ -33,25 +33,42 @@ namespace chuyenNganh.websiteBanGiay.Controllers
         // Kiểm tra và thêm sản phẩm vào giỏ hàng
         public async Task<IActionResult> AddToCart(int id, int quantity = 1)
         {
+            // Lấy thông tin sản phẩm và size
             var productSize = await _context.ProductSizes
                 .Include(ps => ps.Product)
                 .FirstOrDefaultAsync(ps => ps.ProductId == id);
 
-            if (productSize == null || quantity <= 0)
+            // Kiểm tra sản phẩm có tồn tại hay không
+            if (productSize == null)
             {
-                TempData["Message"] = "Sản phẩm không hợp lệ hoặc số lượng không hợp lệ.";
+                TempData["Message"] = "Sản phẩm không hợp lệ.";
                 return RedirectToAction("Index", "Products");
+            }
+
+            // Kiểm tra số lượng hợp lệ
+            if (quantity <= 0)
+            {
+                TempData["Message"] = "Số lượng không hợp lệ. Vui lòng nhập số lượng lớn hơn 0.";
+                return RedirectToAction("Details", "Products", new { id });
+            }
+
+            if (quantity > 20)
+            {
+                TempData["Message"] = "Số lượng không hợp lệ. Vui lòng nhập số lượng ít hơn hoặc bằng 20.";
+                return RedirectToAction("Details", "Products", new { id });
             }
 
             if (quantity > productSize.Quantity)
             {
                 TempData["Message"] = $"Số lượng yêu cầu vượt quá số lượng tồn kho. Chỉ còn {productSize.Quantity} sản phẩm.";
-                return RedirectToAction("Index", "Products");
+                return RedirectToAction("Details", "Products", new { id });
             }
 
+            // Lấy giỏ hàng từ Session hoặc tạo mới nếu chưa có
             var gioHang = HttpContext.Session.Get<List<CartItem>>(Constand.Cart_Key) ?? new List<CartItem>();
             var item = gioHang.SingleOrDefault(p => p.ProductId == id);
 
+            // Thêm sản phẩm mới hoặc cập nhật số lượng
             if (item == null)
             {
                 item = new CartItem
@@ -71,11 +88,11 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                 item.Quantity += quantity;
             }
 
+            // Lưu giỏ hàng vào Session
             HttpContext.Session.Set(Constand.Cart_Key, gioHang);
             TempData["Message"] = "Sản phẩm đã được thêm vào giỏ hàng.";
             return RedirectToAction("Index");
         }
-
 
 
         [HttpPost]

@@ -66,29 +66,29 @@
                         <small class="fas fa-star-half-alt"></small>
                         <small class="far fa-star"></small>
                     </div>
-                    <small class="pt-1">(99 Reviews)</small>
+                    
                 </div>
                 <h3 class="font-weight-semi-bold mb-4">@Model.Price.ToString("N0") VND</h3>
                 <div class="d-flex mb-3">
                     <strong class="text-dark mr-3">Sizes:</strong>
-                    <form>
+                    <form id="sizeForm">
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-1" name="size">
+                            <input type="radio" class="custom-control-input" id="size-1" name="size" value="39">
                             <label class="custom-control-label" for="size-1">39</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-2" name="size">
+                            <input type="radio" class="custom-control-input" id="size-2" name="size" value="40">
                             <label class="custom-control-label" for="size-2">40</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-3" name="size">
+                            <input type="radio" class="custom-control-input" id="size-3" name="size" value="41">
                             <label class="custom-control-label" for="size-3">41</label>
                         </div>
                     </form>
                 </div>
-                
+
                 <!-- Chọn số lượng và nút Thêm vào Giỏ hàng -->
-                <form asp-action="AddToCart" asp-controller="Carts" asp-route-id="@Model.ProductId" method="post">
+                <form asp-action="AddToCart" asp-controller="Carts" asp-route-id="@Model.ProductId" method="post" id="addToCartForm">
                     <div class="d-flex align-items-center mb-4">
                         <div class="input-group quantity mr-3" style="width: 130px;">
                             <button type="button" class="btn btn-warning btn-minus">
@@ -216,3 +216,28 @@
     </div>
 </div>
 <!-- Shop Detail End -->
+@section Scripts {
+<script>
+    document.getElementById("addToCartForm").addEventListener("submit", function (event) {
+        // Kiểm tra xem có size nào được chọn chưa
+        const sizeChecked = document.querySelector('input[name="size"]:checked');
+        if (!sizeChecked) {
+            // Ngăn form submit
+            event.preventDefault(); 
+            alert("Vui lòng chọn size trước khi thêm vào giỏ hàng!");
+        }
+    });
+
+    // Kiểm tra số lượng khi người dùng submit form
+        document.getElementById('addToCartForm').addEventListener('submit', function(event) {
+            var quantity = parseInt(document.querySelector('input[name="quantity"]').value);
+
+            if (quantity > 19) {
+                // Hiển thị thông báo nếu số lượng vượt quá 19
+                alert('Số lượng sản phẩm không được vượt quá 19.');
+                event.preventDefault(); 
+            }
+        });
+
+</script>
+}
