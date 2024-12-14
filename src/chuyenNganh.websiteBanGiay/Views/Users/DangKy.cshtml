@@ -16,17 +16,33 @@
             </div>
         }
 
-        <form asp-action="DangKy" method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger">
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <p>@error.ErrorMessage</p>
+                    }
+                </div>
+            }
+
             <div class="mb-3">
-                <label asp-for="UserName" class="form-label"></label>
-                <input asp-for="UserName" class="form-control" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
+                <label for="UserName">Tên đăng nhập</label>
+                <input type="text" class="form-control" id="UserName" name="UserName" required />
             </div>
 
             <div class="mb-3">
                 <label asp-for="Password" class="form-label"></label>
                 <input asp-for="Password" type="password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="ConfirmPassword" class="form-label"></label>
+                <input asp-for="ConfirmPassword" type="password" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
@@ -53,9 +69,10 @@
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
 
-            <div class="mb-3">
-                <label for="Hình" class="form-label"></label>
-                <input type="file" name="Hình" class="form-control" />
+            <div class="form-group">
+                <label for="Image">Chọn ảnh đại diện</label>
+                <input type="file" name="Image" class="form-control" accept="image/*" />
+                <span asp-validation-for="Image" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
@@ -75,7 +92,7 @@
 
             <input type="hidden" asp-for="Role" value="User" />
 
-            <button type="submit" class="btn btn-primary w-100">Đăng Ký</button>
+            <button type="submit" class="btn btn-primary">Đăng ký</button>
         </form>
     </div>
 </div>

@@ -1,7 +1,9 @@
 ﻿using chuyenNganh.websiteBanGiay.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace chuyenNganh.websiteBanGiay.Controllers
 {
@@ -17,9 +19,102 @@ namespace chuyenNganh.websiteBanGiay.Controllers
         // GET: WishLists
         public async Task<IActionResult> Index()
         {
-            var chuyenNganhContext = _context.WishLists.Include(w => w.Product).Include(w => w.User);
-            return View(await chuyenNganhContext.ToListAsync());
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId))
+            {
+                // Nếu người dùng chưa đăng nhập
+                return RedirectToAction("Dangnhap", "Users");
+            }
+
+            // Lấy danh sách yêu thích của người dùng hiện tại
+            var wishListItems = await _context.WishLists
+                .Where(w => w.UserId.ToString() == userId)
+                .Include(w => w.Product)
+                .ToListAsync();
+
+            return View(wishListItems);
         }
+
+
+        //AddToWishList
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> AddToWishList(int productId)
+        {
+            // Lấy ID người dùng từ Claims trong Cookie Authentication
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            // Kiểm tra xem người dùng đã đăng nhập chưa
+            if (string.IsNullOrEmpty(userId))
+            {
+                return RedirectToAction("Dangnhap", "Users"); // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
+            }
+
+            // Kiểm tra xem sản phẩm đã có trong danh sách yêu thích chưa
+            var existingWishList = await _context.WishLists
+                .FirstOrDefaultAsync(w => w.UserId == int.Parse(userId) && w.ProductId == productId);
+
+            // Nếu sản phẩm đã có trong danh sách yêu thích, thông báo lỗi
+            if (existingWishList != null)
+            {
+                TempData["ErrorMessage"] = "Sản phẩm đã có trong danh sách yêu thích của bạn.";
+                return RedirectToAction("Details", "Products", new { id = productId });
+            }
+
+            // Nếu sản phẩm chưa có trong danh sách yêu thích, thêm vào
+            var wishList = new WishList
+            {
+                UserId = int.Parse(userId),
+                ProductId = productId,
+                AddedDate = DateTime.Now
+            };
+
+            // Thêm sản phẩm vào danh sách yêu thích trong cơ sở dữ liệu
+            _context.WishLists.Add(wishList);
+            await _context.SaveChangesAsync(); // Lưu thay đổi vào cơ sở dữ liệu
+
+            // Hiển thị thông báo thành công
+            TempData["SuccessMessage"] = "Sản phẩm đã được thêm vào danh sách yêu thích!";
+            return RedirectToAction("Details", "Products", new { id = productId });
+        }
+
+
+        //DeleteWishList
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+        public async Task<IActionResult> DeleteProduct(int productId)
+        {
+            // Kiểm tra nếu người dùng đã đăng nhập
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Dangnhap", "Users");
+            }
+
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId))
+            {
+                return RedirectToAction("Dangnhap", "Users");
+            }
+
+            // Tìm sản phẩm trong danh sách yêu thích của người dùng
+            var wishListItem = await _context.WishLists
+                .FirstOrDefaultAsync(w => w.UserId == int.Parse(userId) && w.ProductId == productId);
+
+            if (wishListItem != null)
+            {
+                _context.WishLists.Remove(wishListItem);
+                await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Sản phẩm đã được xóa khỏi danh sách yêu thích.";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Sản phẩm không tồn tại trong danh sách yêu thích.";
+            }
+
+            return RedirectToAction("Index");
+        }
+
 
         // GET: WishLists/Details/5
         public async Task<IActionResult> Details(int? id)

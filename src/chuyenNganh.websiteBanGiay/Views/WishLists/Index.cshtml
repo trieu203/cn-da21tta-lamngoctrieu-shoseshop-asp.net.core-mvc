@@ -1,47 +1,54 @@
 ﻿@model IEnumerable<chuyenNganh.websiteBanGiay.Data.WishList>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách yêu thích";
+    Layout = "_Product";
 }
 
-<h1>Index</h1>
+<div>
+    <h2>Danh sách yêu thích của bạn</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.AddedDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Product)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AddedDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Product.ProductId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.UserId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.WishListId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.WishListId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.WishListId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <!-- Hiển thị thông báo nếu có -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <!-- Kiểm tra nếu danh sách yêu thích có sản phẩm -->
+    @if (Model.Any())
+    {
+        <ul class="list-group">
+            @foreach (var item in Model)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div class="d-flex">
+                        <!-- Hiển thị hình ảnh sản phẩm -->
+                        <img src="@Url.Content("~/img/products/" + item.Product.ImageUrl)" alt="@item.Product.ProductName" class="img-thumbnail" style="width: 50px; height: 50px; object-fit: cover;">
+
+                        <!-- Tên sản phẩm -->
+                        <span class="ml-2">@item.Product.ProductName</span>
+                    </div>
+
+                    <!-- Nút xóa sản phẩm khỏi danh sách yêu thích -->
+                    <form method="post" asp-action="DeleteProduct" asp-route-productId="@item.ProductId" class="d-inline-block">
+                        <button type="submit" class="btn btn-danger btn-sm">
+                            <i class="fa fa-trash"></i> Xóa
+                        </button>
+                    </form>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>Chưa có sản phẩm nào trong danh sách yêu thích của bạn.</p>
+    }
+</div>

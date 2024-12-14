@@ -1,4 +1,6 @@
-﻿namespace chuyenNganh.websiteBanGiay.ViewModels
+﻿using chuyenNganh.websiteBanGiay.Data;
+
+namespace chuyenNganh.websiteBanGiay.ViewModels
 {
     public class ProductVM
     {
@@ -28,6 +30,30 @@
         public string? Comment { get; set; }
         public string? UserName { get; set; }
         public string? Email { get; set; }
+        public double AverageRating { get; set; } 
+        public List<ReviewVM>? Reviews { get; set; }
 
     }
+
+    public class ReviewVM
+    {
+        public int Rating { get; set; }
+        public string Comment { get; set; } = string.Empty;
+        public int? UserId { get; set; }
+        public int? ProductId { get; set; }
+        public string? ImageUrl { get; set; }
+        public string UserName { get; set; } = "Ẩn danh";
+        public string Email { get; set; } = "Không có email";
+        public DateTime ReviewDate { get; set; }
+    }
+
+    public class ProductDetailsViewModel
+    {
+        public Product? Product { get; set; }
+        public List<Review>? Reviews { get; set; }
+        public double AverageRating { get; set; }
+        public int UserRating { get; set; }
+        public Review? NewReview { get; set; }
+    }
+
 }

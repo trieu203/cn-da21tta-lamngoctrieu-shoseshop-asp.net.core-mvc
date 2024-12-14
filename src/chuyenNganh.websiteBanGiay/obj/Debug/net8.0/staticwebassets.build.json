@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wqx91FpUZuolp9U8wiqTN3xpXyvFI/DIM8piV8YYDXg=",
+  "Hash": "xuyR7oNNyMmd+yt3mQsOyWA7f+FQv7oe1FD3t0CzTMQ=",
   "Source": "chuyenNganh.websiteBanGiay",
   "BasePath": "_content/chuyenNganh.websiteBanGiay",
   "Mode": "Default",
@@ -1674,6 +1674,111 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\sale\\sale.jpg"
+    },
+    {
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\23def7ba-8548-41d7-827d-0a1be72cb2d0.jpg",
+      "SourceId": "chuyenNganh.websiteBanGiay",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
+      "BasePath": "_content/chuyenNganh.websiteBanGiay",
+      "RelativePath": "img/users/23def7ba-8548-41d7-827d-0a1be72cb2d0#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yw0if6u91t",
+      "Integrity": "3sM5/DRcJCXI2eqUQHwQtX3lha/GITqCDW+rr7tvtaE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\users\\23def7ba-8548-41d7-827d-0a1be72cb2d0.jpg"
+    },
+    {
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\5112aa80-5f60-4ea0-aa12-5ab8421e5ac7.jpg",
+      "SourceId": "chuyenNganh.websiteBanGiay",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
+      "BasePath": "_content/chuyenNganh.websiteBanGiay",
+      "RelativePath": "img/users/5112aa80-5f60-4ea0-aa12-5ab8421e5ac7#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "y7g2u9zez4",
+      "Integrity": "nhAMe12M60EFhz+f2k/EuhqiW2C6ZAmk0odo39+WXS4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\users\\5112aa80-5f60-4ea0-aa12-5ab8421e5ac7.jpg"
+    },
+    {
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\a8b15223-e8f7-4a24-ad5c-5498fdfdf5d6.jpg",
+      "SourceId": "chuyenNganh.websiteBanGiay",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
+      "BasePath": "_content/chuyenNganh.websiteBanGiay",
+      "RelativePath": "img/users/a8b15223-e8f7-4a24-ad5c-5498fdfdf5d6#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yw0if6u91t",
+      "Integrity": "3sM5/DRcJCXI2eqUQHwQtX3lha/GITqCDW+rr7tvtaE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\users\\a8b15223-e8f7-4a24-ad5c-5498fdfdf5d6.jpg"
+    },
+    {
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\d801bf32-9bea-4beb-9c3e-44e5a6b54a95.jpg",
+      "SourceId": "chuyenNganh.websiteBanGiay",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
+      "BasePath": "_content/chuyenNganh.websiteBanGiay",
+      "RelativePath": "img/users/d801bf32-9bea-4beb-9c3e-44e5a6b54a95#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yw0if6u91t",
+      "Integrity": "3sM5/DRcJCXI2eqUQHwQtX3lha/GITqCDW+rr7tvtaE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\users\\d801bf32-9bea-4beb-9c3e-44e5a6b54a95.jpg"
+    },
+    {
+      "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\e2c5bbd7-f5cd-4af3-98cb-51bc678db217.jpg",
+      "SourceId": "chuyenNganh.websiteBanGiay",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\",
+      "BasePath": "_content/chuyenNganh.websiteBanGiay",
+      "RelativePath": "img/users/e2c5bbd7-f5cd-4af3-98cb-51bc678db217#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "w7n0gm0aqe",
+      "Integrity": "dOL64mmrrXCZaW+UEF5Q34LS4E4SfMkEMhpR+LF3Nks=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\users\\e2c5bbd7-f5cd-4af3-98cb-51bc678db217.jpg"
     },
     {
       "Identity": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\user_boy.jpg",
@@ -5218,8 +5323,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "thzohqzne7",
-      "Integrity": "T+2UahENIByqerwNvtrfo5xYBk1l707bx2KoXQs9HHc=",
+      "Fingerprint": "af1gbpnlsi",
+      "Integrity": "yvXGG4l5mb7pDMQ4DqqfV5M0XoF68lJ37g7hVePOG5U=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scss\\style.scss"
@@ -5249,7 +5354,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 17 Nov 2024 04:41:23 GMT"
+          "Value": "Sat, 07 Dec 2024 02:47:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5286,7 +5391,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 17 Nov 2024 04:41:23 GMT"
+          "Value": "Sat, 07 Dec 2024 02:47:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5331,7 +5436,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 17 Nov 2024 04:41:23 GMT"
+          "Value": "Sat, 07 Dec 2024 02:47:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5376,7 +5481,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 17 Nov 2024 04:41:23 GMT"
+          "Value": "Sat, 07 Dec 2024 02:47:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11701,6 +11806,416 @@
         {
           "Name": "integrity",
           "Value": "sha256-8U2G/I/lz+yhOVvFspTRV7MrxKuBx50hRU01teeLkZU="
+        }
+      ]
+    },
+    {
+      "Route": "img/users/23def7ba-8548-41d7-827d-0a1be72cb2d0.jpg",
+      "AssetFile": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\23def7ba-8548-41d7-827d-0a1be72cb2d0.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3sM5/DRcJCXI2eqUQHwQtX3lha/GITqCDW+rr7tvtaE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 02:01:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3sM5/DRcJCXI2eqUQHwQtX3lha/GITqCDW+rr7tvtaE="
+        }
+      ]
+    },
+    {
+      "Route": "img/users/23def7ba-8548-41d7-827d-0a1be72cb2d0.yw0if6u91t.jpg",
+      "AssetFile": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\23def7ba-8548-41d7-827d-0a1be72cb2d0.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3sM5/DRcJCXI2eqUQHwQtX3lha/GITqCDW+rr7tvtaE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 02:01:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yw0if6u91t"
+        },
+        {
+          "Name": "label",
+          "Value": "img/users/23def7ba-8548-41d7-827d-0a1be72cb2d0.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3sM5/DRcJCXI2eqUQHwQtX3lha/GITqCDW+rr7tvtaE="
+        }
+      ]
+    },
+    {
+      "Route": "img/users/5112aa80-5f60-4ea0-aa12-5ab8421e5ac7.jpg",
+      "AssetFile": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\5112aa80-5f60-4ea0-aa12-5ab8421e5ac7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17884"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nhAMe12M60EFhz+f2k/EuhqiW2C6ZAmk0odo39+WXS4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 06 Dec 2024 05:51:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nhAMe12M60EFhz+f2k/EuhqiW2C6ZAmk0odo39+WXS4="
+        }
+      ]
+    },
+    {
+      "Route": "img/users/5112aa80-5f60-4ea0-aa12-5ab8421e5ac7.y7g2u9zez4.jpg",
+      "AssetFile": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\5112aa80-5f60-4ea0-aa12-5ab8421e5ac7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17884"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nhAMe12M60EFhz+f2k/EuhqiW2C6ZAmk0odo39+WXS4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 06 Dec 2024 05:51:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y7g2u9zez4"
+        },
+        {
+          "Name": "label",
+          "Value": "img/users/5112aa80-5f60-4ea0-aa12-5ab8421e5ac7.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nhAMe12M60EFhz+f2k/EuhqiW2C6ZAmk0odo39+WXS4="
+        }
+      ]
+    },
+    {
+      "Route": "img/users/a8b15223-e8f7-4a24-ad5c-5498fdfdf5d6.jpg",
+      "AssetFile": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\a8b15223-e8f7-4a24-ad5c-5498fdfdf5d6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3sM5/DRcJCXI2eqUQHwQtX3lha/GITqCDW+rr7tvtaE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 02:00:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3sM5/DRcJCXI2eqUQHwQtX3lha/GITqCDW+rr7tvtaE="
+        }
+      ]
+    },
+    {
+      "Route": "img/users/a8b15223-e8f7-4a24-ad5c-5498fdfdf5d6.yw0if6u91t.jpg",
+      "AssetFile": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\a8b15223-e8f7-4a24-ad5c-5498fdfdf5d6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3sM5/DRcJCXI2eqUQHwQtX3lha/GITqCDW+rr7tvtaE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 02:00:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yw0if6u91t"
+        },
+        {
+          "Name": "label",
+          "Value": "img/users/a8b15223-e8f7-4a24-ad5c-5498fdfdf5d6.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3sM5/DRcJCXI2eqUQHwQtX3lha/GITqCDW+rr7tvtaE="
+        }
+      ]
+    },
+    {
+      "Route": "img/users/d801bf32-9bea-4beb-9c3e-44e5a6b54a95.jpg",
+      "AssetFile": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\d801bf32-9bea-4beb-9c3e-44e5a6b54a95.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3sM5/DRcJCXI2eqUQHwQtX3lha/GITqCDW+rr7tvtaE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 01:59:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3sM5/DRcJCXI2eqUQHwQtX3lha/GITqCDW+rr7tvtaE="
+        }
+      ]
+    },
+    {
+      "Route": "img/users/d801bf32-9bea-4beb-9c3e-44e5a6b54a95.yw0if6u91t.jpg",
+      "AssetFile": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\d801bf32-9bea-4beb-9c3e-44e5a6b54a95.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3sM5/DRcJCXI2eqUQHwQtX3lha/GITqCDW+rr7tvtaE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Dec 2024 01:59:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yw0if6u91t"
+        },
+        {
+          "Name": "label",
+          "Value": "img/users/d801bf32-9bea-4beb-9c3e-44e5a6b54a95.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3sM5/DRcJCXI2eqUQHwQtX3lha/GITqCDW+rr7tvtaE="
+        }
+      ]
+    },
+    {
+      "Route": "img/users/e2c5bbd7-f5cd-4af3-98cb-51bc678db217.jpg",
+      "AssetFile": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\e2c5bbd7-f5cd-4af3-98cb-51bc678db217.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "39667"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dOL64mmrrXCZaW+UEF5Q34LS4E4SfMkEMhpR+LF3Nks=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 06 Dec 2024 05:32:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dOL64mmrrXCZaW+UEF5Q34LS4E4SfMkEMhpR+LF3Nks="
+        }
+      ]
+    },
+    {
+      "Route": "img/users/e2c5bbd7-f5cd-4af3-98cb-51bc678db217.w7n0gm0aqe.jpg",
+      "AssetFile": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\e2c5bbd7-f5cd-4af3-98cb-51bc678db217.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "39667"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dOL64mmrrXCZaW+UEF5Q34LS4E4SfMkEMhpR+LF3Nks=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 06 Dec 2024 05:32:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w7n0gm0aqe"
+        },
+        {
+          "Name": "label",
+          "Value": "img/users/e2c5bbd7-f5cd-4af3-98cb-51bc678db217.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dOL64mmrrXCZaW+UEF5Q34LS4E4SfMkEMhpR+LF3Nks="
         }
       ]
     },
@@ -25481,6 +25996,51 @@
       ]
     },
     {
+      "Route": "scss/style.af1gbpnlsi.scss",
+      "AssetFile": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\scss\\style.scss",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7930"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yvXGG4l5mb7pDMQ4DqqfV5M0XoF68lJ37g7hVePOG5U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 06 Dec 2024 04:28:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "af1gbpnlsi"
+        },
+        {
+          "Name": "label",
+          "Value": "scss/style.scss"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yvXGG4l5mb7pDMQ4DqqfV5M0XoF68lJ37g7hVePOG5U="
+        }
+      ]
+    },
+    {
       "Route": "scss/style.scss",
       "AssetFile": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\scss\\style.scss",
       "Selectors": [],
@@ -25491,7 +26051,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7664"
+          "Value": "7930"
         },
         {
           "Name": "Content-Type",
@@ -25499,11 +26059,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"T+2UahENIByqerwNvtrfo5xYBk1l707bx2KoXQs9HHc=\""
+          "Value": "\"yvXGG4l5mb7pDMQ4DqqfV5M0XoF68lJ37g7hVePOG5U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 12:41:23 GMT"
+          "Value": "Fri, 06 Dec 2024 04:28:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -25513,52 +26073,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-T+2UahENIByqerwNvtrfo5xYBk1l707bx2KoXQs9HHc="
-        }
-      ]
-    },
-    {
-      "Route": "scss/style.thzohqzne7.scss",
-      "AssetFile": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\scss\\style.scss",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7664"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"T+2UahENIByqerwNvtrfo5xYBk1l707bx2KoXQs9HHc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 30 Nov 2024 12:41:23 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "thzohqzne7"
-        },
-        {
-          "Name": "label",
-          "Value": "scss/style.scss"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-T+2UahENIByqerwNvtrfo5xYBk1l707bx2KoXQs9HHc="
+          "Value": "sha256-yvXGG4l5mb7pDMQ4DqqfV5M0XoF68lJ37g7hVePOG5U="
         }
       ]
     }

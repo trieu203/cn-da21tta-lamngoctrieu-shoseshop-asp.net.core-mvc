@@ -47,6 +47,19 @@ $input-placeholder-color: #999999;
 }
 
 
+.star-rating .star {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.star-rating .star i {
+    color: #ccc; /* Màu sao mặc định */
+}
+
+.star-rating .star input:checked ~ i,
+.star-rating .star:hover i {
+    color: #ffcc00; /* Màu sao khi chọn */
+}
 
 
 

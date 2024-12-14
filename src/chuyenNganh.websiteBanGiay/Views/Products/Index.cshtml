@@ -42,9 +42,19 @@
                                     <img class="img-fluid w-100" src="@Url.Content("~/img/products/" + item.ImageUrl + ".jpg")" alt="@item.ProductName">
                                 </a>
                                 <div class="product-action">
-                                    <a title="Thêm vào giỏ hàng" asp-action="Details" asp-controller="Products" asp-route-id="@item.ProductId" class="btn btn-outline-dark btn-square"><i class="fa fa-shopping-cart"></i></a>
-                                    <a title="Thêm vào danh sách yêu thích" class="btn btn-outline-dark btn-square" href="#"><i class="far fa-heart"></i></a>
+                                    <!-- Thêm vào giỏ hàng -->
+                                    <a title="Thêm vào giỏ hàng" asp-action="Details" asp-controller="Products" asp-route-id="@item.ProductId" class="btn btn-outline-dark btn-square">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </a>
+
+                                    <!-- Thêm vào danh sách yêu thích -->
+                                    <form method="post" asp-action="Index" asp-controller="WishLists" asp-route-productId="@item.ProductId" class="d-inline-block">
+                                        <button type="submit" class="btn btn-outline-dark btn-square" title="Thêm vào danh sách yêu thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                    </form>
                                 </div>
+
                             </div>
 
                             <div class="text-center py-4">

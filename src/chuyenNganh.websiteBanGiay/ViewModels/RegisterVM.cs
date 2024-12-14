@@ -16,6 +16,11 @@ namespace chuyenNganh.websiteBanGiay.ViewModels
         [MaxLength(20, ErrorMessage = "Mật khẩu tối đa 20 ký tự")]
         public string? Password { get; set; }
 
+        [Display(Name = "Xác nhận mật khẩu")]
+        [Required(ErrorMessage = "Xác nhận mật khẩu là bắt buộc")]
+        [Compare("Password", ErrorMessage = "Mật khẩu và xác nhận mật khẩu không khớp")]
+        public string? ConfirmPassword { get; set; }
+
         [Display(Name = "Email")]
         [Required(ErrorMessage = "Email là bắt buộc")]
         [EmailAddress(ErrorMessage = "Địa chỉ email không hợp lệ")]
@@ -31,6 +36,7 @@ namespace chuyenNganh.websiteBanGiay.ViewModels
         public string? SDT { get; set; }
 
         [Display(Name = "Địa chỉ")]
+        [Required(ErrorMessage = "Địa chỉ là bắt buộc")]
         [MaxLength(255, ErrorMessage = "Địa chỉ tối đa 255 ký tự")]
         public string? Address { get; set; }
 
@@ -48,6 +54,10 @@ namespace chuyenNganh.websiteBanGiay.ViewModels
 
         [MaxLength(50, ErrorMessage = "Vai trò tối đa 50 ký tự")]
         public string? Role { get; set; } = "User";
+
+        // Thuộc tính để chứa hình ảnh khi đăng ký
+        [Display(Name = "Ảnh đại diện")]
+        public IFormFile? Image { get; set; }
 
     }
 }

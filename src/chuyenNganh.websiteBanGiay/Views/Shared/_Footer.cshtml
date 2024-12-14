@@ -3,7 +3,7 @@
     <div class="row px-xl-5 pt-5">
         <div class="col-lg-4 col-md-12 mb-5">
             <h5 class="text-secondary text-uppercase mb-4">Liên Hệ</h5>
-            <p class="mb-4">MILIONSHOP chuyên cung cấp các sản phẩm giày chất lượng cao với thiết kế đa dạng phong cách: thể thao, thời trang, lịch lãm, đáp ứng nhu cầu của mọi đối tượng khách hàng.</p>
+            <p class="mb-4">MILIONSHOP chuyên cung cấp các sản phẩm giày chất lượng cao với thiết kế đa dạng phong cách.</p>
             <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>114, Kiên Thị Nhẫn, P7, TP Trà Vinh</p>
             <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>trieungocgame123@gmail.com</p>
             <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+84 398 450 834</p>
@@ -20,11 +20,29 @@
         <div class="col-lg-4 col-md-6 mb-5">
             <h5 class="text-secondary text-uppercase mb-4">Tài Khoản Của Tôi</h5>
             <div class="d-flex flex-column justify-content-start">
-                <a class="text-secondary mb-2" asp-controller="Users" asp-action="Dangnhap"><i class="fa fa-angle-right mr-2"></i>Đăng nhập</a>
-                <a class="text-secondary mb-2" asp-controller="Users" asp-action="DangKy"><i class="fa fa-angle-right mr-2"></i>Đăng ký</a>
-                <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Lịch sử đơn hàng</a>
-                <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Danh sách yêu thích</a>
-                <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Thông tin tài khoản</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <!-- Nếu người dùng là Admin -->
+                        <a class="text-secondary mb-2" asp-controller="Users" asp-action="DangXuat"><i class="fa fa-angle-right mr-2"></i>Đăng xuất</a>
+                        <a class="text-secondary mb-2" asp-controller="Admin" asp-action="#"><i class="fa fa-angle-right mr-2"></i>Quản lý</a>
+                    }
+                    else
+                    {
+                        <!-- Nếu người dùng là người dùng thông thường -->
+                        <a class="text-secondary mb-2" asp-controller="Users" asp-action="DangXuat"><i class="fa fa-angle-right mr-2"></i>Đăng xuất</a>
+                        <a class="text-secondary mb-2" asp-controller="Users" asp-action="Details"><i class="fa fa-angle-right mr-2"></i>Thông tin tài khoản</a>
+                        <a class="text-secondary mb-2" asp-controller="Carts" asp-action="Index"><i class="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
+                        <a class="text-secondary mb-2" asp-controller="#" asp-action="#"><i class="fa fa-angle-right mr-2"></i>Danh sách yêu thích</a>
+                    }
+                }
+                else
+                {
+                    <!-- Nếu người dùng chưa đăng nhập -->
+                    <a class="text-secondary mb-2" asp-controller="Users" asp-action="Dangnhap"><i class="fa fa-angle-right mr-2"></i>Đăng nhập</a>
+                    <a class="text-secondary mb-2" asp-controller="Users" asp-action="DangKy"><i class="fa fa-angle-right mr-2"></i>Đăng ký</a>
+                }
             </div>
         </div>
     </div>

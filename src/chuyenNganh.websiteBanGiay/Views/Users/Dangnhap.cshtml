@@ -8,7 +8,7 @@
 <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4 shadow" style="width: 400px;">
         <h3 class="text-center mb-4">@ViewData["Title"]</h3>
-        <form asp-action="Login" method="post">
+        <form asp-action="Dangnhap" method="post">
             <div class="form-group mb-3">
                 <label asp-for="UserName" class="form-label"></label>
                 <input asp-for="UserName" class="form-control text-center" placeholder="Nhập tên đăng nhập" />
@@ -20,6 +20,8 @@
                 <input asp-for="Password" class="form-control text-center" type="password" placeholder="Nhập mật khẩu" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
+
+            <div asp-validation-summary="All" class="text-danger"></div>
 
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
