@@ -108,7 +108,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                     Password = model.Password,
                     Email = model.Email,
                     FullName = model.FullName,
-                    SDT = model.SDT,
+                    Sdt = model.SDT,
                     Address = model.Address,
                     GioiTinh = model.GioiTinh,
                     Role = "User",
@@ -164,35 +164,45 @@ namespace chuyenNganh.websiteBanGiay.Controllers
 
 
         // GET: Users/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details()
         {
-            if (id == null)
+            // Lấy UserName từ User.Identity.Name
+            string userName = User.Identity.Name;
+
+            if (string.IsNullOrEmpty(userName))
             {
+                // Nếu không tìm thấy tên người dùng, trả về lỗi 404
                 return NotFound();
             }
 
+            // Truy vấn User từ cơ sở dữ liệu dựa trên UserName
             var user = await _context.Users
-                .FirstOrDefaultAsync(m => m.UserId == id);
+                .FirstOrDefaultAsync(u => u.UserName == userName);  // Giả sử UserName là tên người dùng
 
             if (user == null)
             {
+                // Nếu không tìm thấy người dùng, trả về lỗi 404
                 return NotFound();
             }
 
+            // Tạo ViewModel để hiển thị thông tin người dùng
             var userViewModel = new UserViewModel
             {
                 UserId = user.UserId,
                 FullName = user.FullName,
                 Email = user.Email,
-                SDT = user.SDT,
+                ImageUrl = user.ImageUrl,
+                SDT = user.Sdt,
                 Address = user.Address,
                 NgaySinh = user.NgaySinh,
                 GioiTinh = user.GioiTinh,
                 Role = user.Role
             };
 
+            // Trả về View với dữ liệu của người dùng
             return View(userViewModel);
         }
+
 
 
         // GET: Users/Create

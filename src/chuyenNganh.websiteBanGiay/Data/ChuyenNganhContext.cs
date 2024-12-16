@@ -74,6 +74,7 @@ public partial class ChuyenNganhContext : DbContext
                 .HasColumnType("decimal(18, 2)")
                 .HasColumnName("Price_AtTime");
             entity.Property(e => e.ProductId).HasColumnName("Product_ID");
+            entity.Property(e => e.ProductName).HasMaxLength(64);
             entity.Property(e => e.Size)
                 .HasMaxLength(15)
                 .IsUnicode(false);
@@ -234,6 +235,7 @@ public partial class ChuyenNganhContext : DbContext
 
             entity.Property(e => e.ReviewId).HasColumnName("Review_ID");
             entity.Property(e => e.Comment).HasMaxLength(255);
+            entity.Property(e => e.ImageUrl).HasMaxLength(1);
             entity.Property(e => e.ProductId).HasColumnName("Product_ID");
             entity.Property(e => e.ReviewDate)
                 .HasDefaultValueSql("(getdate())")
@@ -255,6 +257,7 @@ public partial class ChuyenNganhContext : DbContext
             entity.HasKey(e => e.UserId).HasName("PK__Users__206D9190324CF44D");
 
             entity.Property(e => e.UserId).HasColumnName("User_ID");
+            entity.Property(e => e.Address).HasMaxLength(255);
             entity.Property(e => e.CreatedDate)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnName("Created_Date");
@@ -264,12 +267,16 @@ public partial class ChuyenNganhContext : DbContext
             entity.Property(e => e.FullName)
                 .HasMaxLength(255)
                 .HasColumnName("Full_Name");
+            entity.Property(e => e.ImageUrl).HasMaxLength(255);
             entity.Property(e => e.Password)
                 .HasMaxLength(255)
                 .IsUnicode(false);
             entity.Property(e => e.Role)
                 .HasMaxLength(16)
                 .IsUnicode(false);
+            entity.Property(e => e.Sdt)
+                .HasMaxLength(20)
+                .HasColumnName("SDT");
             entity.Property(e => e.UserName)
                 .HasMaxLength(50)
                 .HasColumnName("User_Name");
@@ -290,6 +297,7 @@ public partial class ChuyenNganhContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
                 .HasColumnName("Added_Date");
+            entity.Property(e => e.ImageUrl).HasMaxLength(1);
             entity.Property(e => e.ProductId).HasColumnName("Product_ID");
             entity.Property(e => e.UserId).HasColumnName("User_ID");
 

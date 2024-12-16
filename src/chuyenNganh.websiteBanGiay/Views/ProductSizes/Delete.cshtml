@@ -1,44 +1,45 @@
 ﻿@model chuyenNganh.websiteBanGiay.Data.ProductSize
 
 @{
-    ViewData["Title"] = "Xóa kích cỡ sản phẩm";
+    ViewData["Title"] = "Delete";
 }
 
-<div class="container mt-5">
-    <h1 class="text-center text-danger">Xóa kích cỡ sản phẩm</h1>
-    <h3 class="text-center text-warning">Bạn có chắc chắn muốn xóa kích cỡ này?</h3>
+<h1>Delete</h1>
 
-    <div class="card shadow-sm p-4 mt-4">
-        <h4 class="card-title mb-4">Thông tin kích cỡ</h4>
-
-        <dl class="row">
-            <!-- Size -->
-            <dt class="col-sm-3">Kích cỡ</dt>
-            <dd class="col-sm-9">@Html.DisplayFor(model => model.Size)</dd>
-
-            <!-- Quantity -->
-            <dt class="col-sm-3">Số lượng</dt>
-            <dd class="col-sm-9">@Html.DisplayFor(model => model.Quantity)</dd>
-
-            <!-- Price At Time -->
-            <dt class="col-sm-3">Giá tại thời điểm</dt>
-            <dd class="col-sm-9">@string.Format("{0:0,0} VND", Model.PriceAtTime)</dd>
-
-            <!-- Product Name -->
-            <dt class="col-sm-3">Tên sản phẩm</dt>
-            <dd class="col-sm-9">@Html.DisplayFor(model => model.Product.ProductName)</dd>
-        </dl>
-
-        <form asp-action="Delete">
-            <input type="hidden" asp-for="ProductSizeId" />
-            <div class="mt-4 text-center">
-                <button type="submit" class="btn btn-danger">
-                    <i class="bi bi-trash"></i> Xóa
-                </button>
-                <a asp-action="Index" class="btn btn-secondary ml-3">
-                    <i class="bi bi-arrow-left"></i> Quay lại danh sách
-                </a>
-            </div>
-        </form>
-    </div>
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ProductSize</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PriceAtTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PriceAtTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Product)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Product.ProductId)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ProductSizeId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
 </div>

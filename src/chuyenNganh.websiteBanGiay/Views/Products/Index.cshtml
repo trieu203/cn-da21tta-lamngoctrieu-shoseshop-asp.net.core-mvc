@@ -24,10 +24,8 @@
                 <div class="col-12 pb-1">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <div>
-                            
                         </div>
                         <div class="ml-2">
-                            
                         </div>
                     </div>
                     <h4> Có <b>@Model.Count()</b> Sản phẩm </h4>
@@ -48,7 +46,7 @@
                                     </a>
 
                                     <!-- Thêm vào danh sách yêu thích -->
-                                    <form method="post" asp-action="Index" asp-controller="WishLists" asp-route-productId="@item.ProductId" class="d-inline-block">
+                                    <form method="post" asp-action="AddToWishList" asp-controller="WishLists" asp-route-productId="@item.ProductId" class="d-inline-block">
                                         <button type="submit" class="btn btn-outline-dark btn-square" title="Thêm vào danh sách yêu thích">
                                             <i class="far fa-heart"></i>
                                         </button>
@@ -137,5 +135,3 @@
     </div>
 </div>
 <!-- Shop End -->
-
-

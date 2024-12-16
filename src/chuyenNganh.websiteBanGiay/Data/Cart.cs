@@ -1,4 +1,7 @@
-﻿namespace chuyenNganh.websiteBanGiay.Data;
+﻿using System;
+using System.Collections.Generic;
+
+namespace chuyenNganh.websiteBanGiay.Data;
 
 public partial class Cart
 {

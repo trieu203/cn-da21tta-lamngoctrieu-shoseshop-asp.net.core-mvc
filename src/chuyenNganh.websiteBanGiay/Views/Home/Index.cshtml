@@ -12,7 +12,7 @@
 <div class="container-fluid pt-5 pb-3">
     <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"> <center> <span class="bg-secondary pr-3"> SẢN PHẨM NỔI BẬT</span></h2> </center>
     <div class="row px-xl-5 d-flex flex-row flex-wrap justify-content-start">
-        @foreach (var item in Model.Take(8)) 
+        @foreach (var item in Model.Take(8))
         {
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
@@ -22,7 +22,11 @@
                         </a>
                         <div class="product-action">
                             <a title="Thêm vào giỏ hàng" asp-action="Details" asp-controller="Products" asp-route-id="@item.ProductId" class="btn btn-outline-dark btn-square"><i class="fa fa-shopping-cart"></i></a>
-                            <a title="Thêm vào danh sách yêu thích" class="btn btn-outline-dark btn-square" href="#"><i class="far fa-heart"></i></a>
+                            <form method="post" asp-action="AddToWishList" asp-controller="WishLists" asp-route-productId="@item.ProductId" class="d-inline-block">
+                                <button type="submit" class="btn btn-outline-dark btn-square" title="Thêm vào danh sách yêu thích">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                     <div class="text-center py-4">
@@ -43,58 +47,58 @@
             </div>
         }
     </div>
-    </div>
-    <!-- Phân Trang -->
-    <div class="col-12">
-        <nav>
-            <ul class="pagination justify-content-center">
-                <!-- Nút Previous -->
-                @if (Model.HasPreviousPage)
+</div>
+<!-- Phân Trang -->
+<div class="col-12">
+    <nav>
+        <ul class="pagination justify-content-center">
+            <!-- Nút Previous -->
+            @if (Model.HasPreviousPage)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("Index", new { page = Model.CurrentPage - 1, Category = ViewBag.CurrentCategory })">Back</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled">
+                    <span class="page-link">Back</span>
+                </li>
+            }
+
+            <!-- Số Trang -->
+            @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                if (i == Model.CurrentPage)
                 {
-                    <li class="page-item">
-                        <a class="page-link" href="@Url.Action("Index", new { page = Model.CurrentPage - 1, Category = ViewBag.CurrentCategory })">Back</a>
+                    <li class="page-item active">
+                        <span class="page-link">@i</span>
                     </li>
                 }
                 else
                 {
-                    <li class="page-item disabled">
-                        <span class="page-link">Back</span>
-                    </li>
-                }
-
-                <!-- Số Trang -->
-                @for (int i = 1; i <= Model.TotalPages; i++)
-                {
-                    if (i == Model.CurrentPage)
-                    {
-                        <li class="page-item active">
-                            <span class="page-link">@i</span>
-                        </li>
-                    }
-                    else
-                    {
-                        <li class="page-item">
-                            <a class="page-link" href="@Url.Action("Index", new { page = i, Category = ViewBag.CurrentCategory })">@i</a>
-                        </li>
-                    }
-                }
-
-                <!-- Nút Next -->
-                @if (Model.HasNextPage)
-                {
                     <li class="page-item">
-                        <a class="page-link" href="@Url.Action("Index", new { page = Model.CurrentPage + 1, Category = ViewBag.CurrentCategory })">Next</a>
+                        <a class="page-link" href="@Url.Action("Index", new { page = i, Category = ViewBag.CurrentCategory })">@i</a>
                     </li>
                 }
-                else
-                {
-                    <li class="page-item disabled">
-                        <span class="page-link">Next</span>
-                    </li>
-                }
-            </ul>
-        </nav>
-    </div>
+            }
+
+            <!-- Nút Next -->
+            @if (Model.HasNextPage)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("Index", new { page = Model.CurrentPage + 1, Category = ViewBag.CurrentCategory })">Next</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled">
+                    <span class="page-link">Next</span>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>
 
 </div>
 <!-- Products End -->

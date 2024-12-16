@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System.Security.Claims;
 
 
@@ -139,7 +140,8 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                         Comment = r.Comment,
                         UserName = r.User?.UserName ?? "Ẩn danh",
                         Email = r.User?.Email ?? "Không có email",
-                        ReviewDate = r.ReviewDate ?? DateTime.MinValue
+                        ReviewDate = r.ReviewDate ?? DateTime.MinValue,
+                        ImageUrl = r.User?.ImageUrl ?? "user_boy.jpg"
                     })
                     .ToList();
 
@@ -217,7 +219,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
 
                 // Tìm sản phẩm theo ProductId
                 var product = await _context.Products
-                    .Include(p => p.Reviews)  // Đảm bảo rằng Reviews được tải đầy đủ
+                    .Include(p => p.Reviews)
                     .SingleOrDefaultAsync(p => p.ProductId == productId);
 
                 if (product == null)

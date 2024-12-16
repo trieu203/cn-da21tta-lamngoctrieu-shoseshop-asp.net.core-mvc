@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj": {}
+    "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj": {}
   },
   "projects": {
-    "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj": {
+    "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj",
+        "projectUniqueName": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj",
         "projectName": "chuyenNganh.websiteBanGiay",
-        "projectPath": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj",
+        "projectPath": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj",
         "packagesPath": "C:\\Users\\Trieu\\.nuget\\packages\\",
-        "outputPath": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\obj\\",
+        "outputPath": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -22,15 +22,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -47,8 +47,8 @@
         "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -74,11 +74,19 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[9.0.0, )"
             },
             "System.Linq": {
               "target": "Package",
               "version": "[4.3.0, )"
+            },
+            "X.PagedList": {
+              "target": "Package",
+              "version": "[10.5.7, )"
+            },
+            "X.PagedList.Mvc.Core": {
+              "target": "Package",
+              "version": "[10.5.7, )"
             }
           },
           "imports": [

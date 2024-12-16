@@ -19,7 +19,6 @@
     </div>
 </div>
 <!-- Breadcrumb End -->
-
 <!-- Shop Detail Start -->
 <div class="container-fluid pb-5">
     <div class="row px-xl-5">
@@ -67,7 +66,7 @@
                         <small class="fas fa-star-half-alt"></small>
                         <small class="far fa-star"></small>
                     </div>
-                    
+
                 </div>
                 <h3 class="font-weight-semi-bold mb-4">@Model.Price.ToString("N0") VND</h3>
                 <div class="d-flex mb-3">
@@ -105,7 +104,7 @@
                         </button>
                     </div>
                 </form>
-                
+
             </div>
         </div>
     </div>
@@ -136,7 +135,12 @@
                                     @foreach (var review in Model.Reviews)
                                     {
                                         <div class="media mb-4">
-                                            <img src="@Url.Content("~/img/users/" + @Model.ImageUrl + ".jpg")" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
+                                            <img src="@Url.Content("~/img/users/" + review.ImageUrl)"
+                                                 alt="@review.UserName"
+                                                 class="img-fluid mr-3 mt-1"
+                                                 style="width: 45px; height: 45px; object-fit: cover;">
+
+
                                             <div class="media-body">
                                                 <h6>@review.UserName<small> - <i>@review.ReviewDate.ToString("dd MMM yyyy")</i></small></h6>
                                                 <div class="text-primary mb-2">
@@ -213,42 +217,42 @@
 </div>
 <!-- Shop Detail End -->
 @section Scripts {
-<script>
-    document.getElementById("addToCartForm").addEventListener("submit", function (event) {
-        // Kiểm tra xem có size nào được chọn chưa
-        const sizeChecked = document.querySelector('input[name="size"]:checked');
-        if (!sizeChecked) {
-            // Ngăn form submit
-            event.preventDefault(); 
-            alert("Vui lòng chọn size trước khi thêm vào giỏ hàng!");
-        }
-    });
-
-    // Kiểm tra số lượng khi người dùng submit form
-        document.getElementById('addToCartForm').addEventListener('submit', function(event) {
-            var quantity = parseInt(document.querySelector('input[name="quantity"]').value);
-
-            if (quantity > 19) {
-                // Hiển thị thông báo nếu số lượng vượt quá 19
-                alert('Số lượng sản phẩm không được vượt quá 19.');
-                event.preventDefault(); 
+    <script>
+        document.getElementById("addToCartForm").addEventListener("submit", function (event) {
+            // Kiểm tra xem có size nào được chọn chưa
+            const sizeChecked = document.querySelector('input[name="size"]:checked');
+            if (!sizeChecked) {
+                // Ngăn form submit
+                event.preventDefault();
+                alert("Vui lòng chọn size trước khi thêm vào giỏ hàng!");
             }
         });
 
-                    document.addEventListener("DOMContentLoaded", function () {
-            const stars = document.querySelectorAll(".star input[type='radio']");
-            stars.forEach(star => {
-                star.addEventListener("change", function () {
-                    const allStars = document.querySelectorAll(".star i");
-                    allStars.forEach(starIcon => starIcon.className = "far fa-star"); // Đặt lại sao trống
-                    const rating = this.value;
-                    for (let i = 1; i <= rating; i++) {
-                        document.querySelector(`#rating-${i} ~ i`).className = "fas fa-star"; // Đặt sao đầy
-                    }
+        // Kiểm tra số lượng khi người dùng submit form
+            document.getElementById('addToCartForm').addEventListener('submit', function(event) {
+                var quantity = parseInt(document.querySelector('input[name="quantity"]').value);
+
+                if (quantity > 19) {
+                    // Hiển thị thông báo nếu số lượng vượt quá 19
+                    alert('Số lượng sản phẩm không được vượt quá 19.');
+                    event.preventDefault();
+                }
+            });
+
+                        document.addEventListener("DOMContentLoaded", function () {
+                const stars = document.querySelectorAll(".star input[type='radio']");
+                stars.forEach(star => {
+                    star.addEventListener("change", function () {
+                        const allStars = document.querySelectorAll(".star i");
+                        allStars.forEach(starIcon => starIcon.className = "far fa-star"); // Đặt lại sao trống
+                        const rating = this.value;
+                        for (let i = 1; i <= rating; i++) {
+                            document.querySelector(`#rating-${i} ~ i`).className = "fas fa-star"; // Đặt sao đầy
+                        }
+                    });
                 });
             });
-        });
 
 
-</script>
+    </script>
 }

@@ -1,0 +1,80 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<chuyenNganh.websiteBanGiay.Data.Product>
+
+@{
+    ViewData["Title"] = "Danh Sách Sản Phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="text-primary">Danh Sách Sản Phẩm</h2>
+        <a asp-action="Create" class="btn btn-success">
+            <i class="fas fa-plus-circle"></i> Thêm Sản Phẩm Mới
+        </a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover shadow-sm">
+            <thead class="table-dark text-white">
+                <tr>
+                    <th scope="col">Tên Sản Phẩm</th>
+                    <th scope="col">Giá</th>
+                    <th scope="col">Mô Tả</th>
+                    <th scope="col">Giảm Giá (%)</th>
+                    <th scope="col">Ngày Tạo</th>
+                    <th scope="col">Hình Ảnh</th>
+                    <th scope="col">Danh Mục</th>
+                    <th scope="col" class="text-center">Thao Tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>@item.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"))</td>
+                        <td>@item.Description</td>
+                        <td>@item.Discount %</td>
+                        <td>@item.CreatedDate?.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            <img src="@Url.Content("~/img/products/" + item.ImageUrl + ".jpg")" alt="@item.ProductName" class="img-thumbnail" style="width: 70px; height: 70px;" />
+                        </td>
+                        <td>@(item.Category?.CategoryName ?? "Chưa có danh mục")</td>
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@item.ProductId" class="btn btn-primary btn-sm">
+                                <i class="fas fa-edit"></i> Sửa
+                            </a>
+                            <a asp-action="Details" asp-route-id="@item.ProductId" class="btn btn-info btn-sm text-white">
+                                <i class="fas fa-info-circle"></i> Chi Tiết
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@item.ProductId" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');">
+                                <i class="fas fa-trash-alt"></i> Xóa
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Phân trang -->
+    <div class="d-flex justify-content-center mt-4">
+        @Html.PagedListPager(
+                 Model,
+                 page => Url.Action("Product", new { page }),
+                 new PagedListRenderOptions
+        {
+            LiElementClasses = new[] { "page-item" },
+            PageClasses = new[] { "page-link" },
+            UlElementClasses = new[] { "pagination", "pagination-sm" },
+            DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+            DisplayLinkToLastPage = PagedListDisplayMode.Always,
+            DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+            DisplayLinkToNextPage = PagedListDisplayMode.Always
+        })
+    </div>
+
+
+</div>

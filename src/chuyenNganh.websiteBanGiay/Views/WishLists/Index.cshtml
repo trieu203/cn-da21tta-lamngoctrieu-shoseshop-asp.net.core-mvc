@@ -6,7 +6,7 @@
 }
 
 <div>
-    <h2>Danh sách yêu thích của bạn</h2>
+    <center><h2>Danh sách yêu thích của bạn</h2></center>
 
     <!-- Hiển thị thông báo nếu có -->
     @if (TempData["SuccessMessage"] != null)
@@ -31,10 +31,15 @@
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <div class="d-flex">
                         <!-- Hiển thị hình ảnh sản phẩm -->
-                        <img src="@Url.Content("~/img/products/" + item.Product.ImageUrl)" alt="@item.Product.ProductName" class="img-thumbnail" style="width: 50px; height: 50px; object-fit: cover;">
+
+                        <img src="@Url.Content("~/img/products/" + item.Product.ImageUrl + ".jpg")"
+                             alt="Hình"
+                             class="img-thumbnail"
+                             style="width: 50px; height: 50px; object-fit: cover;">
+
 
                         <!-- Tên sản phẩm -->
-                        <span class="ml-2">@item.Product.ProductName</span>
+                        <a asp-action="Details" asp-controller="Products" asp-route-id="@item.ProductId"> <span class="ml-2">@item.Product.ProductName</span> </a>
                     </div>
 
                     <!-- Nút xóa sản phẩm khỏi danh sách yêu thích -->
@@ -49,6 +54,7 @@
     }
     else
     {
-        <p>Chưa có sản phẩm nào trong danh sách yêu thích của bạn.</p>
+        <center>  <p>Chưa có sản phẩm nào trong danh sách yêu thích của bạn.</p> </center>
+        <center>  <a asp-controller="Products" asp-action="Index" class="btn btn-primary mt-3">Quay lại</a> </center>
     }
 </div>

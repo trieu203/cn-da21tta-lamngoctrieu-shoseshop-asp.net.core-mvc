@@ -14,12 +14,14 @@
 
         public string? Address { get; set; }
 
-        public IFormFile? Image { get; set; } 
+        public IFormFile? Image { get; set; }
 
-        public bool GioiTinh { get; set; }
+        public bool? GioiTinh { get; set; }
 
         public DateTime? NgaySinh { get; set; }
 
         public string? Role { get; set; }
+
+        public string? ImageUrl { get; set; }
     }
 }

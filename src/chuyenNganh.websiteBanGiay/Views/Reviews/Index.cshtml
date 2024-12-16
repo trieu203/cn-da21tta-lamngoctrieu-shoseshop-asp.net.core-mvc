@@ -22,6 +22,9 @@
                 @Html.DisplayNameFor(model => model.ReviewDate)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Product)
             </th>
             <th>
@@ -41,6 +44,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ReviewDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Product.ProductId)

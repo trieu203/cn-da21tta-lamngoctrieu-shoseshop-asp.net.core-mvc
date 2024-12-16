@@ -12,6 +12,9 @@ namespace chuyenNganh.websiteBanGiay.ViewModels
         public int WishListId { get; set; }
         public int CartId { get; set; }
         public int? Rating { get; set; }
+        public string? Description { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public string? CategoryName { get; set; }
     }
 
     public class ProductVMDT

@@ -47,7 +47,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             // Kiểm tra xem người dùng đã đăng nhập chưa
             if (string.IsNullOrEmpty(userId))
             {
-                return RedirectToAction("Dangnhap", "Users"); // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
+                return RedirectToAction("Dangnhap", "Users");
             }
 
             // Kiểm tra xem sản phẩm đã có trong danh sách yêu thích chưa

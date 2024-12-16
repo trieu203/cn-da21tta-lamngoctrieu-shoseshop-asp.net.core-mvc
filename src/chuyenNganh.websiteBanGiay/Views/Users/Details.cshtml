@@ -1,13 +1,74 @@
 ﻿@model chuyenNganh.websiteBanGiay.ViewModels.UserViewModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Thông tin cá nhân";
+    Layout = "_Product";
 }
 
+<div class="container mt-5">
+    <!-- Tiêu đề -->
+    <h1 class="text-center display-4 font-weight-bold">Thông tin cá nhân</h1>
+    
 
+    <div class="row">
+        <!-- Cột bên trái: Hình đại diện -->
+        <div class="col-md-4 text-center">
+            <div class="form-group">
+                @if (Model.ImageUrl != null)
+                {
+                    <img src="@Url.Content("~/img/users/" + Model.ImageUrl)" class="img-fluid rounded-circle shadow"
+                         alt="User Image" style="width: 250px; height: 250px; object-fit: cover;" />
+                }
+                else
+                {
+                    <img src="~/img/users/user_boy.jpg" class="img-fluid rounded-circle shadow"
+                         alt="User Image" style="width: 250px; height: 250px; object-fit: cover;" />
+                }
+            </div>
+        </div>
 
+        <!-- Cột bên phải: Thông tin người dùng -->
+        <div class="col-md-8">
+            <div class="row mb-3">
+                
+            </div>
+            <div class="row mb-3">
+                <label class="col-md-4 font-weight-bold h5">Email:</label>
+                <div class="col-md-8 h5 text-muted">@Model.Email</div>
+            </div>
 
-<div>
-    <a asp-controller="Users" asp-action="Edit" asp-route-id="@Model?.UserId">Cập nhật</a> |
-    <a asp-controller="Users" asp-action="Details">Quay lạit</a>
+            <div class="row mb-3">
+                <label class="col-md-4 font-weight-bold h5">Họ và tên:</label>
+                <div class="col-md-8 h5 text-muted">@Model.FullName</div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-md-4 font-weight-bold h5">Số điện thoại:</label>
+                <div class="col-md-8 h5 text-muted">@Model.SDT</div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-md-4 font-weight-bold h5">Địa chỉ:</label>
+                <div class="col-md-8 h5 text-muted">@Model.Address</div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-md-4 font-weight-bold h5">Giới tính:</label>
+                <div class="col-md-8 h5 text-muted">
+                    @(Model.GioiTinh.HasValue ? (Model.GioiTinh.Value ? "Nam" : "Nữ") : "Không xác định")
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-md-4 font-weight-bold h5">Ngày sinh:</label>
+                <div class="col-md-8 h5 text-muted">@Model.NgaySinh?.ToString("dd/MM/yyyy")</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nút điều hướng -->
+    <div class="mt-4 text-center">
+        <a asp-controller="Users" asp-action="Edit" asp-route-id="@Model?.UserId" class="btn btn-lg btn-info px-4">Cập nhật</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-lg btn-secondary ml-3 px-4">Quay lại</a>
+    </div>
 </div>

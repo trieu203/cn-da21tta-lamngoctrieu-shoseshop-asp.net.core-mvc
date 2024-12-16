@@ -12,19 +12,19 @@ public partial class User
 
     public string? FullName { get; set; }
 
-    public string? SDT { get; set; }
+    public string? Role { get; set; }
+
+    public DateOnly? CreatedDate { get; set; }
+
+    public string? Sdt { get; set; }
 
     public string? Address { get; set; }
 
     public string? ImageUrl { get; set; }
 
-    public bool GioiTinh { get; set; }
+    public bool? GioiTinh { get; set; }
 
     public DateTime? NgaySinh { get; set; }
-
-    public string? Role { get; set; }
-
-    public DateOnly? CreatedDate { get; set; }
 
     public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
 

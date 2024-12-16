@@ -43,7 +43,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                 CategoryId = category.CategoryId,
                 CategoryName = category.CategoryName,
                 Description = category.Description,
-                ImageUrl = category.ImageUrl 
+                ImageUrl = category.ImageUrl
             };
 
             return View(categoryVM);

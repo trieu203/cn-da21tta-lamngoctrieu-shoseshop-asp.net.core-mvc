@@ -1,0 +1,57 @@
+﻿@model IEnumerable<chuyenNganh.websiteBanGiay.Data.Category>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Danh mục sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="h3 text-primary">Danh mục sản phẩm</h1>
+        <a asp-area="Admin" asp-controller="HomeAdmin" asp-action="CreateCategory" class="btn btn-success">
+            + Tạo mới danh mục
+        </a>
+
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Tên danh mục</th>
+                    <th scope="col">Mô tả</th>
+                    <th scope="col">Ngày tạo</th>
+                    <th scope="col">Ảnh minh họa</th>
+                    <th scope="col" class="text-center">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.CategoryName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td>@item.CreatedDate?.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.ImageUrl))
+                            {
+                                <img src="@Url.Content("~/img/categories/" + item.ImageUrl + ".jpg")" style="max-width: 100px;" />
+                            }
+                            else
+                            {
+                                <span class="text-muted">Chưa có ảnh</span>
+                            }
+                        </td>
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@item.CategoryId" class="btn btn-sm btn-warning">Sửa</a>
+                            <a asp-action="Details" asp-route-id="@item.CategoryId" class="btn btn-sm btn-info text-white">Chi tiết</a>
+                            <a asp-action="Delete" asp-route-id="@item.CategoryId" class="btn btn-sm btn-danger">Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

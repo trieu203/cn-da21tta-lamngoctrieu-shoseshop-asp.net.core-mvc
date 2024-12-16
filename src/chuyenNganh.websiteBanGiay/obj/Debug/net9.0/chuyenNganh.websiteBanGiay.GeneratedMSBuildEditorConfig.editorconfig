@@ -1,0 +1,345 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = chuyenNganh.websiteBanGiay
+build_property.RootNamespace = chuyenNganh.websiteBanGiay
+build_property.ProjectDir = D:\DO_AN_CHUYEN_NGANH\chuyenNganh.websiteBanGiay\chuyenNganh.websiteBanGiay\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\DO_AN_CHUYEN_NGANH\chuyenNganh.websiteBanGiay\chuyenNganh.websiteBanGiay
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/Category.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXENhdGVnb3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/CreateCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXENyZWF0ZUNhdGVnb3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXFByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/ProductSize.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXFByb2R1Y3RTaXplLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Areas/Admin/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/CartItems/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydEl0ZW1zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/CartItems/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydEl0ZW1zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/CartItems/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydEl0ZW1zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/CartItems/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydEl0ZW1zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/CartItems/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydEl0ZW1zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Carts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Carts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Carts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Carts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Carts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Categories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Categories/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Categories/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Categories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/MailConfirmations/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbENvbmZpcm1hdGlvbnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/MailConfirmations/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbENvbmZpcm1hdGlvbnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/MailConfirmations/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbENvbmZpcm1hdGlvbnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/MailConfirmations/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbENvbmZpcm1hdGlvbnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/MailConfirmations/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbENvbmZpcm1hdGlvbnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/OrderItems/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/OrderItems/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/OrderItems/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/OrderItems/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/OrderItems/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Orders/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Orders/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Orders/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Orders/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Orders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/ProductSizes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFNpemVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/ProductSizes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFNpemVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/ProductSizes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFNpemVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/ProductSizes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFNpemVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/ProductSizes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFNpemVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Products/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Products/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Products/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcU2VhcmNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Reviews/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Reviews/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Reviews/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Reviews/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Reviews/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Shared/Components/Cart/CartPanel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2FydFxDYXJ0UGFuZWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Shared/Components/MenuCategory/_MenuCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudUNhdGVnb3J5XF9NZW51Q2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Shared/Components/WishList/WishListPanel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcV2lzaExpc3RcV2lzaExpc3RQYW5lbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Shared/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Shared/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Shared/_LayoutShop.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRTaG9wLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Shared/_Narbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXJiYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Shared/_Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Users/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Users/DangKy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGFuZ0t5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Users/Dangnhap.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGFuZ25oYXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Users/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Users/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Users/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/WishLists/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaExpc3RzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/WishLists/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaExpc3RzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/WishLists/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaExpc3RzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/WishLists/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaExpc3RzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/WishLists/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaExpc3RzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-9a58qhmezo

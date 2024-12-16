@@ -33,6 +33,7 @@
                             <th>Sản phẩm</th>
                             <th>Giá</th>
                             <th>Số lượng</th>
+                            <th>Kích cỡ</th>
                             <th>Tổng tiền</th>
                             <th>Xóa</th>
                         </tr>
@@ -44,7 +45,7 @@
                                 <td class="align-middle">
                                     <div class="d-flex align-items-center">
                                         <img src="@Url.Content("~/img/products/" + item.ImageUrl + ".jpg")" style="width: 50px; height: auto;">
-                                        <span>@item.ProductName</span>
+                                        <a asp-action="Details" asp-controller="Products" asp-route-id="@item.ProductId">  <span>@item.ProductName</span> </a>
                                     </div>
                                 </td>
 
@@ -64,6 +65,10 @@
                                         </div>
                                     </div>
                                 </td>
+
+                                <td class="align-middle">
+                                    <span>@item.Size</span>
+                                </td>
                                 <td class="align-middle total-price">
                                     @((item.PriceAtTime * item.Quantity).ToString("N0")) VND
                                 </td>
@@ -75,6 +80,7 @@
                                         </button>
                                     </form>
                                 </td>
+                                
                             </tr>
                         }
                     </tbody>
@@ -112,7 +118,6 @@
     </div>
 </div>
 <!-- Cart End -->
-
 @section Scripts {
     <script>
         // Hàm cập nhật tổng tiền và số lượng
@@ -166,8 +171,27 @@
             updateTotal(); // Cập nhật lại tổng tiền
         });
 
+                $("form").on("submit", function(e) {
+            if (!confirm("Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?")) {
+                e.preventDefault(); // Ngừng hành động nếu người dùng không xác nhận
+            }
+        });
+
+                $(".quantity-input").on("change", function() {
+            let quantity = $(this).val();
+            if (isNaN(quantity) || quantity <= 0) {
+                alert("Vui lòng nhập một số lượng hợp lệ.");
+                $(this).val(1); // Thiết lập lại số lượng về 1 nếu giá trị không hợp lệ
+            }
+            updateTotal();
+        });
+
+
         // Cập nhật tổng tiền khi trang được tải lần đầu
         updateTotal();
+
+
+
     </script>
 }
 

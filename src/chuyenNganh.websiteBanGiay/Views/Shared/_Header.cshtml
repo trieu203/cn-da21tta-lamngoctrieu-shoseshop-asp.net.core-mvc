@@ -60,12 +60,12 @@
                             <!-- Nếu người dùng là Admin -->
                             @if (User.IsInRole("Admin"))
                             {
-                                <a asp-controller="Admin" asp-action="Index" class="dropdown-item">Quản lý</a>
+                                <a href="Admin" class="dropdown-item">Quản lý</a>
                             }
                             else
                             {
                                 <!-- Nếu người dùng là User -->
-                                <a asp-controller="Users" asp-action="Details" class="dropdown-item">Thông tin cá nhân</a>
+                                <a asp-controller="Users" asp-action="Details"  class="dropdown-item">Thông tin cá nhân</a>
                             }
                         </div>
                     }

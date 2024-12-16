@@ -10,6 +10,8 @@ public partial class WishList
 
     public DateTime? AddedDate { get; set; }
 
+    public string? ImageUrl { get; set; }
+
     public virtual Product? Product { get; set; }
 
     public virtual User? User { get; set; }
