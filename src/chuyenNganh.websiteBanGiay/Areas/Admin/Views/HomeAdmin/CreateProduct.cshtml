@@ -1,0 +1,69 @@
+﻿@model chuyenNganh.websiteBanGiay.Data.Product
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Tạo mới sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+            <h3 class="mb-0">Tạo mới sản phẩm</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="CreateProduct" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <!-- Tên sản phẩm -->
+                <div class="mb-3">
+                    <label asp-for="ProductName" class="form-label">Tên sản phẩm</label>
+                    <input asp-for="ProductName" class="form-control" placeholder="Nhập tên sản phẩm" />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+
+                <!-- Giá sản phẩm -->
+                <div class="mb-3">
+                    <label asp-for="Price" class="form-label">Giá sản phẩm</label>
+                    <input asp-for="Price" class="form-control" placeholder="Nhập giá sản phẩm" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <!-- Mô tả sản phẩm -->
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label">Mô tả</label>
+                    <textarea asp-for="Description" class="form-control" rows="4" placeholder="Nhập mô tả sản phẩm"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <!-- Giảm giá -->
+                <div class="mb-3">
+                    <label asp-for="Discount" class="form-label">Giảm giá (%)</label>
+                    <input asp-for="Discount" class="form-control" placeholder="Nhập mức giảm giá" />
+                    <span asp-validation-for="Discount" class="text-danger"></span>
+                </div>
+
+                <!-- Danh mục sản phẩm -->
+                <div class="mb-3">
+                    <label class="form-label">Danh mục</label>
+                    <select asp-for="CategoryId" class="form-select" asp-items="ViewBag.CategoryName">
+                        <option value="">-- Chọn danh mục --</option>
+                    </select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+
+                <!-- Hình ảnh -->
+                <div class="mb-3">
+                    <label class="form-label">Hình ảnh sản phẩm</label>
+                    <input type="file" name="ImageFile" class="form-control" />
+                </div>
+
+                <!-- Nút tạo mới -->
+                <div class="text-end">
+                    <a asp-area="admin" asp-controller="HomeAdmin" asp-action="Product" class="btn btn-secondary">Quay lại</a>
+                    <button type="submit" class="btn btn-success">Tạo sản phẩm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

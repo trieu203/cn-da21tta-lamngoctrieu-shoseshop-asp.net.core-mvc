@@ -16,27 +16,24 @@
 
     <div class="card shadow-sm">
         <div class="card-body">
-            <form asp-action="CreateCategory">
+            <form asp-action="CreateCategory" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
 
+                <!-- Tên danh mục -->
                 <div class="mb-3">
                     <label asp-for="CategoryName" class="form-label fw-bold">Tên danh mục</label>
                     <input asp-for="CategoryName" class="form-control" placeholder="Nhập tên danh mục..." />
                     <span asp-validation-for="CategoryName" class="text-danger"></span>
                 </div>
 
+                <!-- Mô tả danh mục -->
                 <div class="mb-3">
                     <label asp-for="Description" class="form-label fw-bold">Mô tả</label>
                     <textarea asp-for="Description" class="form-control" rows="3" placeholder="Nhập mô tả danh mục..."></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
 
-                <div class="mb-3">
-                    <label asp-for="ImageUrl" class="form-label fw-bold">Đường dẫn hình ảnh</label>
-                    <input asp-for="ImageUrl" class="form-control" placeholder="Nhập URL hình ảnh..." />
-                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
-                </div>
-
+                <!-- Nút hành động -->
                 <div class="text-end">
                     <button type="submit" class="btn btn-success">
                         <i class="fas fa-save"></i> Lưu danh mục

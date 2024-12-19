@@ -49,38 +49,40 @@
                 <div class="btn-group">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <!-- Đã đăng nhập -->
+                        <!-- Hiển thị tên và hình ảnh của người dùng -->
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">
-                            Tài khoản
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <!-- Hiển thị nút Đăng xuất -->
-                            <a asp-controller="Users" asp-action="DangXuat" class="dropdown-item">Đăng xuất</a>
+                            <img src="@Url.Content("~/img/users/" + (User.FindFirst("ImageUrl")?.Value ?? "user_boy.jpg"))"
+                                 alt="User Image" class="rounded-circle" width="60" height="60"
+                                 onerror="this.onerror=null;this.src='~/img/users/user_boy.jpg';" />
 
-                            <!-- Nếu người dùng là Admin -->
+                            <span>@User.Identity.Name</span>
+                        </button>
+
+
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a asp-controller="Users" asp-action="DangXuat" class="dropdown-item">Đăng xuất</a>
                             @if (User.IsInRole("Admin"))
                             {
-                                <a href="Admin" class="dropdown-item">Quản lý</a>
+                                <a asp-controller="Admin" asp-action="Index" class="dropdown-item">Quản lý</a>
                             }
                             else
                             {
-                                <!-- Nếu người dùng là User -->
-                                <a asp-controller="Users" asp-action="Details"  class="dropdown-item">Thông tin cá nhân</a>
+                                <a asp-controller="Users" asp-action="Details" class="dropdown-item">Thông tin cá nhân</a>
                             }
                         </div>
                     }
                     else
                     {
-                        <!-- Chưa đăng nhập -->
+                        <!-- Hiển thị nếu chưa đăng nhập -->
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">
-                            Tài khoản
+                            Đăng nhập/Đăng ký
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <!-- Nếu chưa đăng nhập, hiển thị nút đăng nhập và đăng ký -->
                             <a asp-controller="Users" asp-action="Dangnhap" class="dropdown-item">Đăng nhập</a>
                             <a asp-controller="Users" asp-action="DangKy" class="dropdown-item">Đăng ký</a>
                         </div>
                     }
+
                 </div>
             </div>
         </div>

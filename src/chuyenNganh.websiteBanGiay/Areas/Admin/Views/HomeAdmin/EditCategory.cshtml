@@ -1,0 +1,68 @@
+﻿@model chuyenNganh.websiteBanGiay.Data.Category
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Chỉnh sửa danh mục";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">Chỉnh sửa danh mục</h3>
+        </div>
+        <div class="card-body">
+            <!-- Truyền ID để Controller nhận -->
+            <form asp-action="EditCategory" asp-route-id="@Model.CategoryId" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <input type="hidden" asp-for="CategoryId" />
+
+                <!-- Tên danh mục -->
+                <div class="mb-3">
+                    <label asp-for="CategoryName" class="form-label">Tên danh mục</label>
+                    <input asp-for="CategoryName" class="form-control" placeholder="Nhập tên danh mục" />
+                    <span asp-validation-for="CategoryName" class="text-danger"></span>
+                </div>
+
+                <!-- Mô tả -->
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label">Mô tả</label>
+                    <textarea asp-for="Description" class="form-control" rows="3" placeholder="Nhập mô tả danh mục"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <!-- Hình ảnh -->
+                <div class="mb-3">
+                    <label class="form-label">Hình ảnh danh mục</label>
+                    <input type="file" name="ImageFile" class="form-control" accept="image/*" />
+                    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                    {
+                        <div class="mt-2">
+                            <label>Hình ảnh hiện tại:</label><br />
+                            @{
+                                var imageUrl = Model.ImageUrl?.ToString() ?? ""; // Đảm bảo ImageUrl không null
+                                var imageFile = string.IsNullOrEmpty(System.IO.Path.GetExtension(imageUrl))
+                                ? imageUrl + ".jpg"
+                                : imageUrl;
+
+                                var imagePath = Url.Content("~/img/categories/" + imageFile);
+                            }
+                            <img src="@imagePath"
+                                 alt="@Model.CategoryName"
+                                 class="img-thumbnail"
+                                 style="width: 70px; height: 70px;"
+                                 onerror="this.onerror=null; this.src='/img/products/default.jpg';" />
+                        </div>
+                    }
+                </div>
+
+                <!-- Nút lưu -->
+                <div class="d-flex justify-content-end">
+                    <a asp-area="admin" asp-controller="HomeAdmin" asp-action="Category" class="btn btn-secondary me-2">Quay lại</a>
+                    <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

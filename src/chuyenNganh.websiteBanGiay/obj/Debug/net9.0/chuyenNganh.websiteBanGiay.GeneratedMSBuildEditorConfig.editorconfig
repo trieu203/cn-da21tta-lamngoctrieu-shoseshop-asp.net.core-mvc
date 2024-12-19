@@ -36,6 +36,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXENyZWF0ZUNhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/CreateProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXENyZWF0ZVByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/DeleteCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXERlbGV0ZUNhdGVnb3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/EditCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEVkaXRDYXRlZ29yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -70,6 +82,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/CartItems/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydEl0ZW1zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Carts/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/DO_AN_CHUYEN_NGANH/chuyenNganh.websiteBanGiay/chuyenNganh.websiteBanGiay/Views/Carts/Create.cshtml]

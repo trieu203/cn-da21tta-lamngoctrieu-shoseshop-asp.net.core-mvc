@@ -25,28 +25,22 @@
 <body>
     <div class="container-scroller">
         <!-- partial:../../partials/_navbar.html -->
-        <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-                <a class="navbar-brand brand-logo" asp-action="Index" asp-controller="Home">
-                    <img src="../../LayoutAdmin/dist/assets/images/home.png" alt="logo" style="width: 70px; height: 70px;" />
-                </a>
-            </div>
-        </nav>
+        
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
             <!-- partial:../../partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item nav-profile">
-                        <a href="#" class="nav-link">
+                        <a asp-controller="Admin" asp-action="Index" class="nav-link">
                             <div class="nav-profile-image">
-                                <img src="../../LayoutAdmin/dist/assets/images/faces/face1.jpg" alt="profile" />
+                                <img src="~/img/users/5112aa80-5f60-4ea0-aa12-5ab8421e5ac7.jpg" alt="profile" />
                                 <span class="login-status online"></span>
                                 <!--change to offline or busy as needed-->
                             </div>
                             <div class="nav-profile-text d-flex flex-column">
-                                <span class="font-weight-bold mb-2">David Grey. H</span>
-                                <span class="text-secondary text-small">Project Manager</span>
+                                <span class="font-weight-bold mb-2">trieulam</span>
+                                <span class="text-secondary text-small">Quản lý</span>
                             </div>
                             <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
                         </a>
@@ -127,35 +121,17 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                            <span class="menu-title">User Pages</span>
+                            <span class="menu-title">Hành động</span>
                             <i class="menu-arrow"></i>
                             <i class="mdi mdi-lock menu-icon"></i>
                         </a>
                         <div class="collapse" id="auth">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../../pages/samples/blank-page.html"> Blank Page </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../../pages/samples/login.html"> Login </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../../pages/samples/register.html"> Register </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../../pages/samples/error-404.html"> 404 </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../../pages/samples/error-500.html"> 500 </a>
+                                    <a class="nav-link" asp-controller="Users" asp-action="DangXuat"> Đăng xuất </a>
                                 </li>
                             </ul>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../docs/documentation.html" target="_blank">
-                            <span class="menu-title">Documentation</span>
-                            <i class="mdi mdi-file-document-box menu-icon"></i>
-                        </a>
                     </li>
                 </ul>
             </nav>
@@ -168,8 +144,6 @@
                 <!-- partial:../../partials/_footer.html -->
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights reserved.</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
                     </div>
                 </footer>
                 <!-- partial -->

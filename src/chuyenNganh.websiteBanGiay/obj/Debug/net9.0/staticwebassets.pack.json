@@ -3025,6 +3025,10 @@
       "PackagePath": "staticwebassets\\LayoutAdmin\\src\\partials\\_sidebar.html"
     },
     {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\checkout.html",
+      "PackagePath": "staticwebassets\\checkout.html"
+    },
+    {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-grid.css"
     },
@@ -3065,8 +3069,28 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\categories\\1039e725-02b0-4ada-8506-5b992534336f.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\1039e725-02b0-4ada-8506-5b992534336f.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\categories\\9bc97b9c-6b5e-42ef-8bef-5f3b8e58dac6.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\9bc97b9c-6b5e-42ef-8bef-5f3b8e58dac6.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\categories\\9dfce318-598c-4b12-a89c-f9e84205a099.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\9dfce318-598c-4b12-a89c-f9e84205a099.jpg"
+    },
+    {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\categories\\addias.jpg",
       "PackagePath": "staticwebassets\\img\\categories\\addias.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\categories\\ahin.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\ahin.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\categories\\b0f2fd72-3d6a-4ac7-8997-dd083b4f960a.jpg",
+      "PackagePath": "staticwebassets\\img\\categories\\b0f2fd72-3d6a-4ac7-8997-dd083b4f960a.jpg"
     },
     {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\categories\\newbalance.jpg",
@@ -3083,6 +3107,10 @@
     {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\categories\\puma.jpg",
       "PackagePath": "staticwebassets\\img\\categories\\puma.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\c72e1965-76a9-4fd4-b952-fa080e929cdc.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\c72e1965-76a9-4fd4-b952-fa080e929cdc.jpg"
     },
     {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product01_01.jpg",
@@ -3333,20 +3361,60 @@
       "PackagePath": "staticwebassets\\img\\sale\\sale.jpg"
     },
     {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\004b290e-a943-4bfb-a7e3-8be0cbdcdf8e.jpg",
+      "PackagePath": "staticwebassets\\img\\users\\004b290e-a943-4bfb-a7e3-8be0cbdcdf8e.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\0228eafa-995b-4a92-a541-01dd681953e6.jpg",
+      "PackagePath": "staticwebassets\\img\\users\\0228eafa-995b-4a92-a541-01dd681953e6.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\092d70e4-6568-4e38-9645-0cf569d6ffce.jpg",
+      "PackagePath": "staticwebassets\\img\\users\\092d70e4-6568-4e38-9645-0cf569d6ffce.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\1968cba3-a830-4e68-aa93-c59e2c3baef8.jpg",
+      "PackagePath": "staticwebassets\\img\\users\\1968cba3-a830-4e68-aa93-c59e2c3baef8.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\1cf45173-89f3-4d67-ad1a-93659b8c765b.jpg",
+      "PackagePath": "staticwebassets\\img\\users\\1cf45173-89f3-4d67-ad1a-93659b8c765b.jpg"
+    },
+    {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\23def7ba-8548-41d7-827d-0a1be72cb2d0.jpg",
       "PackagePath": "staticwebassets\\img\\users\\23def7ba-8548-41d7-827d-0a1be72cb2d0.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\4e78c491-e534-4e52-8f78-465f6bf60584.jpg",
+      "PackagePath": "staticwebassets\\img\\users\\4e78c491-e534-4e52-8f78-465f6bf60584.jpg"
     },
     {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\5112aa80-5f60-4ea0-aa12-5ab8421e5ac7.jpg",
       "PackagePath": "staticwebassets\\img\\users\\5112aa80-5f60-4ea0-aa12-5ab8421e5ac7.jpg"
     },
     {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\9531e10a-34ce-4b8b-8a2c-b05ebb854f57.jpg",
+      "PackagePath": "staticwebassets\\img\\users\\9531e10a-34ce-4b8b-8a2c-b05ebb854f57.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\9adff2d0-482c-4a59-b24a-9793a3dd7c5a.jpg",
+      "PackagePath": "staticwebassets\\img\\users\\9adff2d0-482c-4a59-b24a-9793a3dd7c5a.jpg"
+    },
+    {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\a8b15223-e8f7-4a24-ad5c-5498fdfdf5d6.jpg",
       "PackagePath": "staticwebassets\\img\\users\\a8b15223-e8f7-4a24-ad5c-5498fdfdf5d6.jpg"
     },
     {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\af29b564-cc89-4599-af17-5ac4b94f87c5.jpg",
+      "PackagePath": "staticwebassets\\img\\users\\af29b564-cc89-4599-af17-5ac4b94f87c5.jpg"
+    },
+    {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\d801bf32-9bea-4beb-9c3e-44e5a6b54a95.jpg",
       "PackagePath": "staticwebassets\\img\\users\\d801bf32-9bea-4beb-9c3e-44e5a6b54a95.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\d915de4f-bf72-4057-8003-bed57225d0f6.jpg",
+      "PackagePath": "staticwebassets\\img\\users\\d915de4f-bf72-4057-8003-bed57225d0f6.jpg"
     },
     {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\e2c5bbd7-f5cd-4af3-98cb-51bc678db217.jpg",

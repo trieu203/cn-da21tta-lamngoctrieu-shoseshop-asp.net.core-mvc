@@ -1,71 +1,24 @@
 ﻿@model IEnumerable<chuyenNganh.websiteBanGiay.Data.Order>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Đặt hàng thành công";
+    Layout = "_Product";
 }
 
-<h1>Index</h1>
+<div class="container text-center mt-5">
+    <div class="alert alert-success" role="alert">
+        <h1 class="display-4">🎉 Đặt hàng thành công! 🎉</h1>
+        <p class="lead">Cảm ơn bạn đã mua hàng tại cửa hàng của chúng tôi.</p>
+        <hr>
+        <p class="mb-3">
+            Mã đơn hàng của bạn: <strong>@ViewData["OrderId"]</strong><br>
+            Thời gian đặt hàng: <strong>@ViewData["OrderDate"]</strong>
+        </p>
+        <p>
+            Đơn hàng sẽ được giao đến địa chỉ: <strong>@ViewData["ShippingAddress"]</strong><br>
+            Nếu có bất kỳ thắc mắc nào, vui lòng liên hệ với chúng tôi qua hotline: <strong>1800-1234</strong>.
+        </p>
+        <a href="@Url.Action("Index", "Products")" class="btn btn-primary btn-lg mt-4">Tiếp tục mua sắm</a>
+    </div>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.OrderDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalAmount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OrderStatus)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ShippingAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalAmount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderStatus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShippingAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.UserId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.OrderId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.OrderId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>

@@ -1,5 +1,5 @@
 ﻿@model chuyenNganh.websiteBanGiay.ViewModels.PaginatedList<chuyenNganh.websiteBanGiay.ViewModels.ProductVM>
-
+@using System.IO
 
 @{
     ViewData["Title"] = "Trang chủ";
@@ -17,9 +17,24 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
+                        @{
+                            // Lấy ImageUrl từ item, đảm bảo không null
+                            var imageUrl = item.ImageUrl?.ToString() ?? "";
+
+                            // Kiểm tra nếu thiếu phần mở rộng (".jpg") thì thêm vào
+                            var imageFile = string.IsNullOrEmpty(System.IO.Path.GetExtension(imageUrl))
+                            ? imageUrl + ".jpg"
+                            : imageUrl;
+
+                            // Đường dẫn đến ảnh
+                            var imagePath = Url.Content("~/img/products/" + imageFile);
+                        }
+
                         <a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProductId">
-                            <img class="img-fluid w-100" src="@Url.Content("~/img/products/" + item.ImageUrl + ".jpg")" alt="@item.ProductName">
+                            <img class="img-fluid w-100" src="@imagePath" alt="@item.ProductName"
+                                 onerror="this.onerror=null; this.src='/img/products/default.jpg';" />
                         </a>
+
                         <div class="product-action">
                             <a title="Thêm vào giỏ hàng" asp-action="Details" asp-controller="Products" asp-route-id="@item.ProductId" class="btn btn-outline-dark btn-square"><i class="fa fa-shopping-cart"></i></a>
                             <form method="post" asp-action="AddToWishList" asp-controller="WishLists" asp-route-productId="@item.ProductId" class="d-inline-block">

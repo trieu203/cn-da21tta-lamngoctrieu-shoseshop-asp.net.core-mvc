@@ -1,4 +1,5 @@
 ﻿using chuyenNganh.websiteBanGiay.Data;
+using chuyenNganh.websiteBanGiay.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -182,7 +183,114 @@ namespace chuyenNganh.websiteBanGiay.Controllers
 
             return RedirectToAction("Index");
         }
+        //Checkout
 
+        [HttpGet]
+        public IActionResult Checkout()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                return RedirectToAction("Dangnhap", "Users");
+            }
+
+            var cart = _context.Carts
+                .Include(c => c.CartItems)
+                .ThenInclude(ci => ci.Product) // Bao gồm thông tin sản phẩm
+                .FirstOrDefault(c => c.UserId == int.Parse(userId) && c.IsActive);
+
+            if (cart == null || !cart.CartItems.Any())
+            {
+                TempData["ErrorMessage"] = "Giỏ hàng của bạn đang trống.";
+                return RedirectToAction("Index", "Carts");
+            }
+
+            // Kiểm tra dữ liệu null trước khi ánh xạ
+            var model = new CheckoutViewModel
+            {
+                CartItems = cart.CartItems
+                    .Where(ci => ci.Product != null) // Lọc ra các mục không hợp lệ
+                    .Select(ci => new CartItemViewModel
+                    {
+                        ProductName = ci.Product.ProductName ?? "Không có tên sản phẩm",
+                        Quantity = ci.Quantity,
+                        PriceAtTime = ci.PriceAtTime
+                    }).ToList(),
+            };
+
+            return View(model);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Checkout(CheckoutViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                return RedirectToAction("Dangnhap", "Users");
+            }
+
+            // Lấy giỏ hàng
+            var cart = await _context.Carts
+                .Include(c => c.CartItems)
+                .FirstOrDefaultAsync(c => c.UserId == int.Parse(userId) && c.IsActive);
+
+            if (cart == null || !cart.CartItems.Any())
+            {
+                TempData["ErrorMessage"] = "Giỏ hàng của bạn đang trống.";
+                return RedirectToAction("Index", "Carts");
+            }
+
+            // Tạo đơn hàng
+            var order = new Order
+            {
+                UserId = int.Parse(userId),
+                OrderDate = DateTime.Now,
+                TotalAmount = cart.CartItems.Sum(ci => ci.PriceAtTime * ci.Quantity) + 50000,
+                OrderStatus = "Pending",
+                ShippingAddress = model.ShippingAddress,
+                Email = model.Email,
+                PhoneNumber = model.PhoneNumber
+            };
+
+            _context.Orders.Add(order);
+            await _context.SaveChangesAsync();
+
+            // Thêm các sản phẩm vào OrderItems
+            foreach (var cartItem in cart.CartItems)
+            {
+                var orderItem = new OrderItem
+                {
+                    OrderId = order.OrderId,
+                    ProductId = cartItem.ProductId,
+                    Quantity = cartItem.Quantity,
+                    Price = cartItem.PriceAtTime,
+                    Size = cartItem.Size
+                };
+                _context.OrderItems.Add(orderItem);
+            }
+
+            // Xóa các mục trong giỏ hàng
+            _context.CartItems.RemoveRange(cart.CartItems);
+
+            // Cập nhật trạng thái giỏ hàng
+            cart.IsActive = false;
+            _context.Carts.Update(cart);
+
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Đơn hàng của bạn đã được tạo thành công.";
+            return RedirectToAction("Index", "Orders");
+        }
 
 
 

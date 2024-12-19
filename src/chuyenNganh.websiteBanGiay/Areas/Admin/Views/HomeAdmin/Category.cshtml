@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<chuyenNganh.websiteBanGiay.Data.Category>
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using System.IO
 
 @{
     ViewData["Title"] = "Danh mục sản phẩm";
@@ -22,7 +23,7 @@
                     <th scope="col">Tên danh mục</th>
                     <th scope="col">Mô tả</th>
                     <th scope="col">Ngày tạo</th>
-                    <th scope="col">Ảnh minh họa</th>
+                    <th scope="col">Hình minh họa</th>
                     <th scope="col" class="text-center">Hành động</th>
                 </tr>
             </thead>
@@ -32,21 +33,27 @@
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.CategoryName)</td>
                         <td>@Html.DisplayFor(modelItem => item.Description)</td>
-                        <td>@item.CreatedDate?.ToString("dd/MM/yyyy")</td>
                         <td>
-                            @if (!string.IsNullOrEmpty(item.ImageUrl))
-                            {
-                                <img src="@Url.Content("~/img/categories/" + item.ImageUrl + ".jpg")" style="max-width: 100px;" />
+                            @{
+                                var imageUrl = item.ImageUrl?.ToString() ?? ""; // Đảm bảo ImageUrl không null
+                                var imageFile = string.IsNullOrEmpty(System.IO.Path.GetExtension(imageUrl))
+                                ? imageUrl + ".jpg"
+                                : imageUrl;
+
+                                var imagePath = Url.Content("~/img/categories/" + imageFile);
                             }
-                            else
-                            {
-                                <span class="text-muted">Chưa có ảnh</span>
-                            }
+                            <img src="@imagePath"
+                                 alt="@item.CategoryName"
+                                 class="img-thumbnail"
+                                 style="width: 70px; height: 70px;"
+                                 onerror="this.onerror=null; this.src='/img/products/default.jpg';" />
                         </td>
+
+                        <td>@item.CreatedDate?.ToString("dd/MM/yyyy")</td>
                         <td class="text-center">
-                            <a asp-action="Edit" asp-route-id="@item.CategoryId" class="btn btn-sm btn-warning">Sửa</a>
-                            <a asp-action="Details" asp-route-id="@item.CategoryId" class="btn btn-sm btn-info text-white">Chi tiết</a>
-                            <a asp-action="Delete" asp-route-id="@item.CategoryId" class="btn btn-sm btn-danger">Xóa</a>
+                            <a asp-area="admin" asp-action="EditCategory" asp-route-id="@item.CategoryId" class="btn btn-sm btn-warning">Sửa</a>
+                            <a  asp-action="Details" asp-route-id="@item.CategoryId" class="btn btn-sm btn-info text-white">Chi tiết</a>
+                            <a asp-area="admin" asp-action="DeleteCategory" asp-route-id="@item.CategoryId" class="btn btn-sm btn-danger">Xóa</a>
                         </td>
                     </tr>
                 }

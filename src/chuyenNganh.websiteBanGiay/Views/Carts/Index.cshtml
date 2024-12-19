@@ -1,7 +1,7 @@
 ﻿@model List<chuyenNganh.websiteBanGiay.Data.CartItem>
 
 @{
-    ViewData["Title"] = "Shopping Cart";
+    ViewData["Title"] = "Giỏ hàng";
     Layout = "_Product";
 }
 
@@ -110,7 +110,7 @@
                                 @string.Format("{0:N0} VNĐ", Model.Sum(x => x.PriceAtTime * x.Quantity) + 50000)
                             </h5>
                         </div>
-                        <button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Tiến hành thanh toán</button>
+                        <a asp-action="Checkout"><button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Tiến hành thanh toán</button> </a>
                     </div>
                 </div>
             </div>

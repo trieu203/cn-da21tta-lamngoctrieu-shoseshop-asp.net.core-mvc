@@ -1,0 +1,89 @@
+﻿@model chuyenNganh.websiteBanGiay.ViewModels.CheckoutViewModel
+
+@{
+    ViewData["Title"] = "Checkout";
+    Layout = "_Product";
+}
+
+<div class="container-fluid">
+    <form asp-action="Checkout" method="post">
+        <div class="row px-xl-5">
+            <div class="col-lg-8">
+                <h5 class="section-title position-relative text-uppercase mb-3">
+                    <span class="bg-secondary pr-3">Địa chỉ thanh toán</span>
+                </h5>
+                <div class="bg-light p-30 mb-5">
+                    @if (TempData["ErrorMessage"] != null)
+                    {
+                        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+                    }
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label>Họ và tên</label>
+                            <input class="form-control" asp-for="FullName" placeholder="Nguyễn Văn A" required>
+                            <span class="text-danger" asp-validation-for="FullName"></span>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Địa chỉ E-mail</label>
+                            <input class="form-control" asp-for="Email" placeholder="demo@gmail.com" required>
+                            <span class="text-danger" asp-validation-for="Email"></span>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Số điện thoại</label>
+                            <input class="form-control" asp-for="PhoneNumber" placeholder="03981 123 123" required>
+                            <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Địa chỉ nhận hàng</label>
+                            <input class="form-control" asp-for="ShippingAddress" placeholder="Ấp/Xã/Huyện/Thành phố" required>
+                            <span class="text-danger" asp-validation-for="ShippingAddress"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Tổng đơn hàng</span></h5>
+                <div class="bg-light p-30 mb-5">
+                    <div class="border-bottom">
+                        <h6 class="mb-3">Sản phẩm</h6>
+                        @foreach (var item in Model.CartItems)
+                        {
+                            <div class="d-flex justify-content-between">
+                                <p class="product-name">@item.ProductName</p>
+                                <p>@string.Format("{0:#,##0} VNĐ", item.PriceAtTime * item.Quantity)</p>
+                            </div>
+                        }
+                    </div>
+                    <div class="border-bottom pt-3 pb-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h6>Tạm tính</h6>
+                            <h6>@string.Format("{0:N0} VNĐ", Model.CartItems.Sum(x => x.PriceAtTime * x.Quantity))</h6>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-medium">Phí vận chuyển</h6>
+                            <h6 class="font-weight-medium">50,000 VNĐ</h6>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <div class="d-flex justify-content-between mt-2">
+                            <h5>Tổng tiền</h5>
+                            <h5>@string.Format("{0:N0} VNĐ", Model.CartItems.Sum(x => x.PriceAtTime * x.Quantity) + 50000)</h5>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="section-title position-relative text-uppercase mb-3">
+                    <span class="bg-secondary pr-3">Hình thức thanh toán</span>
+                </h5>
+                <div class="bg-light p-30">
+                    <div class="form-group">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" asp-for="PaymentMethod" value="COD" id="cod" class="custom-control-input" checked>
+                            <label class="custom-control-label" for="cod">Thanh toán khi nhận hàng</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-block btn-primary font-weight-bold py-3">Xác nhận</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

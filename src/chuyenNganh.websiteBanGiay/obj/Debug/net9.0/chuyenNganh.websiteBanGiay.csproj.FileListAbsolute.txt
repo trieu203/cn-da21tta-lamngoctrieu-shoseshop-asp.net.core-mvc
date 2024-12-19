@@ -493,3 +493,4 @@ D:\DO_AN_CHUYEN_NGANH\chuyenNganh.websiteBanGiay\chuyenNganh.websiteBanGiay\obj\
 D:\DO_AN_CHUYEN_NGANH\chuyenNganh.websiteBanGiay\chuyenNganh.websiteBanGiay\bin\Debug\net9.0\X.PagedList.dll
 D:\DO_AN_CHUYEN_NGANH\chuyenNganh.websiteBanGiay\chuyenNganh.websiteBanGiay\bin\Debug\net9.0\X.PagedList.Mvc.Core.dll
 D:\DO_AN_CHUYEN_NGANH\chuyenNganh.websiteBanGiay\chuyenNganh.websiteBanGiay\obj\Debug\net9.0\chuyenNganh.websiteBanGiay.MvcApplicationPartsAssemblyInfo.cs
+D:\DO_AN_CHUYEN_NGANH\chuyenNganh.websiteBanGiay\chuyenNganh.websiteBanGiay\obj\Debug\net9.0\compressed\fj1gtfgks8-buvutudkaa.gz

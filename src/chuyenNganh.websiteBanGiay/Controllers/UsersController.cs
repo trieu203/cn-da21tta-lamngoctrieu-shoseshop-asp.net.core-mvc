@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using System.Text.RegularExpressions;
 
 namespace chuyenNganh.websiteBanGiay.Controllers
 {
@@ -85,6 +86,15 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                     return View(model);
                 }
 
+                // Kiểm tra định dạng email
+                var emailRegex = @"^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$";
+                if (!Regex.IsMatch(model.Email, emailRegex))
+                {
+                    ModelState.AddModelError(string.Empty, "Địa chỉ email không hợp lệ.");
+                    return View(model);
+                }
+
+
                 // Lưu tên file hình ảnh
                 string imageFileName = null;
 
@@ -122,7 +132,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                 await _context.SaveChangesAsync();
 
                 TempData["SuccessMessage"] = "Đăng ký thành công!";
-                return RedirectToAction("DangKy");
+                return RedirectToAction("Dangnhap");
             }
 
             return View(model);
@@ -150,12 +160,21 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                 {
                     new Claim(ClaimTypes.NameIdentifier, dbUser.UserId.ToString()),
                     new Claim(ClaimTypes.Name, dbUser.UserName),
-                    new Claim(ClaimTypes.Role, dbUser.Role)
+                    new Claim(ClaimTypes.Role, dbUser.Role),
+                    new Claim("ImageUrl", dbUser.ImageUrl ?? "user_boy.jpg")
                 };
+
+                Console.WriteLine($"ImageUrl: {dbUser.ImageUrl}");
 
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+
+                if (dbUser.Role == "Admin")
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+
                 return RedirectToAction("Index", "Home");
             }
 
@@ -240,31 +259,118 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             {
                 return NotFound();
             }
-            return View(user);
+
+            var userEditVM = new UserEditVM
+            {
+                UserId = user.UserId,
+                UserName = user.UserName,
+                Email = user.Email,
+                FullName = user.FullName,
+                Sdt = user.Sdt,
+                Address = user.Address,
+                GioiTinh = user.GioiTinh,
+                NgaySinh = user.NgaySinh,
+                ImageUrl = user.ImageUrl,
+                Role = user.Role
+            };
+
+            return View(userEditVM);
         }
+
 
         // POST: Users/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UserId,UserName,Password,Email,FullName,SDT,Address,ImageUrl,GioiTinh,NgaySinh,Role,CreatedDate")] User user)
+        public async Task<IActionResult> Edit(int id, UserEditVM model)
         {
-            if (id != user.UserId)
+            if (id != model.UserId)
             {
                 return NotFound();
             }
 
             if (ModelState.IsValid)
             {
+                if (model.NgaySinh.HasValue)
+                {
+                    var today = DateOnly.FromDateTime(DateTime.Today);
+                    var birthDate = DateOnly.FromDateTime(model.NgaySinh.Value);
+
+                    var age = today.Year - birthDate.Year;
+                    if (birthDate > today.AddYears(-age))
+                    {
+                        age--;
+                    }
+
+                    if (age < 15)
+                    {
+                        ModelState.AddModelError(string.Empty, "Bạn phải ít nhất 15 tuổi để chỉnh sửa thông tin.");
+                        return View(model);
+                    }
+                }
+
+                var existingUser = await _context.Users
+                    .FirstOrDefaultAsync(u => (u.UserName == model.UserName || u.Email == model.Email) && u.UserId != model.UserId);
+                if (existingUser != null)
+                {
+                    ModelState.AddModelError(string.Empty, "Tên người dùng hoặc email đã tồn tại.");
+                    return View(model);
+                }
+
+                var emailRegex = @"^[^\s@]+@[^\s@]+\.[^\s@]+$";
+                if (!Regex.IsMatch(model.Email, emailRegex))
+                {
+                    ModelState.AddModelError("Email", "Địa chỉ email không hợp lệ.");
+                    return View(model);
+                }
+
+                string imageFileName = model.ImageUrl;
+
+                if (model.Image != null)
+                {
+                    var fileExtension = Path.GetExtension(model.Image.FileName);
+                    imageFileName = Guid.NewGuid().ToString() + fileExtension;
+
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "users", imageFileName);
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await model.Image.CopyToAsync(stream);
+                    }
+                }
+
                 try
                 {
+                    var user = await _context.Users.FindAsync(id);
+                    if (user == null)
+                    {
+                        return NotFound();
+                    }
+
+                    // Cập nhật thông tin người dùng
+                    user.UserName = model.UserName;
+                    user.Email = model.Email;
+                    user.FullName = model.FullName;
+                    user.Sdt = model.Sdt;
+                    user.Address = model.Address;
+                    user.GioiTinh = model.GioiTinh;
+                    user.NgaySinh = model.NgaySinh;
+                    user.ImageUrl = imageFileName;
+                    user.Role = model.Role ?? "User";
+
+                    // Nếu mật khẩu không được nhập mới, giữ mật khẩu cũ
+                    if (!string.IsNullOrEmpty(model.Password))
+                    {
+                        user.Password = model.Password;
+                    }
+
                     _context.Update(user);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UserExists(user.UserId))
+                    if (!UserExists(model.UserId))
                     {
                         return NotFound();
                     }
@@ -273,10 +379,14 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+
+                TempData["SuccessMessage"] = "Cập nhật thông tin thành công!";
+                return RedirectToAction(nameof(Details));
             }
-            return View(user);
+
+            return View(model);
         }
+
 
         // GET: Users/Delete/5
         public async Task<IActionResult> Delete(int? id)

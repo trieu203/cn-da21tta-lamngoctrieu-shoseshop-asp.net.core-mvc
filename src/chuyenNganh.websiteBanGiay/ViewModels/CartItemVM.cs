@@ -1,6 +1,6 @@
 ﻿namespace chuyenNganh.websiteBanGiay.ViewModels
 {
-    public class CartItem
+    public class CartItemVM
     {
         public int CartId { get; set; }
         public int ProductId { get; set; }

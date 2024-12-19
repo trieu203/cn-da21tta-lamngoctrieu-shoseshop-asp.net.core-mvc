@@ -1,0 +1,46 @@
+﻿@model chuyenNganh.websiteBanGiay.Data.Category
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Xóa danh mục";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg">
+        <div class="card-header bg-danger text-white">
+            <h3 class="mb-0">Xác nhận xóa danh mục</h3>
+        </div>
+        <div class="card-body">
+            <p class="lead">Bạn có chắc chắn muốn xóa danh mục này không?</p>
+
+            <dl class="row">
+                <dt class="col-sm-3 text-muted">Tên danh mục</dt>
+                <dd class="col-sm-9">@Model.CategoryName</dd>
+
+                <dt class="col-sm-3 text-muted">Mô tả</dt>
+                <dd class="col-sm-9">@Model.Description</dd>
+
+                <dt class="col-sm-3 text-muted">Ngày tạo</dt>
+                <dd class="col-sm-9">@Model.CreatedDate?.ToString("dd/MM/yyyy")</dd>
+
+            </dl>
+
+            <!-- Form xóa với xác nhận JavaScript -->
+            <form asp-action="DeleteCategory" method="post" onsubmit="return confirmDelete();">
+                <input type="hidden" asp-for="CategoryId" />
+                <div class="d-flex justify-content-end">
+                    <a asp-area="admin" asp-controller="HomeAdmin" asp-action="Category" class="btn btn-secondary me-2">Hủy bỏ</a>
+                    <button type="submit" class="btn btn-danger">Xác nhận xóa</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Script xác nhận xóa -->
+<script>
+    function confirmDelete() {
+        return confirm("Bạn có chắc chắn muốn xóa danh mục này không? Hành động này không thể hoàn tác.");
+    }
+</script>

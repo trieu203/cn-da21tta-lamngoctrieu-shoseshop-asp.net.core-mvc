@@ -1,6 +1,8 @@
 ﻿@using X.PagedList
 @using X.PagedList.Mvc.Core
 @model IPagedList<chuyenNganh.websiteBanGiay.Data.Product>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using System.IO
 
 @{
     ViewData["Title"] = "Danh Sách Sản Phẩm";
@@ -10,7 +12,7 @@
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h2 class="text-primary">Danh Sách Sản Phẩm</h2>
-        <a asp-action="Create" class="btn btn-success">
+        <a asp-area="Admin" asp-controller="HomeAdmin" asp-action="CreateProduct" class="btn btn-success">
             <i class="fas fa-plus-circle"></i> Thêm Sản Phẩm Mới
         </a>
     </div>
@@ -39,8 +41,21 @@
                         <td>@item.Discount %</td>
                         <td>@item.CreatedDate?.ToString("dd/MM/yyyy")</td>
                         <td>
-                            <img src="@Url.Content("~/img/products/" + item.ImageUrl + ".jpg")" alt="@item.ProductName" class="img-thumbnail" style="width: 70px; height: 70px;" />
+                            @{
+                                var imageUrl = item.ImageUrl?.ToString() ?? ""; // Đảm bảo ImageUrl không null
+                                var imageFile = string.IsNullOrEmpty(System.IO.Path.GetExtension(imageUrl))
+                                ? imageUrl + ".jpg"
+                                : imageUrl;
+
+                                var imagePath = Url.Content("~/img/products/" + imageFile);
+                            }
+                            <img src="@imagePath"
+                                 alt="@item.ProductName"
+                                 class="img-thumbnail"
+                                 style="width: 70px; height: 70px;"
+                                 onerror="this.onerror=null; this.src='/img/products/default.jpg';" />
                         </td>
+
                         <td>@(item.Category?.CategoryName ?? "Chưa có danh mục")</td>
                         <td class="text-center">
                             <a asp-action="Edit" asp-route-id="@item.ProductId" class="btn btn-primary btn-sm">

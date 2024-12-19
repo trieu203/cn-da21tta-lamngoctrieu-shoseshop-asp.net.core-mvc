@@ -28,9 +28,24 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <!-- Trigger Modal on Click -->
+                            @{
+                                // Lấy ImageUrl từ item, đảm bảo không null
+                                var imageUrl = Model.ImageUrl?.ToString() ?? "";
+
+                                // Kiểm tra nếu thiếu phần mở rộng (".jpg") thì thêm vào
+                                var imageFile = string.IsNullOrEmpty(System.IO.Path.GetExtension(imageUrl))
+                                ? imageUrl + ".jpg"
+                                : imageUrl;
+
+                                // Đường dẫn đến ảnh
+                                var imagePath = Url.Content("~/img/products/" + imageFile);
+                            }
+
                             <a class="product-img" href="#" data-toggle="modal" data-target="#imageModal" title="Click để xem rỏ hơn">
-                                <img class="d-block w-100" src="@Url.Content("~/img/Products/" + Model.ImageUrl + ".jpg")" alt="@Model.ProductName">
+                                <img class="img-fluid w-100" src="@imagePath" alt="@Model.ProductName"
+                                     onerror="this.onerror=null; this.src='/img/products/default.jpg';" />
                             </a>
+
                         </div>
                     </div>
                 </div>
