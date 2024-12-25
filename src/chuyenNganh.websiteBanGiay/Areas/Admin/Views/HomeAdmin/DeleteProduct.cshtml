@@ -1,0 +1,58 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model chuyenNganh.websiteBanGiay.Data.Product
+
+@{
+    ViewData["Title"] = "Xóa sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center text-danger">Xóa sản phẩm</h1>
+    <hr />
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="alert alert-warning text-center" role="alert">
+                <strong>Bạn có chắc chắn muốn xóa sản phẩm này không?</strong>
+            </div>
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Thông tin sản phẩm
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">Tên sản phẩm:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.ProductName)</dd>
+
+                        <dt class="col-sm-4">Giá:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Price) VNĐ</dd>
+
+                        <dt class="col-sm-4">Mô tả:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Description)</dd>
+
+                        <dt class="col-sm-4">Giảm giá:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Discount)%</dd>
+
+                        <dt class="col-sm-4">Ngày tạo:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.CreatedDate)</dd>
+
+                        <dt class="col-sm-4">Hình ảnh:</dt>
+                        <dd class="col-sm-8">
+                            <img src="/img/products/@Html.DisplayFor(model => model.ImageUrl)" alt="@Html.DisplayFor(model => model.ProductName)" class="img-thumbnail" style="max-width: 150px; max-height: 150px;">
+                        </dd>
+
+                        <dt class="col-sm-4">Danh mục:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Category.CategoryName)</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="mt-4 d-flex justify-content-between">
+                <form asp-action="DeleteProduct" onsubmit="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')">
+                    <input type="hidden" asp-for="ProductId" />
+                    <button type="submit" class="btn btn-danger">Xóa</button>
+                </form>
+                <a asp-area="admin" asp-controller="HomeAdmin" asp-action="Product" class="btn btn-secondary me-2">Quay lại</a>
+            </div>
+        </div>
+    </div>
+</div>

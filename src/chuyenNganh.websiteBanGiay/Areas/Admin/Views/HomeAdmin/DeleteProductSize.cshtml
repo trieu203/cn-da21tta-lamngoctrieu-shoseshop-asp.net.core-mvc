@@ -1,0 +1,42 @@
+﻿@model chuyenNganh.websiteBanGiay.Data.ProductSize
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Xóa Kích Thước Sản Phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center text-danger">Xóa Kích Thước Sản Phẩm</h1>
+    <p class="text-center text-muted">Bạn có chắc chắn muốn xóa kích thước sản phẩm này? Thao tác này không thể hoàn tác.</p>
+    <hr />
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-warning text-dark">
+            <strong>Thông tin kích thước sản phẩm</strong>
+        </div>
+        <div class="card-body">
+            <dl class="row mb-0">
+                <dt class="col-sm-3">Kích thước (Size):</dt>
+                <dd class="col-sm-9">@Model.Size</dd>
+
+                <dt class="col-sm-3">Số lượng:</dt>
+                <dd class="col-sm-9">@Model.Quantity</dd>
+
+                <dt class="col-sm-3">Giá tại thời điểm:</dt>
+                <dd class="col-sm-9">@Model.PriceAtTime.ToString("C")</dd>
+
+                <dt class="col-sm-3">Sản phẩm:</dt>
+                <dd class="col-sm-9">@Model.Product.ProductName</dd>
+            </dl>
+        </div>
+    </div>
+
+    <form asp-action="DeleteProductSize" method="post" class="mt-4" onsubmit="return confirm('Bạn có chắc chắn muốn xóa kích thước sản phẩm này?')">
+        <input type="hidden" asp-for="ProductSizeId" />
+        <div class="d-flex justify-content-between">
+            <a asp-area="admin" asp-controller="HomeAdmin" asp-action="ProductSize" class="btn btn-secondary">Quay lại</a>
+            <button type="submit" class="btn btn-danger">Xóa</button>
+        </div>
+    </form>
+</div>

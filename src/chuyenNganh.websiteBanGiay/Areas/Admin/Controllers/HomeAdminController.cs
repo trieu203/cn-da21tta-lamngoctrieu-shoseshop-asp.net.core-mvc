@@ -266,8 +266,25 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             }
         }
 
+        //Detail Categry
+        [Route("DetailCategory")]
+        [HttpGet]
+        public async Task<IActionResult> DetailCategory(int id)
+        {
+            // Tìm danh mục theo ID
+            var category = await _context.Categories
+                                         .Include(c => c.Products) // Bao gồm sản phẩm liên quan
+                                         .FirstOrDefaultAsync(c => c.CategoryId == id);
 
-        
+            if (category == null)
+            {
+                TempData["Message"] = "Danh mục không tồn tại.";
+                return RedirectToAction("Category");
+            }
+
+            return View(category);
+        }
+
 
 
         // GET: Admin/Home/Product
@@ -283,6 +300,25 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                                      .ToPagedList(pageNumber, pageSize);
 
             return View(lstProduct);
+        }
+
+        //Detail Product
+        [Route("DetailProduct")]
+        [HttpGet]
+        public async Task<IActionResult> DetailProduct(int id)
+        {
+            // Tìm sản phẩm theo ID
+            var product = await _context.Products
+                                        .Include(p => p.Category) // Bao gồm danh mục liên quan
+                                        .FirstOrDefaultAsync(p => p.ProductId == id);
+
+            if (product == null)
+            {
+                TempData["Message"] = "Sản phẩm không tồn tại.";
+                return RedirectToAction("Product");
+            }
+
+            return View(product);
         }
 
         //Create Product
@@ -349,6 +385,148 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
         }
 
 
+        //Edit Product
+        [Route("EditProduct")]
+        [HttpGet]
+        public async Task<IActionResult> EditProduct(int id)
+        {
+            // Truy vấn sản phẩm từ CSDL
+            var product = await _context.Products.FindAsync(id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return View(product);
+        }
+
+        [Route("EditProduct")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditProduct(int id, Product updatedProduct, IFormFile? ImageFile)
+        {
+            var existingProduct = await _context.Products.FindAsync(id);
+
+            if (existingProduct == null)
+            {
+                return NotFound();
+            }
+
+            // Kiểm tra giá trị nhập vào, nếu rỗng thì giữ lại giá trị cũ
+            existingProduct.ProductName = string.IsNullOrEmpty(updatedProduct.ProductName)
+                ? existingProduct.ProductName
+                : updatedProduct.ProductName;
+
+            existingProduct.Description = string.IsNullOrEmpty(updatedProduct.Description)
+                ? existingProduct.Description
+                : updatedProduct.Description;
+
+            existingProduct.Price = updatedProduct.Price > 0
+                ? updatedProduct.Price
+                : existingProduct.Price;
+
+            // Xử lý hình ảnh
+            if (ImageFile != null && ImageFile.Length > 0)
+            {
+                var fileExtension = Path.GetExtension(ImageFile.FileName);
+                var fileName = $"{Guid.NewGuid()}{fileExtension}";
+
+                // Đường dẫn lưu file
+                var uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "products");
+                var filePath = Path.Combine(uploadPath, fileName);
+
+                // Tạo thư mục nếu chưa có
+                if (!Directory.Exists(uploadPath))
+                {
+                    Directory.CreateDirectory(uploadPath);
+                }
+
+                // Lưu file ảnh mới
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await ImageFile.CopyToAsync(stream);
+                }
+
+                // Xóa hình ảnh cũ nếu tồn tại
+                if (!string.IsNullOrEmpty(existingProduct.ImageUrl))
+                {
+                    var oldFilePath = Path.Combine(uploadPath, existingProduct.ImageUrl);
+                    if (System.IO.File.Exists(oldFilePath))
+                    {
+                        System.IO.File.Delete(oldFilePath);
+                    }
+                }
+
+                // Gán tên file mới
+                existingProduct.ImageUrl = fileName;
+            }
+
+            // Lưu cập nhật vào CSDL
+            _context.Products.Update(existingProduct);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Product");
+        }
+
+        // Delete Product
+        [Route("DeleteProduct")]
+        [HttpGet]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            // Tìm sản phẩm theo ID
+            var product = await _context.Products.FindAsync(id);
+
+            if (product == null)
+            {
+                TempData["Message"] = "Sản phẩm không tồn tại.";
+                return RedirectToAction("Product");
+            }
+
+            return View(product);
+        }
+
+        [Route("DeleteProduct")]
+        [HttpPost, ActionName("DeleteProduct")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteProductConfirmed(int id)
+        {
+            try
+            {
+                // Truy vấn sản phẩm từ CSDL
+                var product = await _context.Products.FindAsync(id);
+
+                if (product == null)
+                {
+                    TempData["Message"] = "Sản phẩm không tồn tại.";
+                    return RedirectToAction("Product");
+                }
+
+                // Xóa hình ảnh nếu tồn tại
+                if (!string.IsNullOrEmpty(product.ImageUrl))
+                {
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "products", product.ImageUrl);
+                    if (System.IO.File.Exists(filePath))
+                    {
+                        System.IO.File.Delete(filePath);
+                    }
+                }
+
+                // Xóa sản phẩm khỏi CSDL
+                _context.Products.Remove(product);
+                await _context.SaveChangesAsync();
+
+                TempData["Message"] = "Sản phẩm đã được xóa thành công.";
+                return RedirectToAction("Product");
+            }
+            catch (Exception ex)
+            {
+                // Ghi log lỗi
+                _logger.LogError(ex, "Lỗi khi xóa sản phẩm.");
+                TempData["Message"] = "Có lỗi xảy ra khi xóa sản phẩm.";
+                return RedirectToAction("Product");
+            }
+        }
 
 
         // GET: Admin/Home/ProductSize
@@ -365,6 +543,156 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
 
             return View(lstProductSize);
         }
+
+        // Create ProductSize
+        [Route("CreateProductSize")]
+        [HttpGet]
+        public async Task<IActionResult> CreateProductSize()
+        {
+            ViewBag.ProductName = new SelectList(await _context.Products.ToListAsync(), "ProductId", "ProductName");
+            return View();
+        }
+
+        [Route("CreateProductSize")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateProductSize(ProductSize productSize)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.ProductSizes.Add(productSize);
+                await _context.SaveChangesAsync();
+                TempData["Message"] = "Kích thước sản phẩm đã được tạo thành công.";
+                return RedirectToAction("ProductSize");
+            }
+            ViewBag.Products = new SelectList(await _context.Products.ToListAsync(), "ProductId", "ProductName");
+            return View(productSize);
+        }
+
+        // Edit ProductSize
+        [Route("EditProductSize")]
+        [HttpGet]
+        public async Task<IActionResult> EditProductSize(int id)
+        {
+            var productSize = await _context.ProductSizes
+                .Include(ps => ps.Product)
+                .FirstOrDefaultAsync(ps => ps.ProductSizeId == id);
+
+            if (productSize == null)
+            {
+                TempData["Message"] = "Kích thước sản phẩm không tồn tại.";
+                return RedirectToAction("ProductSize");
+            }
+
+            // Sử dụng ProductName thay vì ProductId trong dropdown
+            ViewBag.ProductName = new SelectList(await _context.Products.ToListAsync(), "ProductId", "ProductName", productSize.ProductId);
+            return View(productSize);
+        }
+
+
+        [Route("EditProductSize")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditProductSize(int id, ProductSize updatedProductSize)
+        {
+            var existingProductSize = await _context.ProductSizes.FindAsync(id);
+
+            if (existingProductSize == null)
+            {
+                TempData["Message"] = "Kích thước sản phẩm không tồn tại.";
+                return RedirectToAction("ProductSize");
+            }
+
+            // Cập nhật giá trị mới nếu có, giữ giá trị cũ nếu để trống
+            existingProductSize.ProductId = updatedProductSize.ProductId ?? existingProductSize.ProductId;
+            existingProductSize.Size = !string.IsNullOrEmpty(updatedProductSize.Size)
+                ? updatedProductSize.Size
+                : existingProductSize.Size;
+            existingProductSize.Quantity = updatedProductSize.Quantity > 0
+                ? updatedProductSize.Quantity
+                : existingProductSize.Quantity;
+            existingProductSize.PriceAtTime = updatedProductSize.PriceAtTime > 0
+                ? updatedProductSize.PriceAtTime
+                : existingProductSize.PriceAtTime;
+
+            _context.ProductSizes.Update(existingProductSize);
+            await _context.SaveChangesAsync();
+
+            TempData["Message"] = "Kích thước sản phẩm đã được chỉnh sửa thành công.";
+            return RedirectToAction("ProductSize");
+        }
+
+        //Delete ProductSize
+        [Route("DeleteProductSize")]
+        [HttpGet]
+        public async Task<IActionResult> DeleteProductSize(int id)
+        {
+            // Truy vấn kích thước sản phẩm từ CSDL
+            var productSize = await _context.ProductSizes
+                .Include(ps => ps.Product) // Bao gồm thông tin sản phẩm liên quan
+                .FirstOrDefaultAsync(ps => ps.ProductSizeId == id);
+
+            if (productSize == null)
+            {
+                TempData["Message"] = "Kích thước sản phẩm không tồn tại.";
+                return RedirectToAction("ProductSize");
+            }
+
+            return View(productSize);
+        }
+
+        [Route("DeleteProductSize")]
+        [HttpPost, ActionName("DeleteProductSize")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteProductSizeConfirmed(int id)
+        {
+            try
+            {
+                // Truy vấn kích thước sản phẩm từ CSDL
+                var productSize = await _context.ProductSizes.FindAsync(id);
+
+                if (productSize == null)
+                {
+                    TempData["Message"] = "Kích thước sản phẩm không tồn tại.";
+                    return RedirectToAction("ProductSize");
+                }
+
+                // Xóa kích thước sản phẩm khỏi CSDL
+                _context.ProductSizes.Remove(productSize);
+                await _context.SaveChangesAsync();
+
+                TempData["Message"] = "Kích thước sản phẩm đã được xóa thành công.";
+                return RedirectToAction("ProductSize");
+            }
+            catch (Exception ex)
+            {
+                // Ghi log lỗi
+                _logger.LogError(ex, "Lỗi khi xóa kích thước sản phẩm.");
+                TempData["Message"] = "Có lỗi xảy ra khi xóa kích thước sản phẩm.";
+                return RedirectToAction("ProductSize");
+            }
+        }
+
+
+        // Detail ProductSize
+        [Route("DetailProductSize")]
+        [HttpGet]
+        public async Task<IActionResult> DetailProductSize(int id)
+        {
+            var productSize = await _context.ProductSizes
+                .Include(ps => ps.Product)
+                .FirstOrDefaultAsync(ps => ps.ProductSizeId == id);
+
+            if (productSize == null)
+            {
+                TempData["Message"] = "Kích thước sản phẩm không tồn tại.";
+                return RedirectToAction("ProductSize");
+            }
+
+            return View(productSize);
+        }
+
+
 
     }
 }

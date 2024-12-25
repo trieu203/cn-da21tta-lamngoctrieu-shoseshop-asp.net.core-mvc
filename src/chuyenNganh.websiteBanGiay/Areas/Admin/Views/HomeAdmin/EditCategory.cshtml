@@ -41,7 +41,7 @@
                         <div class="mt-2">
                             <label>Hình ảnh hiện tại:</label><br />
                             @{
-                                var imageUrl = Model.ImageUrl?.ToString() ?? ""; // Đảm bảo ImageUrl không null
+                                var imageUrl = Model.ImageUrl?.ToString() ?? "";
                                 var imageFile = string.IsNullOrEmpty(System.IO.Path.GetExtension(imageUrl))
                                 ? imageUrl + ".jpg"
                                 : imageUrl;

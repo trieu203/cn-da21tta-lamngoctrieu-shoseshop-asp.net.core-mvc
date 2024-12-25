@@ -56,6 +56,12 @@ namespace chuyenNganh.websiteBanGiay.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (string.IsNullOrWhiteSpace(model.SDT))
+                {
+                    ModelState.AddModelError(string.Empty, "Số điện thoại không được để trống.");
+                    return View(model);
+                }
+
                 // Kiểm tra tuổi người dùng
                 if (model.NgaySinh.HasValue)
                 {
@@ -87,13 +93,12 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                 }
 
                 // Kiểm tra định dạng email
-                var emailRegex = @"^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$";
+                var emailRegex = @"^[a-zA-Z0-9._%+-]+@gmail\.com$";
                 if (!Regex.IsMatch(model.Email, emailRegex))
                 {
-                    ModelState.AddModelError(string.Empty, "Địa chỉ email không hợp lệ.");
+                    ModelState.AddModelError(string.Empty, "Địa chỉ email phải có đuôi @gmail.com.");
                     return View(model);
                 }
-
 
                 // Lưu tên file hình ảnh
                 string imageFileName = null;
@@ -132,7 +137,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                 await _context.SaveChangesAsync();
 
                 TempData["SuccessMessage"] = "Đăng ký thành công!";
-                return RedirectToAction("Dangnhap");
+                return RedirectToAction("DangKy");
             }
 
             return View(model);

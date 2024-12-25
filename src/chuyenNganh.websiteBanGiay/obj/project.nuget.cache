@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7QbBVWmQIJU=",
+  "dgSpecHash": "NdxZ259D58g=",
   "success": true,
-  "projectFilePath": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj",
+  "projectFilePath": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Trieu\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Trieu\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

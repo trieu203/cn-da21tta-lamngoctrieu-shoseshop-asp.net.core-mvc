@@ -1,18 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\",
+  "WorkspaceRootPath": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4AF116DA-83D3-42A9-AD4A-A877D3DB0E9F}|chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj|d:\\do_an_chuyen_nganh\\chuyennganh.websitebangiay\\chuyennganh.websitebangiay\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4AF116DA-83D3-42A9-AD4A-A877D3DB0E9F}|chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj|solutionrelative:chuyennganh.websitebangiay\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4AF116DA-83D3-42A9-AD4A-A877D3DB0E9F}|chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj|d:\\do_an_chuyen_nganh\\src_code\\chuyennganh.websitebangiay\\src\\chuyennganh.websitebangiay\\areas\\admin\\views\\homeadmin\\productsize.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4AF116DA-83D3-42A9-AD4A-A877D3DB0E9F}|chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj|solutionrelative:chuyennganh.websitebangiay\\areas\\admin\\views\\homeadmin\\productsize.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4AF116DA-83D3-42A9-AD4A-A877D3DB0E9F}|chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj|d:\\do_an_chuyen_nganh\\chuyennganh.websitebangiay\\chuyennganh.websitebangiay\\views\\carts\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4AF116DA-83D3-42A9-AD4A-A877D3DB0E9F}|chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj|solutionrelative:chuyennganh.websitebangiay\\views\\carts\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4AF116DA-83D3-42A9-AD4A-A877D3DB0E9F}|chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj|d:\\do_an_chuyen_nganh\\src_code\\chuyennganh.websitebangiay\\src\\chuyennganh.websitebangiay\\areas\\admin\\views\\homeadmin\\category.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4AF116DA-83D3-42A9-AD4A-A877D3DB0E9F}|chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj|solutionrelative:chuyennganh.websitebangiay\\areas\\admin\\views\\homeadmin\\category.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4AF116DA-83D3-42A9-AD4A-A877D3DB0E9F}|chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj|d:\\do_an_chuyen_nganh\\chuyennganh.websitebangiay\\chuyennganh.websitebangiay\\data\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4AF116DA-83D3-42A9-AD4A-A877D3DB0E9F}|chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj|solutionrelative:chuyennganh.websitebangiay\\data\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4AF116DA-83D3-42A9-AD4A-A877D3DB0E9F}|chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj|d:\\do_an_chuyen_nganh\\src_code\\chuyennganh.websitebangiay\\src\\chuyennganh.websitebangiay\\areas\\admin\\views\\homeadmin\\deleteproductsize.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4AF116DA-83D3-42A9-AD4A-A877D3DB0E9F}|chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj|solutionrelative:chuyennganh.websitebangiay\\areas\\admin\\views\\homeadmin\\deleteproductsize.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4AF116DA-83D3-42A9-AD4A-A877D3DB0E9F}|chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj|d:\\do_an_chuyen_nganh\\src_code\\chuyennganh.websitebangiay\\src\\chuyennganh.websitebangiay\\areas\\admin\\controllers\\homeadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4AF116DA-83D3-42A9-AD4A-A877D3DB0E9F}|chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay.csproj|solutionrelative:chuyennganh.websitebangiay\\areas\\admin\\controllers\\homeadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,39 +30,54 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Order.cs",
-              "DocumentMoniker": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\Data\\Order.cs",
-              "RelativeDocumentMoniker": "chuyenNganh.websiteBanGiay\\Data\\Order.cs",
-              "ToolTip": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\Data\\Order.cs",
-              "RelativeToolTip": "chuyenNganh.websiteBanGiay\\Data\\Order.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA3wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T14:00:27.05Z"
+              "DocumentIndex": 1,
+              "Title": "Category.cshtml",
+              "DocumentMoniker": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\Areas\\Admin\\Views\\HomeAdmin\\Category.cshtml",
+              "RelativeDocumentMoniker": "chuyenNganh.websiteBanGiay\\Areas\\Admin\\Views\\HomeAdmin\\Category.cshtml",
+              "ToolTip": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\Areas\\Admin\\Views\\HomeAdmin\\Category.cshtml",
+              "RelativeToolTip": "chuyenNganh.websiteBanGiay\\Areas\\Admin\\Views\\HomeAdmin\\Category.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADcAAACRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-25T15:49:00.688Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Checkout.cshtml",
-              "DocumentMoniker": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\Views\\Carts\\Checkout.cshtml",
-              "RelativeDocumentMoniker": "chuyenNganh.websiteBanGiay\\Views\\Carts\\Checkout.cshtml",
-              "ToolTip": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\Views\\Carts\\Checkout.cshtml",
-              "RelativeToolTip": "chuyenNganh.websiteBanGiay\\Views\\Carts\\Checkout.cshtml",
-              "ViewState": "AgIAABYAAAAAAAAAAAAiwFkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "DeleteProductSize.cshtml",
+              "DocumentMoniker": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\Areas\\Admin\\Views\\HomeAdmin\\DeleteProductSize.cshtml",
+              "RelativeDocumentMoniker": "chuyenNganh.websiteBanGiay\\Areas\\Admin\\Views\\HomeAdmin\\DeleteProductSize.cshtml",
+              "ToolTip": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\Areas\\Admin\\Views\\HomeAdmin\\DeleteProductSize.cshtml",
+              "RelativeToolTip": "chuyenNganh.websiteBanGiay\\Areas\\Admin\\Views\\HomeAdmin\\DeleteProductSize.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACkAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-19T12:09:52.358Z"
+              "WhenOpened": "2024-12-25T15:45:45.416Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CartsController.cs",
-              "DocumentMoniker": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\Controllers\\CartsController.cs",
-              "RelativeDocumentMoniker": "chuyenNganh.websiteBanGiay\\Controllers\\CartsController.cs",
-              "ToolTip": "D:\\DO_AN_CHUYEN_NGANH\\chuyenNganh.websiteBanGiay\\chuyenNganh.websiteBanGiay\\Controllers\\CartsController.cs",
-              "RelativeToolTip": "chuyenNganh.websiteBanGiay\\Controllers\\CartsController.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAuwNAAAAA1AAAAAAAAAA==",
+              "Title": "ProductSize.cshtml",
+              "DocumentMoniker": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\Areas\\Admin\\Views\\HomeAdmin\\ProductSize.cshtml",
+              "RelativeDocumentMoniker": "chuyenNganh.websiteBanGiay\\Areas\\Admin\\Views\\HomeAdmin\\ProductSize.cshtml",
+              "ToolTip": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\Areas\\Admin\\Views\\HomeAdmin\\ProductSize.cshtml*",
+              "RelativeToolTip": "chuyenNganh.websiteBanGiay\\Areas\\Admin\\Views\\HomeAdmin\\ProductSize.cshtml*",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACsAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-25T15:18:37.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeAdminController.cs",
+              "DocumentMoniker": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\Areas\\Admin\\Controllers\\HomeAdminController.cs",
+              "RelativeDocumentMoniker": "chuyenNganh.websiteBanGiay\\Areas\\Admin\\Controllers\\HomeAdminController.cs",
+              "ToolTip": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\Areas\\Admin\\Controllers\\HomeAdminController.cs",
+              "RelativeToolTip": "chuyenNganh.websiteBanGiay\\Areas\\Admin\\Controllers\\HomeAdminController.cs",
+              "ViewState": "AgIAAI8CAAAAAAAAAAAuwHMCAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T11:49:13.702Z",
+              "WhenOpened": "2024-12-25T15:13:47.57Z",
               "EditorCaption": ""
             }
           ]

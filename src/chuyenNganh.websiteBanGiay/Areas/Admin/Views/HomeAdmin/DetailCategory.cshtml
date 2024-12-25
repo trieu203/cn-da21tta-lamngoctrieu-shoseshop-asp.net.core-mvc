@@ -1,0 +1,56 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model chuyenNganh.websiteBanGiay.Data.Category
+
+@{
+    ViewData["Title"] = "Chi tiết danh mục";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Chi tiết danh mục</h1>
+    <hr />
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            Thông tin danh mục
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4">Tên danh mục:</dt>
+                <dd class="col-sm-8">@Model.CategoryName</dd>
+
+                <dt class="col-sm-4">Mô tả:</dt>
+                <dd class="col-sm-8">@Model.Description</dd>
+
+                <dt class="col-sm-4">Ngày tạo:</dt>
+                <dd class="col-sm-8">@Model.CreatedDate</dd>
+
+                <dt class="col-sm-4">Hình ảnh:</dt>
+                <dd class="col-sm-8">
+                    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                    {
+                        <div class="mt-2">
+                            @{
+                                var imageUrl = Model.ImageUrl?.ToString() ?? "";
+                                var imageFile = string.IsNullOrEmpty(System.IO.Path.GetExtension(imageUrl))
+                                ? imageUrl + ".jpg"
+                                : imageUrl;
+
+                                var imagePath = Url.Content("~/img/categories/" + imageFile);
+                            }
+                            <img src="@imagePath"
+                                 alt="@Model.CategoryName"
+                                 class="img-thumbnail"
+                                 style="width: 70px; height: 70px;"
+                                 onerror="this.onerror=null; this.src='/img/products/default.jpg';" />
+                        </div>
+                    }
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-4 d-flex justify-content-between">
+        <a asp-action="EditCategory" asp-route-id="@Model.CategoryId" class="btn btn-warning">Chỉnh sửa</a>
+        <a asp-action="Category" class="btn btn-secondary">Quay lại danh sách</a>
+    </div>
+</div>

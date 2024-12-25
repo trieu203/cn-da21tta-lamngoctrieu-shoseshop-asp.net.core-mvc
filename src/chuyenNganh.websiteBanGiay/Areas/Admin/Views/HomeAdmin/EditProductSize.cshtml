@@ -1,0 +1,51 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model chuyenNganh.websiteBanGiay.Data.ProductSize
+
+@{
+    ViewData["Title"] = "Chỉnh sửa kích thước sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Chỉnh sửa kích thước sản phẩm</h1>
+    <hr />
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="EditProductSize" class="shadow p-4 rounded bg-light">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                <input type="hidden" asp-for="ProductSizeId" />
+
+                <div class="form-group mb-3">
+                    <label asp-for="ProductId" class="form-label">Chọn sản phẩm</label>
+                    <select asp-for="ProductId" class="form-select" asp-items="ViewBag.ProductName">
+                        <option value="">-- Chọn sản phẩm --</option>
+                    </select>
+                    <span asp-validation-for="ProductId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Size" class="form-label">Kích thước (Size)</label>
+                    <input asp-for="Size" class="form-control" placeholder="Nhập kích thước sản phẩm" />
+                    <span asp-validation-for="Size" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Quantity" class="form-label">Số lượng</label>
+                    <input asp-for="Quantity" class="form-control" placeholder="Nhập số lượng sản phẩm" />
+                    <span asp-validation-for="Quantity" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="PriceAtTime" class="form-label">Giá tại thời điểm</label>
+                    <input asp-for="PriceAtTime" class="form-control" placeholder="Nhập giá sản phẩm" />
+                    <span asp-validation-for="PriceAtTime" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a asp-area="admin" asp-action="ProductSize" class="btn btn-secondary">Quay lại danh sách</a>
+                    <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

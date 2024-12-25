@@ -52,7 +52,7 @@
                         <td>@item.CreatedDate?.ToString("dd/MM/yyyy")</td>
                         <td class="text-center">
                             <a asp-area="admin" asp-action="EditCategory" asp-route-id="@item.CategoryId" class="btn btn-sm btn-warning">Sửa</a>
-                            <a  asp-action="Details" asp-route-id="@item.CategoryId" class="btn btn-sm btn-info text-white">Chi tiết</a>
+                            <a asp-area="admin" asp-action="DetailCategory" asp-route-id="@item.CategoryId" class="btn btn-sm btn-info text-white">Chi tiết</a>
                             <a asp-area="admin" asp-action="DeleteCategory" asp-route-id="@item.CategoryId" class="btn btn-sm btn-danger">Xóa</a>
                         </td>
                     </tr>

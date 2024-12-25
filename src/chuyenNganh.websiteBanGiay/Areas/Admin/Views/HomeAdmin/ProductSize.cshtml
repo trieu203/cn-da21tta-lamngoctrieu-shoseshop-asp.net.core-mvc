@@ -1,6 +1,7 @@
 ﻿@using X.PagedList
 @using X.PagedList.Mvc.Core
 @model X.PagedList.IPagedList<chuyenNganh.websiteBanGiay.Data.ProductSize>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Quản lý kích thước sản phẩm";
@@ -10,8 +11,8 @@
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h2 class="text-primary">Quản lý kích thước sản phẩm</h2>
-        <a asp-action="Create" class="btn btn-success">
-            <i class="fas fa-plus-circle"></i> Thêm mới kích thước
+        <a asp-area="Admin" asp-controller="HomeAdmin" asp-action="CreateProductSize" class="btn btn-success">
+            + Tạo mới danh mục
         </a>
     </div>
     <div class="table-responsive">
@@ -34,15 +35,13 @@
                         <td>@item.PriceAtTime.ToString("N0") VND</td>
                         <td>@Html.DisplayFor(modelItem => item.Product.ProductName)</td>
                         <td class="text-center">
-                            <a asp-action="Edit" asp-route-id="@item.ProductSizeId" class="btn btn-sm btn-warning">
+                            <a asp-area="admin" asp-action="EditProductSize" asp-route-id="@item.ProductSizeId" class="btn btn-sm btn-warning">
                                 <i class="fas fa-edit"></i> Sửa
                             </a>
-                            <a asp-action="Details" asp-route-id="@item.ProductSizeId" class="btn btn-sm btn-info text-white">
-                                <i class="fas fa-info-circle"></i> Chi tiết
+                            <a asp-area="admin" asp-action="DetailProductSize" asp-route-id="@item.ProductSizeId" class="btn btn-info btn-sm text-white">
+                                <i class="fas fa-info-circle"></i> Chi Tiết
                             </a>
-                            <a asp-action="Delete" asp-route-id="@item.ProductSizeId" class="btn btn-sm btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa không?');">
-                                <i class="fas fa-trash-alt"></i> Xóa
-                            </a>
+                            <a asp-area="admin" asp-action="DeleteProductSize" asp-route-id="@item.ProductSizeId" class="btn btn-sm btn-danger">Xóa</a>
                         </td>
                     </tr>
                 }
