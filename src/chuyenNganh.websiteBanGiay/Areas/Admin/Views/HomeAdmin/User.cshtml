@@ -1,0 +1,66 @@
+﻿@model IEnumerable<chuyenNganh.websiteBanGiay.Data.User>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "User";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Danh Sách Người Dùng</h1>
+
+    <div class="table-responsive">
+        <table class="table table-hover table-striped align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-center">Hình Ảnh</th>
+                    <th class="text-center">Tên Người Dùng</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Vai Trò</th>
+                    <th class="text-center">Ngày Tạo</th>
+                    <th class="text-center">Hành Động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td class="text-center">
+                            <img src="@Url.Content(string.IsNullOrEmpty(user.ImageUrl) ? "~/img/users/default-user.png" : $"~/img/users/{user.ImageUrl}")"
+                                 alt="@user.UserName"
+                                 class="img-thumbnail"
+                                 style="width: 70px; height: 70px;"
+                                 onerror="this.onerror=null; this.src='@Url.Content("~/img/users/default-user.png")';" />
+                        </td>
+                        <td>@user.UserName</td>
+                        <td>@user.Email</td>
+                        <td>@user.Role</td>
+                        <td>@user.CreatedDate?.ToString("dd/MM/yyyy")</td>
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@user.UserId" class="btn btn-warning btn-sm">Sửa</a>
+                            <a asp-action="Details" asp-route-id="@user.UserId" class="btn btn-info btn-sm">Chi Tiết</a>
+                            <a asp-action="Delete" asp-route-id="@user.UserId" class="btn btn-danger btn-sm">Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-3 d-flex justify-content-center">
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            <a asp-action="User" asp-route-page="@i" class="btn @(i == ViewBag.CurrentPage ? "btn-primary" : "btn-light") mx-1">
+                @i
+            </a>
+        }
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning text-center" role="alert">
+            Hiện tại chưa có người dùng nào.
+        </div>
+    }
+</div>
+

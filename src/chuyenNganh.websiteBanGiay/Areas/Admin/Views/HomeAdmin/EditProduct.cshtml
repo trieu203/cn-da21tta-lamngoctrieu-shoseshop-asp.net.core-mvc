@@ -42,7 +42,7 @@
 
                 <div class="form-group mb-3">
                     <label asp-for="CategoryId" class="form-label">Danh mục</label>
-                    <select asp-for="CategoryId" class="form-select" asp-items="ViewBag.CategoryId">
+                    <select asp-for="CategoryId" class="form-select" asp-items="ViewBag.CategoryName">
                         <option value="">-- Chọn danh mục --</option>
                     </select>
                     <span asp-validation-for="CategoryId" class="text-danger"></span>

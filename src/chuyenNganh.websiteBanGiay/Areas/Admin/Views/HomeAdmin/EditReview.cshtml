@@ -1,0 +1,72 @@
+﻿@model chuyenNganh.websiteBanGiay.Data.Review
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Chỉnh Sửa Đánh Giá";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Chỉnh Sửa Đánh Giá</h1>
+    <hr />
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="EditReview">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                <input type="hidden" asp-for="ReviewId" />
+
+                <!-- Chọn sản phẩm -->
+                <div class="mb-3">
+                    <label asp-for="ProductId" class="form-label">Sản Phẩm</label>
+                    <select asp-for="ProductId" class="form-select" asp-items="ViewBag.ProductId"></select>
+                    <span asp-validation-for="ProductId" class="text-danger"></span>
+                </div>
+
+                <!-- Chọn người dùng -->
+                <div class="mb-3">
+                    <label asp-for="UserId" class="form-label">Người Dùng</label>
+                    <select asp-for="UserId" class="form-select" asp-items="ViewBag.UserId"></select>
+                    <span asp-validation-for="UserId" class="text-danger"></span>
+                </div>
+
+                <!-- Đánh giá -->
+                <div class="mb-3">
+                    <label asp-for="Rating" class="form-label">Đánh Giá (1-5 Sao)</label>
+                    <input asp-for="Rating" type="number" min="1" max="5" class="form-control" />
+                    <span asp-validation-for="Rating" class="text-danger"></span>
+                </div>
+
+                <!-- Bình luận -->
+                <div class="mb-3">
+                    <label asp-for="Comment" class="form-label">Bình Luận</label>
+                    <textarea asp-for="Comment" class="form-control" rows="4"></textarea>
+                    <span asp-validation-for="Comment" class="text-danger"></span>
+                </div>
+
+                <!-- Ngày đánh giá -->
+                <div class="mb-3">
+                    <label asp-for="ReviewDate" class="form-label">Ngày Đánh Giá</label>
+                    <input asp-for="ReviewDate" type="date" class="form-control" />
+                    <span asp-validation-for="ReviewDate" class="text-danger"></span>
+                </div>
+
+                <!-- URL hình ảnh -->
+                <div class="mb-3">
+                    <label asp-for="ImageUrl" class="form-label">URL Hình Ảnh</label>
+                    <input asp-for="ImageUrl" type="text" class="form-control" />
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+
+                <!-- Nút Lưu -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">Lưu Thay Đổi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-action="Review" class="btn btn-secondary btn-sm">Quay Lại Danh Sách</a>
+    </div>
+</div>

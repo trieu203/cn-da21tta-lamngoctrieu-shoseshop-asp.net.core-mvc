@@ -234,6 +234,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\categories\1039e725-02b0-4ada-8506-5b992534336f.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\categories\96fd3193-914b-4206-b0e4-0e5a769bf882.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>chuyenNganh.websiteBanGiay</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/chuyenNganh.websiteBanGiay</BasePath>
+      <RelativePath>img/categories/96fd3193-914b-4206-b0e4-0e5a769bf882.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>w7n0gm0aqe</Fingerprint>
+      <Integrity>dOL64mmrrXCZaW+UEF5Q34LS4E4SfMkEMhpR+LF3Nks=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\categories\96fd3193-914b-4206-b0e4-0e5a769bf882.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\categories\9bc97b9c-6b5e-42ef-8bef-5f3b8e58dac6.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>chuyenNganh.websiteBanGiay</SourceId>
@@ -287,42 +305,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\categories\addias.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\categories\ahin.jpg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>chuyenNganh.websiteBanGiay</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/chuyenNganh.websiteBanGiay</BasePath>
-      <RelativePath>img/categories/ahin.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>w7n0gm0aqe</Fingerprint>
-      <Integrity>dOL64mmrrXCZaW+UEF5Q34LS4E4SfMkEMhpR+LF3Nks=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\categories\ahin.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\categories\b0f2fd72-3d6a-4ac7-8997-dd083b4f960a.jpg'))">
-      <SourceType>Package</SourceType>
-      <SourceId>chuyenNganh.websiteBanGiay</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/chuyenNganh.websiteBanGiay</BasePath>
-      <RelativePath>img/categories/b0f2fd72-3d6a-4ac7-8997-dd083b4f960a.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>7rftj88bn7</Fingerprint>
-      <Integrity>/bd2XsjbWIPNXpyLep/yr11GjdP/Nvqhdzjk+ZS69rc=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\categories\b0f2fd72-3d6a-4ac7-8997-dd083b4f960a.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\categories\newbalance.jpg'))">
       <SourceType>Package</SourceType>
@@ -396,23 +378,23 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\categories\puma.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\products\12280be2-d51b-4cbf-a377-5b345424bd5d.jpg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\products\5f68693b-6eba-4c82-a98c-0c58a277bc25.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>chuyenNganh.websiteBanGiay</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/chuyenNganh.websiteBanGiay</BasePath>
-      <RelativePath>img/products/12280be2-d51b-4cbf-a377-5b345424bd5d.jpg</RelativePath>
+      <RelativePath>img/products/5f68693b-6eba-4c82-a98c-0c58a277bc25.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>l66tut5s28</Fingerprint>
-      <Integrity>c3nJV2kzDDucxKLOiNE0lRcbNHQRh7DSvBSQAxF/eSM=</Integrity>
+      <Fingerprint>w7n0gm0aqe</Fingerprint>
+      <Integrity>dOL64mmrrXCZaW+UEF5Q34LS4E4SfMkEMhpR+LF3Nks=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\products\12280be2-d51b-4cbf-a377-5b345424bd5d.jpg'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\products\5f68693b-6eba-4c82-a98c-0c58a277bc25.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\products\product01_01.jpg'))">
       <SourceType>Package</SourceType>

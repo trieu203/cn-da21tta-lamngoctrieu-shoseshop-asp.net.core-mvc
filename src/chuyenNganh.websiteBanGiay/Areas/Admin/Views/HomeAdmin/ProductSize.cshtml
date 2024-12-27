@@ -36,10 +36,10 @@
                         <td>@Html.DisplayFor(modelItem => item.Product.ProductName)</td>
                         <td class="text-center">
                             <a asp-area="admin" asp-action="EditProductSize" asp-route-id="@item.ProductSizeId" class="btn btn-sm btn-warning">
-                                <i class="fas fa-edit"></i> Sửa
+                                Sửa
                             </a>
                             <a asp-area="admin" asp-action="DetailProductSize" asp-route-id="@item.ProductSizeId" class="btn btn-info btn-sm text-white">
-                                <i class="fas fa-info-circle"></i> Chi Tiết
+                                Chi Tiết
                             </a>
                             <a asp-area="admin" asp-action="DeleteProductSize" asp-route-id="@item.ProductSizeId" class="btn btn-sm btn-danger">Xóa</a>
                         </td>

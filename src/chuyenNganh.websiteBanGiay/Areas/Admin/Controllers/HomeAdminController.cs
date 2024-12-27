@@ -199,7 +199,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
 
 
         //Delete Category
-        [Route("DeleteCategory")]
+        [Route("DeleteCategory/{id:int}")]
         [HttpGet]
         public async Task<IActionResult> DeleteCategory(int id)
         {
@@ -215,7 +215,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             return View(category);
         }
 
-        [Route("DeleteCategory")]
+        [Route("DeleteCategory/{id:int}")]
         [HttpPost, ActionName("DeleteCategory")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -397,7 +397,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-
+            ViewBag.CategoryName = new SelectList(_context.Categories, "CategoryId", "CategoryName");
             return View(product);
         }
 
@@ -470,7 +470,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
         }
 
         // Delete Product
-        [Route("DeleteProduct")]
+        [Route("DeleteProduct/{id:int}")]
         [HttpGet]
         public async Task<IActionResult> DeleteProduct(int id)
         {
@@ -486,7 +486,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             return View(product);
         }
 
-        [Route("DeleteProduct")]
+        [Route("DeleteProduct/{id:int}")]
         [HttpPost, ActionName("DeleteProduct")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteProductConfirmed(int id)
@@ -574,53 +574,94 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> EditProductSize(int id)
         {
-            var productSize = await _context.ProductSizes
-                .Include(ps => ps.Product)
-                .FirstOrDefaultAsync(ps => ps.ProductSizeId == id);
-
-            if (productSize == null)
+            try
             {
-                TempData["Message"] = "Kích thước sản phẩm không tồn tại.";
+                // Lấy ProductSize và bao gồm thông tin Product
+                var productSize = await _context.ProductSizes
+                    .Include(ps => ps.Product)
+                    .FirstOrDefaultAsync(ps => ps.ProductSizeId == id);
+
+                if (productSize == null)
+                {
+                    TempData["Message"] = "Kích thước sản phẩm không tồn tại.";
+                    return RedirectToAction("ProductSize");
+                }
+
+                // Tạo dropdown danh sách sản phẩm
+                ViewBag.ProductName = new SelectList(
+                    await _context.Products.ToListAsync(),
+                    "ProductId",
+                    "ProductName",
+                    productSize.ProductId
+                );
+
+                return View(productSize);
+            }
+            catch (Exception ex)
+            {
+                TempData["Message"] = "Đã xảy ra lỗi khi truy xuất kích thước sản phẩm.";
+                _logger.LogError(ex, "Error retrieving product size with ID: {Id}", id);
                 return RedirectToAction("ProductSize");
             }
-
-            // Sử dụng ProductName thay vì ProductId trong dropdown
-            ViewBag.ProductName = new SelectList(await _context.Products.ToListAsync(), "ProductId", "ProductName", productSize.ProductId);
-            return View(productSize);
         }
-
 
         [Route("EditProductSize")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditProductSize(int id, ProductSize updatedProductSize)
         {
-            var existingProductSize = await _context.ProductSizes.FindAsync(id);
-
-            if (existingProductSize == null)
+            try
             {
-                TempData["Message"] = "Kích thước sản phẩm không tồn tại.";
+                // Lấy ProductSize hiện tại
+                var existingProductSize = await _context.ProductSizes
+                    .FirstOrDefaultAsync(ps => ps.ProductSizeId == id);
+
+                if (existingProductSize == null)
+                {
+                    TempData["Message"] = "Kích thước sản phẩm không tồn tại.";
+                    return RedirectToAction("ProductSize");
+                }
+
+                // Cập nhật dữ liệu nếu hợp lệ
+                if (!ModelState.IsValid)
+                {
+                    foreach (var modelState in ModelState.Values)
+                    {
+                        foreach (var error in modelState.Errors)
+                        {
+                            _logger.LogError($"ModelState Error: {error.ErrorMessage}");
+                        }
+                    }
+
+                    TempData["Message"] = "Dữ liệu không hợp lệ.";
+                    ViewBag.ProductName = new SelectList(
+                        await _context.Products.ToListAsync(),
+                        "ProductId",
+                        "ProductName",
+                        updatedProductSize.ProductId
+                    );
+                    return View(updatedProductSize);
+                }
+
+
+                // Nếu ModelState không hợp lệ, trả về View
+                TempData["Message"] = "Dữ liệu không hợp lệ.";
+                ViewBag.ProductName = new SelectList(
+                    await _context.Products.ToListAsync(),
+                    "ProductId",
+                    "ProductName",
+                    updatedProductSize.ProductId
+                );
+                return View(updatedProductSize);
+            }
+            catch (Exception ex)
+            {
+                TempData["Message"] = "Đã xảy ra lỗi khi chỉnh sửa kích thước sản phẩm.";
+                _logger.LogError(ex, "Error updating product size with ID: {Id}", id);
                 return RedirectToAction("ProductSize");
             }
-
-            // Cập nhật giá trị mới nếu có, giữ giá trị cũ nếu để trống
-            existingProductSize.ProductId = updatedProductSize.ProductId ?? existingProductSize.ProductId;
-            existingProductSize.Size = !string.IsNullOrEmpty(updatedProductSize.Size)
-                ? updatedProductSize.Size
-                : existingProductSize.Size;
-            existingProductSize.Quantity = updatedProductSize.Quantity > 0
-                ? updatedProductSize.Quantity
-                : existingProductSize.Quantity;
-            existingProductSize.PriceAtTime = updatedProductSize.PriceAtTime > 0
-                ? updatedProductSize.PriceAtTime
-                : existingProductSize.PriceAtTime;
-
-            _context.ProductSizes.Update(existingProductSize);
-            await _context.SaveChangesAsync();
-
-            TempData["Message"] = "Kích thước sản phẩm đã được chỉnh sửa thành công.";
-            return RedirectToAction("ProductSize");
         }
+
 
         //Delete ProductSize
         [Route("DeleteProductSize")]
@@ -692,6 +733,240 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             return View(productSize);
         }
 
+        //Index Review
+        [Route("review")]
+        public async Task<IActionResult> Review(int? page)
+        {
+            int pageSize = 10; // Số lượng bản ghi trên mỗi trang
+            int pageNumber = page ?? 1; // Nếu `page` là null thì mặc định là trang 1
+
+            try
+            {
+                // Lấy danh sách đánh giá với thông tin User và Product
+                var reviews = await _context.Reviews
+                    .Include(r => r.User) // Bao gồm thông tin người dùng
+                    .Include(r => r.Product) // Bao gồm thông tin sản phẩm
+                    .OrderByDescending(r => r.ReviewDate) // Sắp xếp theo ngày đánh giá
+                    .Skip((pageNumber - 1) * pageSize) // Bỏ qua các bản ghi của trang trước
+                    .Take(pageSize) // Lấy số lượng bản ghi theo kích thước trang
+                    .ToListAsync();
+
+                // Tính tổng số đánh giá
+                var totalReviews = await _context.Reviews.CountAsync();
+
+                // Gán thông tin phân trang cho ViewBag
+                ViewBag.TotalPages = (int)Math.Ceiling((double)totalReviews / pageSize);
+                ViewBag.CurrentPage = pageNumber;
+
+                return View(reviews);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi lấy danh sách đánh giá.");
+                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
+            }
+        }
+
+
+        //Edit Review
+        [HttpGet]
+        [Route("EditReview")]
+        public async Task<IActionResult> EditReview(int id)
+        {
+            try
+            {
+                // Lấy thông tin đánh giá theo ID
+                var review = await _context.Reviews
+                    .Include(r => r.User) // Bao gồm thông tin người dùng
+                    .Include(r => r.Product) // Bao gồm thông tin sản phẩm
+                    .FirstOrDefaultAsync(r => r.ReviewId == id);
+
+                if (review == null)
+                {
+                    return NotFound("Không tìm thấy đánh giá với ID đã cung cấp.");
+                }
+
+                // Tạo dữ liệu cho dropdown ProductId và UserId
+                ViewBag.ProductId = new SelectList(await _context.Products.ToListAsync(), "ProductId", "ProductName", review.ProductId);
+                ViewBag.UserId = new SelectList(await _context.Users.ToListAsync(), "UserId", "UserName", review.UserId);
+
+                return View(review); // Trả về View với dữ liệu đánh giá
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Lỗi khi truy cập chỉnh sửa đánh giá với ID: {id}");
+                return StatusCode(500, "Đã xảy ra lỗi trong quá trình xử lý, vui lòng thử lại sau.");
+            }
+        }
+
+
+        [HttpPost]
+        [Route("EditReview")]
+        public async Task<IActionResult> EditReview(Review updatedReview)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Nếu dữ liệu không hợp lệ, trả lại dropdown và hiển thị form
+                ViewBag.ProductId = new SelectList(await _context.Products.ToListAsync(), "ProductId", "ProductName", updatedReview.ProductId);
+                ViewBag.UserId = new SelectList(await _context.Users.ToListAsync(), "UserId", "UserName", updatedReview.UserId);
+                return View(updatedReview);
+            }
+
+            try
+            {
+                var existingReview = await _context.Reviews.FirstOrDefaultAsync(r => r.ReviewId == updatedReview.ReviewId);
+
+                if (existingReview == null)
+                {
+                    return NotFound("Không tìm thấy đánh giá cần chỉnh sửa.");
+                }
+
+                // Cập nhật dữ liệu
+                existingReview.ProductId = updatedReview.ProductId;
+                existingReview.UserId = updatedReview.UserId;
+                existingReview.Rating = updatedReview.Rating;
+                existingReview.Comment = updatedReview.Comment;
+                existingReview.ReviewDate = updatedReview.ReviewDate;
+                existingReview.ImageUrl = updatedReview.ImageUrl;
+
+                // Lưu thay đổi
+                await _context.SaveChangesAsync();
+
+                _logger.LogInformation($"Đã chỉnh sửa thành công đánh giá với ID: {updatedReview.ReviewId}");
+                return RedirectToAction("Review"); // Quay lại danh sách đánh giá
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Lỗi khi chỉnh sửa đánh giá với ID: {updatedReview.ReviewId}");
+                return StatusCode(500, "Đã xảy ra lỗi trong quá trình xử lý, vui lòng thử lại sau.");
+            }
+        }
+
+
+
+        //Detail Review
+        [Route("detail-review")]
+        [HttpGet]
+        public async Task<IActionResult> DetailReview(int id)
+        {
+            try
+            {
+                // Lấy dữ liệu đánh giá theo ID
+                var review = await _context.Reviews
+                    .Include(r => r.User)
+                    .Include(r => r.Product)
+                    .FirstOrDefaultAsync(r => r.ReviewId == id);
+
+                if (review == null)
+                {
+                    return NotFound("Không tìm thấy đánh giá.");
+                }
+
+                return View(review); // Trả về View chi tiết
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi xem chi tiết đánh giá.");
+                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
+            }
+        }
+
+
+        //Delete Review
+        [HttpGet]
+        [Route("deleteReview/{id:int}")]
+        public async Task<IActionResult> DeleteReview(int id)
+        {
+            try
+            {
+                _logger.LogInformation($"Tìm đánh giá với ID: {id}");
+
+                var review = await _context.Reviews
+                    .Include(r => r.User)
+                    .Include(r => r.Product)
+                    .FirstOrDefaultAsync(r => r.ReviewId == id);
+
+                if (review == null)
+                {
+                    _logger.LogWarning($"Không tìm thấy đánh giá với ID: {id}");
+                    return NotFound("Không tìm thấy đánh giá.");
+                }
+
+                return View(review);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Lỗi khi tìm đánh giá với ID: {id}");
+                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
+            }
+        }
+
+
+
+        [HttpPost]
+        [Route("deleteReview/{id:int}")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteReviewConfirmed(int id)
+        {
+            try
+            {
+                _logger.LogInformation($"Thực hiện xóa đánh giá với ID: {id}");
+
+                var review = await _context.Reviews.FirstOrDefaultAsync(r => r.ReviewId == id);
+
+                if (review == null)
+                {
+                    _logger.LogWarning($"Không tìm thấy đánh giá cần xóa với ID: {id}");
+                    return NotFound("Không tìm thấy đánh giá cần xóa.");
+                }
+
+                _context.Reviews.Remove(review);
+                await _context.SaveChangesAsync();
+
+                _logger.LogInformation($"Đã xóa thành công đánh giá với ID: {id}");
+                return RedirectToAction("Review");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Lỗi khi xóa đánh giá với ID: {id}");
+                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
+            }
+        }
+
+
+
+        //User
+        [Route("user")]
+        public async Task<IActionResult> User(int? page)
+        {
+            int pageSize = 10; // Số lượng bản ghi trên mỗi trang
+            int pageNumber = page ?? 1; // Nếu `page` là null thì mặc định là trang 1
+
+            try
+            {
+                // Lấy danh sách người dùng theo phân trang
+                var users = await _context.Users
+                    .OrderBy(u => u.UserName) // Sắp xếp theo tên người dùng
+                    .Skip((pageNumber - 1) * pageSize) // Bỏ qua các bản ghi của trang trước
+                    .Take(pageSize) // Lấy số lượng bản ghi theo kích thước trang
+                    .ToListAsync();
+
+                // Tính tổng số người dùng
+                var totalUsers = await _context.Users.CountAsync();
+
+                // Gán giá trị cho ViewBag để sử dụng trong View
+                ViewBag.TotalPages = (int)Math.Ceiling((double)totalUsers / pageSize); // Tổng số trang
+                ViewBag.CurrentPage = pageNumber; // Trang hiện tại
+
+                _logger.LogInformation("Lấy danh sách người dùng thành công. Số lượng: {Count}", users.Count);
+                return View(users);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi lấy danh sách người dùng.");
+                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
+            }
+        }
 
 
     }

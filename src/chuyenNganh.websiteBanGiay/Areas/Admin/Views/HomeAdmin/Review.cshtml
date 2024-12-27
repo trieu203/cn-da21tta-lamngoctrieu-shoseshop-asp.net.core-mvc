@@ -1,0 +1,66 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<chuyenNganh.websiteBanGiay.Data.Review>
+
+@{
+    ViewData["Title"] = "Đánh Giá";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Danh Sách Đánh Giá</h1>
+
+    <div class="d-flex justify-content-between mb-4">
+        <p class="lead mb-0">Quản lý danh sách đánh giá của khách hàng.</p>
+        <a asp-action="Create" class="btn btn-primary">+ Thêm Đánh Giá</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover table-striped align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-center">Đánh Giá</th>
+                    <th class="text-center">Bình Luận</th>
+                    <th class="text-center">Ngày Đánh Giá</th>
+                    <th class="text-center">Sản Phẩm</th>
+                    <th class="text-center">Người Dùng</th>
+                    <th class="text-center">Hành Động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-center">
+                            <span class="badge bg-success">@Html.DisplayFor(modelItem => item.Rating)</span>
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.Comment)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ReviewDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Product.ProductName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.User.UserName)</td>
+                        <td class="text-center">
+                            <a asp-action="DetailReview" asp-route-id="@item.ReviewId" class="btn btn-info btn-sm">Chi Tiết</a>
+                            <a asp-area="admin" asp-action="DeleteReview" asp-route-id="@item.ReviewId" class="btn btn-danger btn-sm">Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="mt-3 d-flex justify-content-center">
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            <a asp-action="Review" asp-route-page="@i" class="btn @(i == ViewBag.CurrentPage ? "btn-primary" : "btn-light") mx-1">
+                @i
+            </a>
+        }
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning text-center" role="alert">
+            Hiện tại chưa có đánh giá nào.
+        </div>
+    }
+</div>

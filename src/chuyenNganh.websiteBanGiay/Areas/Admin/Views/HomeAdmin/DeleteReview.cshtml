@@ -1,0 +1,48 @@
+﻿@model chuyenNganh.websiteBanGiay.Data.Review
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Xóa Đánh Giá";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-danger mx-auto" style="max-width: 600px;">
+        <div class="card-header bg-danger text-white text-center">
+            <h2 class="mb-0">Xóa Đánh Giá</h2>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-warning text-center">
+                <h4 class="mb-3">Bạn có chắc chắn muốn xóa đánh giá này không?</h4>
+                <p class="mb-0">Hành động này không thể hoàn tác!</p>
+            </div>
+
+            <dl class="row">
+                <!-- Số sao -->
+                <dt class="col-sm-4 fw-bold">Số Sao:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Rating)</dd>
+
+                <!-- Bình luận -->
+                <dt class="col-sm-4 fw-bold">Bình Luận:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Comment)</dd>
+
+                <!-- Ngày đánh giá -->
+                <dt class="col-sm-4 fw-bold">Ngày Đánh Giá:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.ReviewDate)</dd>
+
+                <!-- Sản phẩm -->
+                <dt class="col-sm-4 fw-bold">Sản Phẩm:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Product.ProductName)</dd>
+
+                <!-- Người dùng -->
+                <dt class="col-sm-4 fw-bold">Người Dùng:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.User.UserName)</dd>
+            </dl>
+
+            <form asp-action="DeleteReview" method="post" class="text-center mt-4">
+                <input type="hidden" asp-for="ReviewId" />
+                <button type="submit" class="btn btn-danger btn-lg me-3">Xóa</button>
+                <a asp-action="Review" class="btn btn-secondary btn-lg">Hủy</a>
+            </form>
+        </div>
+    </div>
+</div>
