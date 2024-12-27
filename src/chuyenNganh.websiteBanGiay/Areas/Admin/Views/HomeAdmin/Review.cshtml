@@ -20,7 +20,6 @@
                 <tr>
                     <th class="text-center">Đánh Giá</th>
                     <th class="text-center">Bình Luận</th>
-                    <th class="text-center">Ngày Đánh Giá</th>
                     <th class="text-center">Sản Phẩm</th>
                     <th class="text-center">Người Dùng</th>
                     <th class="text-center">Hành Động</th>
@@ -34,7 +33,6 @@
                             <span class="badge bg-success">@Html.DisplayFor(modelItem => item.Rating)</span>
                         </td>
                         <td>@Html.DisplayFor(modelItem => item.Comment)</td>
-                        <td>@Html.DisplayFor(modelItem => item.ReviewDate)</td>
                         <td>@Html.DisplayFor(modelItem => item.Product.ProductName)</td>
                         <td>@Html.DisplayFor(modelItem => item.User.UserName)</td>
                         <td class="text-center">

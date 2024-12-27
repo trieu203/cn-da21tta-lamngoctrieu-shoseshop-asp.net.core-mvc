@@ -60,6 +60,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXERlbGV0ZVJldmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/DO_AN_CHUYEN_NGANH/src_code/chuyenNganh.websiteBanGiay/src/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/DeleteUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXERlbGV0ZVVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/DO_AN_CHUYEN_NGANH/src_code/chuyenNganh.websiteBanGiay/src/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/DetailCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXERldGFpbENhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -74,6 +78,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/DO_AN_CHUYEN_NGANH/src_code/chuyenNganh.websiteBanGiay/src/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/DetailReview.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXERldGFpbFJldmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DO_AN_CHUYEN_NGANH/src_code/chuyenNganh.websiteBanGiay/src/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/DetailUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXERldGFpbFVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/DO_AN_CHUYEN_NGANH/src_code/chuyenNganh.websiteBanGiay/src/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/EditCategory.cshtml]

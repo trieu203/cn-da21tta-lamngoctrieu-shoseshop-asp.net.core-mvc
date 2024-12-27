@@ -37,9 +37,8 @@
                         <td>@user.Role</td>
                         <td>@user.CreatedDate?.ToString("dd/MM/yyyy")</td>
                         <td class="text-center">
-                            <a asp-action="Edit" asp-route-id="@user.UserId" class="btn btn-warning btn-sm">Sửa</a>
-                            <a asp-action="Details" asp-route-id="@user.UserId" class="btn btn-info btn-sm">Chi Tiết</a>
-                            <a asp-action="Delete" asp-route-id="@user.UserId" class="btn btn-danger btn-sm">Xóa</a>
+                            <a asp-area="admin" asp-action="DetailUser" asp-route-id="@user.UserId" class="btn btn-info btn-sm">Chi Tiết</a>
+                            <a asp-area="admin" asp-action="DeleteUser" asp-route-id="@user.UserId" class="btn btn-danger btn-sm">Xóa</a>
                         </td>
                     </tr>
                 }

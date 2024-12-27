@@ -570,101 +570,103 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
         }
 
         // Edit ProductSize
-        [Route("EditProductSize")]
+        [Route("EditProductSize/{id:int}")]
         [HttpGet]
         public async Task<IActionResult> EditProductSize(int id)
         {
             try
             {
-                // Lấy ProductSize và bao gồm thông tin Product
-                var productSize = await _context.ProductSizes
-                    .Include(ps => ps.Product)
+                // Tìm ProductSize theo ID
+                var producSize = await _context.ProductSizes
+                    .Include(ps => ps.Product) // Tải dữ liệu liên quan nếu cần
                     .FirstOrDefaultAsync(ps => ps.ProductSizeId == id);
 
-                if (productSize == null)
+                if (producSize == null)
                 {
-                    TempData["Message"] = "Kích thước sản phẩm không tồn tại.";
+                    _logger.LogWarning("Không tìm thấy ProductSize với ID: {Id}", id);
+                    return NotFound();
+                }
+
+                // Lấy danh sách sản phẩm
+                var products = await _context.Products.ToListAsync();
+                if (!products.Any())
+                {
+                    _logger.LogWarning("Danh sách sản phẩm trống. Không thể chỉnh sửa ProductSize.");
+                    TempData["Message"] = "Không có sản phẩm nào trong hệ thống.";
                     return RedirectToAction("ProductSize");
                 }
 
                 // Tạo dropdown danh sách sản phẩm
-                ViewBag.ProductName = new SelectList(
-                    await _context.Products.ToListAsync(),
-                    "ProductId",
-                    "ProductName",
-                    productSize.ProductId
-                );
+                ViewBag.ProductName = new SelectList(products, "ProductId", "ProductName", producSize.ProductId);
 
-                return View(productSize);
+                return View(producSize);
             }
             catch (Exception ex)
             {
-                TempData["Message"] = "Đã xảy ra lỗi khi truy xuất kích thước sản phẩm.";
-                _logger.LogError(ex, "Error retrieving product size with ID: {Id}", id);
+                _logger.LogError(ex, "Lỗi khi truy xuất ProductSize với ID: {Id}", id);
+                TempData["Message"] = "Đã xảy ra lỗi khi tải dữ liệu.";
                 return RedirectToAction("ProductSize");
             }
         }
 
-        [Route("EditProductSize")]
+        [Route("EditProductSize/{id:int}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditProductSize(int id, ProductSize updatedProductSize)
         {
             try
             {
-                // Lấy ProductSize hiện tại
-                var existingProductSize = await _context.ProductSizes
-                    .FirstOrDefaultAsync(ps => ps.ProductSizeId == id);
+                // Tìm ProductSize hiện tại
+                var existingProductSize = await _context.ProductSizes.FindAsync(id);
 
                 if (existingProductSize == null)
                 {
-                    TempData["Message"] = "Kích thước sản phẩm không tồn tại.";
+                    _logger.LogWarning("Không tìm thấy ProductSize với ID: {Id}", id);
+                    TempData["Message"] = "Không tìm thấy kích thước sản phẩm.";
                     return RedirectToAction("ProductSize");
                 }
 
-                // Cập nhật dữ liệu nếu hợp lệ
-                if (!ModelState.IsValid)
-                {
-                    foreach (var modelState in ModelState.Values)
-                    {
-                        foreach (var error in modelState.Errors)
-                        {
-                            _logger.LogError($"ModelState Error: {error.ErrorMessage}");
-                        }
-                    }
+                // Ghi log trước khi cập nhật
+                _logger.LogInformation("Trước cập nhật: {existingProductSize}", existingProductSize);
 
-                    TempData["Message"] = "Dữ liệu không hợp lệ.";
-                    ViewBag.ProductName = new SelectList(
-                        await _context.Products.ToListAsync(),
-                        "ProductId",
-                        "ProductName",
-                        updatedProductSize.ProductId
-                    );
-                    return View(updatedProductSize);
-                }
+                // Cập nhật thuộc tính
+                existingProductSize.ProductId = updatedProductSize.ProductId ?? existingProductSize.ProductId;
+                existingProductSize.Size = string.IsNullOrEmpty(updatedProductSize.Size)
+                    ? existingProductSize.Size
+                    : updatedProductSize.Size;
+                existingProductSize.Quantity = updatedProductSize.Quantity > 0
+                    ? updatedProductSize.Quantity
+                    : existingProductSize.Quantity;
+                existingProductSize.PriceAtTime = updatedProductSize.PriceAtTime > 0
+                    ? updatedProductSize.PriceAtTime
+                    : existingProductSize.PriceAtTime;
 
+                // Ghi log sau khi cập nhật
+                _logger.LogInformation("Sau cập nhật: {existingProductSize}", existingProductSize);
 
-                // Nếu ModelState không hợp lệ, trả về View
-                TempData["Message"] = "Dữ liệu không hợp lệ.";
-                ViewBag.ProductName = new SelectList(
-                    await _context.Products.ToListAsync(),
-                    "ProductId",
-                    "ProductName",
-                    updatedProductSize.ProductId
-                );
-                return View(updatedProductSize);
+                // Lưu thay đổi vào cơ sở dữ liệu
+                await _context.SaveChangesAsync();
+
+                TempData["Message"] = "Cập nhật kích thước sản phẩm thành công.";
+                return RedirectToAction("ProductSize");
+            }
+            catch (DbUpdateException dbEx)
+            {
+                _logger.LogError(dbEx, "Lỗi khi lưu dữ liệu vào cơ sở dữ liệu.");
+                TempData["Message"] = "Có lỗi xảy ra khi lưu dữ liệu.";
+                return RedirectToAction("ProductSize");
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Lỗi không xác định khi cập nhật ProductSize với ID: {Id}", id);
                 TempData["Message"] = "Đã xảy ra lỗi khi chỉnh sửa kích thước sản phẩm.";
-                _logger.LogError(ex, "Error updating product size with ID: {Id}", id);
                 return RedirectToAction("ProductSize");
             }
         }
 
 
         //Delete ProductSize
-        [Route("DeleteProductSize")]
+        [Route("DeleteProductSize/{id:int}")]
         [HttpGet]
         public async Task<IActionResult> DeleteProductSize(int id)
         {
@@ -682,7 +684,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             return View(productSize);
         }
 
-        [Route("DeleteProductSize")]
+        [Route("DeleteProductSize/{id:int}")]
         [HttpPost, ActionName("DeleteProductSize")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteProductSizeConfirmed(int id)
@@ -968,6 +970,76 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             }
         }
 
+        // Detail User
+        [Route("DetailUser")]
+        [HttpGet]
+        public async Task<IActionResult> DetailUser(int id)
+        {
+            // Tìm danh mục theo ID
+            var user = await _context.Users
+                                         .Include(u => u.Carts)
+                                         .Include(u => u.Orders)
+                                         .Include(u => u.Reviews)
+                                         .Include(u => u.WishLists)
+                                         .FirstOrDefaultAsync(u => u.UserId == id);
+
+            if (user == null)
+            {
+                TempData["Message"] = "Tài khoản không tồn tại.";
+                return RedirectToAction("User");
+            }
+
+            return View(user);
+        }
+
+        //Delete User
+        [HttpGet]
+        [Route("deleteUser/{id:int}")]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            // Tìm người dùng theo ID
+            var user = await _context.Users.FindAsync(id);
+
+            if (user == null)
+            {
+                TempData["Message"] = "Người dùng không tồn tại.";
+                return RedirectToAction("Index"); // Chuyển hướng về danh sách người dùng
+            }
+
+            return View(user); // Trả về view với thông tin người dùng
+        }
+
+
+        [HttpPost]
+        [Route("deleteUser/{id:int}")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteUserConfirmed(int id)
+        {
+            try
+            {
+                // Tìm người dùng trong cơ sở dữ liệu
+                var user = await _context.Users.FindAsync(id);
+
+                if (user == null)
+                {
+                    TempData["Message"] = "Người dùng không tồn tại.";
+                    return RedirectToAction("Index");
+                }
+
+                // Xóa người dùng
+                _context.Users.Remove(user);
+                await _context.SaveChangesAsync();
+
+                TempData["Message"] = "Người dùng đã được xóa thành công.";
+                return RedirectToAction("User"); // Chuyển hướng về danh sách người dùng
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi xảy ra khi xóa người dùng với ID: {Id}", id);
+                TempData["Message"] = "Đã xảy ra lỗi khi xóa người dùng.";
+                return RedirectToAction("Index");
+            }
+        }
 
     }
 }

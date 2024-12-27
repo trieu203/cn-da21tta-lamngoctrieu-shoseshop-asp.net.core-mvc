@@ -21,7 +21,6 @@
             <thead class="table-dark">
                 <tr>
                     <th scope="col">Tên danh mục</th>
-                    <th scope="col">Mô tả</th>
                     <th scope="col">Ngày tạo</th>
                     <th scope="col">Hình minh họa</th>
                     <th scope="col" class="text-center">Hành động</th>
@@ -32,7 +31,7 @@
                 {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.CategoryName)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td>@item.CreatedDate?.ToString("dd/MM/yyyy")</td>
                         <td>
                             @{
                                 var imageUrl = item.ImageUrl?.ToString() ?? ""; // Đảm bảo ImageUrl không null
@@ -49,7 +48,7 @@
                                  onerror="this.onerror=null; this.src='/img/products/default.jpg';" />
                         </td>
 
-                        <td>@item.CreatedDate?.ToString("dd/MM/yyyy")</td>
+                        
                         <td class="text-center">
                             <a asp-area="admin" asp-action="EditCategory" asp-route-id="@item.CategoryId" class="btn btn-sm btn-warning">Sửa</a>
                             <a asp-area="admin" asp-action="DetailCategory" asp-route-id="@item.CategoryId" class="btn btn-sm btn-info text-white">Chi tiết</a>

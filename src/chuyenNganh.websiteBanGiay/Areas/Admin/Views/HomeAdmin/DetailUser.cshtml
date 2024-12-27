@@ -1,0 +1,85 @@
+﻿@model chuyenNganh.websiteBanGiay.Data.User
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chi tiết người dùng";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Thông tin chi tiết người dùng</h1>
+    <hr />
+
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Thông tin người dùng</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row mb-0">
+                <dt class="col-sm-4">Tên đăng nhập</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.UserName)</dd>
+
+                <dt class="col-sm-4">Mật khẩu</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Password)</dd>
+
+                <dt class="col-sm-4">Email</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+
+                <dt class="col-sm-4">Họ và tên</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.FullName)</dd>
+
+                <dt class="col-sm-4">Vai trò</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Role)</dd>
+
+                <dt class="col-sm-4">Ngày tạo</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.CreatedDate)</dd>
+
+                <dt class="col-sm-4">Số điện thoại</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Sdt)</dd>
+
+                <dt class="col-sm-4">Địa chỉ</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Address)</dd>
+
+                <dt class="col-sm-4">Ảnh đại diện</dt>
+                <dd class="col-sm-8">
+                    @{
+                        var imageUrl = Model.ImageUrl?.ToString() ?? ""; // Đảm bảo ImageUrl không null
+                        var imageFile = string.IsNullOrEmpty(System.IO.Path.GetExtension(imageUrl))
+                        ? imageUrl + ".jpg"
+                        : imageUrl;
+
+                        var imagePath = Url.Content("~/img/users/" + imageFile);
+                    }
+                    <img src="@imagePath"
+                         alt=""
+                         class="img-thumbnail"
+                         style="width: 70px; height: 70px;"
+                         onerror="this.onerror=null; this.src='/img/users/user_boy.jpg';" />
+                </dd>
+
+                <dt class="col-sm-4">Giới tính</dt>
+                <dd class="col-sm-8">
+                    @if (Model.GioiTinh.HasValue)
+                    {
+                        if (Model.GioiTinh.Value)
+                        {
+                            @:Nam
+                        }
+                        else
+                        {
+                            @:Nữ
+                        }
+                    }
+                    else
+                    {
+                        <span>Không xác định</span>
+                    }
+                </dd>
+                <dt class="col-sm-4">Ngày sinh</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.NgaySinh)</dd>
+            </dl>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <a asp-action="User" class="btn btn-secondary">Quay lại danh sách</a>
+        </div>
+    </div>
+</div>
