@@ -3069,6 +3069,30 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\admin\\danhmuc.jpg",
+      "PackagePath": "staticwebassets\\img\\admin\\danhmuc.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\admin\\order.jpg",
+      "PackagePath": "staticwebassets\\img\\admin\\order.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\admin\\product.jpg",
+      "PackagePath": "staticwebassets\\img\\admin\\product.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\admin\\review.jpg",
+      "PackagePath": "staticwebassets\\img\\admin\\review.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\admin\\size.jpg",
+      "PackagePath": "staticwebassets\\img\\admin\\size.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\admin\\user.jpg",
+      "PackagePath": "staticwebassets\\img\\admin\\user.jpg"
+    },
+    {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\categories\\1039e725-02b0-4ada-8506-5b992534336f.jpg",
       "PackagePath": "staticwebassets\\img\\categories\\1039e725-02b0-4ada-8506-5b992534336f.jpg"
     },

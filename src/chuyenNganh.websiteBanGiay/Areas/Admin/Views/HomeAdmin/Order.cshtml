@@ -1,0 +1,84 @@
+﻿@model IEnumerable<chuyenNganh.websiteBanGiay.Data.Order>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Danh sách đơn hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="mb-4">Danh sách đơn hàng</h1>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Ngày đặt hàng
+            </th>
+            <th>
+                Tổng tiền
+            </th>
+            <th>
+                Trạng thái
+            </th>
+            <th>
+                Địa chỉ giao hàng
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Số điện thoại
+            </th>
+            <th>
+                Người dùng
+            </th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalAmount)
+                </td>
+                <td>
+                    @if (item.OrderStatus == "Pending")
+                    {
+                        <span class="badge bg-warning">Đang chờ</span>
+                    }
+                    else if (item.OrderStatus == "Completed")
+                    {
+                        <span class="badge bg-success">Hoàn thành</span>
+                    }
+                    else if (item.OrderStatus == "Cancelled")
+                    {
+                        <span class="badge bg-danger">Đã hủy</span>
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item.OrderStatus)
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShippingAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.UserName)
+                </td>
+                <td>
+                    <a asp-area="admin" asp-action="EditOrder" asp-route-id="@item.OrderId" class="btn btn-sm btn-warning">Sửa</a>
+                    <a asp-area="admin" asp-action="DetailOrder" asp-route-id="@item.OrderId" class="btn btn-sm btn-info">Chi tiết</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

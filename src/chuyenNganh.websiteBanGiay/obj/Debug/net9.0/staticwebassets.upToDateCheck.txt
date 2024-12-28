@@ -233,6 +233,12 @@ wwwroot\css\site.css
 wwwroot\css\style.css
 wwwroot\css\style.min.css
 wwwroot\favicon.ico
+wwwroot\img\admin\danhmuc.jpg
+wwwroot\img\admin\order.jpg
+wwwroot\img\admin\product.jpg
+wwwroot\img\admin\review.jpg
+wwwroot\img\admin\size.jpg
+wwwroot\img\admin\user.jpg
 wwwroot\img\categories\1039e725-02b0-4ada-8506-5b992534336f.jpg
 wwwroot\img\categories\96fd3193-914b-4206-b0e4-0e5a769bf882.jpg
 wwwroot\img\categories\9bc97b9c-6b5e-42ef-8bef-5f3b8e58dac6.jpg

@@ -1,0 +1,45 @@
+﻿@model chuyenNganh.websiteBanGiay.Data.Order
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Xóa đơn hàng";
+    //Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="mb-4">Xóa đơn hàng</h1>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <h4 class="card-title">Bạn có chắc chắn muốn xóa đơn hàng này?</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3">Ngày đặt hàng</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.OrderDate)</dd>
+
+            <dt class="col-sm-3">Tổng tiền</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.TotalAmount) VND</dd>
+
+            <dt class="col-sm-3">Trạng thái</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.OrderStatus)</dd>
+
+            <dt class="col-sm-3">Địa chỉ giao hàng</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.ShippingAddress)</dd>
+
+            <dt class="col-sm-3">Email</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt class="col-sm-3">Số điện thoại</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.PhoneNumber)</dd>
+
+            <dt class="col-sm-3">Người dùng</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.User.UserName)</dd>
+        </dl>
+
+        <form asp-action="DeleteOrder">
+            <input type="hidden" asp-for="OrderId" />
+            <div class="d-flex justify-content-between">
+                <input type="submit" value="Xóa" class="btn btn-danger" />
+                <a asp-action="Order" class="btn btn-secondary">Quay lại danh sách</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -24,7 +24,6 @@
                     <th scope="col">Tên Sản Phẩm</th>
                     <th scope="col">Giá</th>
                     <th scope="col">Giảm Giá (%)</th>
-                    <th scope="col">Ngày Tạo</th>
                     <th scope="col">Hình Ảnh</th>
                     <th scope="col">Danh Mục</th>
                     <th scope="col" class="text-center">Thao Tác</th>
@@ -37,7 +36,6 @@
                         <td>@item.ProductName</td>
                         <td>@item.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"))</td>
                         <td>@item.Discount %</td>
-                        <td>@item.CreatedDate?.ToString("dd/MM/yyyy")</td>
                         <td>
                             @{
                                 var imageUrl = item.ImageUrl?.ToString() ?? ""; // Đảm bảo ImageUrl không null

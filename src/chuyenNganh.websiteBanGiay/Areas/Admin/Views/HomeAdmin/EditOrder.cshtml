@@ -1,0 +1,32 @@
+﻿@model chuyenNganh.websiteBanGiay.Data.Order
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Chỉnh sửa trạng thái đơn hàng";
+    //Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="mb-4">Chỉnh sửa trạng thái đơn hàng</h1>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <form asp-action="EditOrder">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="OrderId" />
+
+            <div class="mb-3">
+                <label asp-for="OrderStatus" class="form-label">Trạng thái đơn hàng</label>
+                <select asp-for="OrderStatus" class="form-select">
+                    <option value="Pending">Đang chờ</option>
+                    <option value="Completed">Hoàn thành</option>
+                    <option value="Cancelled">Đã hủy</option>
+                </select>
+                <span asp-validation-for="OrderStatus" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <input type="submit" value="Lưu" class="btn btn-primary" />
+                <a asp-action="Order" class="btn btn-secondary">Quay lại danh sách</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -69,12 +69,12 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                            <span class="menu-title">Quản lý Usser</span>
+                        <a class="nav-link" data-bs-toggle="collapse" href="#user-management" aria-expanded="false" aria-controls="user-management">
+                            <span class="menu-title">Quản lý Người dùng</span>
                             <i class="menu-arrow"></i>
-                            <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                            <i class="mdi mdi-account menu-icon"></i>
                         </a>
-                        <div class="collapse" id="ui-basic">
+                        <div class="collapse" id="user-management">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="Review">
@@ -83,6 +83,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="User">Quản lý tài khoản</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="Order">Quản lý đơn hàng</a>
                                 </li>
                             </ul>
                         </div>
