@@ -3,7 +3,7 @@
 
 @{
     ViewData["Title"] = "Xóa sản phẩm";
-    //Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container mt-5">
@@ -37,7 +37,24 @@
 
                         <dt class="col-sm-4">Hình ảnh:</dt>
                         <dd class="col-sm-8">
-                            <img src="/img/products/@Html.DisplayFor(model => model.ImageUrl)" alt="@Html.DisplayFor(model => model.ProductName)" class="img-thumbnail" style="max-width: 150px; max-height: 150px;">
+                            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                            {
+                                <div class="mt-2">
+                                    @{
+                                        var imageUrl = Model.ImageUrl?.ToString() ?? "";
+                                        var imageFile = string.IsNullOrEmpty(System.IO.Path.GetExtension(imageUrl))
+                                        ? imageUrl + ".jpg"
+                                        : imageUrl;
+
+                                        var imagePath = Url.Content("~/img/products/" + imageFile);
+                                    }
+                                    <img src="@imagePath"
+                                         alt="@Model.ProductName"
+                                         class="img-thumbnail"
+                                         style="width: 70px; height: 70px;"
+                                         onerror="this.onerror=null; this.src='/img/products/default.jpg';" />
+                                </div>
+                            }
                         </dd>
 
                         <dt class="col-sm-4">Danh mục:</dt>
@@ -47,7 +64,7 @@
             </div>
 
             <div class="mt-4 d-flex justify-content-between">
-                <form asp-action="DeleteProduct" onsubmit="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')">
+                <form asp-action="DeleteProduct" asp-route-id="@Model.ProductId" onsubmit="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')">
                     <input type="hidden" asp-for="ProductId" />
                     <button type="submit" class="btn btn-danger">Xóa</button>
                 </form>

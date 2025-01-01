@@ -132,6 +132,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXFJldmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/DO_AN_CHUYEN_NGANH/src_code/chuyenNganh.websiteBanGiay/src/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/ReviewStatisticsByProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXFJldmlld1N0YXRpc3RpY3NCeVByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/DO_AN_CHUYEN_NGANH/src_code/chuyenNganh.websiteBanGiay/src/chuyenNganh.websiteBanGiay/Areas/Admin/Views/HomeAdmin/User.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXFVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

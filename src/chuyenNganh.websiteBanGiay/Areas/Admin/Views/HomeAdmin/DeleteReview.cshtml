@@ -3,6 +3,7 @@
 
 @{
     ViewData["Title"] = "Xóa Đánh Giá";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container mt-5">
@@ -38,7 +39,7 @@
                 <dd class="col-sm-8">@Html.DisplayFor(model => model.User.UserName)</dd>
             </dl>
 
-            <form asp-action="DeleteReview" method="post" class="text-center mt-4">
+            <form asp-action="DeleteReview" asp-route-id="@Model.ReviewId" class="text-center mt-4">
                 <input type="hidden" asp-for="ReviewId" />
                 <button type="submit" class="btn btn-danger btn-lg me-3">Xóa</button>
                 <a asp-action="Review" class="btn btn-secondary btn-lg">Hủy</a>

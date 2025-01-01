@@ -3,7 +3,7 @@
 
 @{
     ViewData["Title"] = "Chỉnh sửa kích thước sản phẩm";
-    //Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container mt-5">
@@ -11,7 +11,7 @@
     <hr />
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form asp-action="EditProductSize" class="shadow p-4 rounded bg-light">
+            <form asp-action="EditProductSize" asp-route-id="@Model.ProductSizeId" class="shadow p-4 rounded bg-light">
                 <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
                 <input type="hidden" asp-for="ProductSizeId" />
 

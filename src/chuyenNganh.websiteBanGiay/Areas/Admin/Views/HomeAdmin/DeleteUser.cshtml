@@ -2,7 +2,7 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Xóa người dùng";
-    //Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container mt-5">
@@ -45,14 +45,19 @@
 
                 <dt class="col-sm-4">Ảnh đại diện</dt>
                 <dd class="col-sm-8">
-                    @if (!string.IsNullOrEmpty(Model.ImageUrl))
-                    {
-                        <img src="@Model.ImageUrl" alt="Ảnh đại diện" class="img-thumbnail" style="max-width: 150px; max-height: 150px;" />
+                    @{
+                        var imageUrl = Model.ImageUrl?.ToString() ?? ""; // Đảm bảo ImageUrl không null
+                        var imageFile = string.IsNullOrEmpty(System.IO.Path.GetExtension(imageUrl))
+                        ? imageUrl + ".jpg"
+                        : imageUrl;
+
+                        var imagePath = Url.Content("~/img/users/" + imageFile);
                     }
-                    else
-                    {
-                        <span>Không có ảnh</span>
-                    }
+                    <img src="@imagePath"
+                         alt=""
+                         class="img-thumbnail"
+                         style="width: 70px; height: 70px;"
+                         onerror="this.onerror=null; this.src='/img/users/user_boy.jpg';" />
                 </dd>
 
                 <dt class="col-sm-4">Giới tính</dt>
@@ -79,18 +84,13 @@
             </dl>
         </div>
         <div class="card-footer d-flex justify-content-between">
-            <form asp-action="DeleteUser" asp-route-id="@Model.UserId" method="post" onsubmit="return confirmDelete();">
-                <input type="hidden" asp-for="UserId" />
-                <button type="submit" class="btn btn-danger">Xóa</button>
+            <form asp-action="DeleteUser" asp-route-id="@Model.UserId" class="text-center mt-4">
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-danger me-2">Xóa</button>
+                </div>
             </form>
             <a asp-action="User" class="btn btn-secondary">Quay lại danh sách</a>
         </div>
     </div>
 </div>
 
-<!-- Script xác nhận xóa -->
-<script>
-    function confirmDelete() {
-        return confirm("Bạn có chắc chắn muốn xóa danh mục này không? Hành động này không thể hoàn tác.");
-    }
-</script>

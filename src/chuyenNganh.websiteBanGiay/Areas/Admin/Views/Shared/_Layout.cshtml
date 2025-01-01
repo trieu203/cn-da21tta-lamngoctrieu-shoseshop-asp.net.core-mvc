@@ -91,6 +91,28 @@
                         </div>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#user-management" aria-expanded="false" aria-controls="user-management">
+                            <span class="menu-title">Thống kê</span>
+                            <i class="menu-arrow"></i>
+                            <i class="mdi mdi-account menu-icon"></i>
+                        </a>
+                        <div class="collapse" id="user-management">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="ReviewStatisticsByProduct">
+                                        Thống kế đánh giá
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="User">Quản lý tài khoản</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="admin" asp-controller="HomeAdmin" asp-action="Order">Quản lý đơn hàng</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                             <span class="menu-title">Hành động</span>
                             <i class="menu-arrow"></i>

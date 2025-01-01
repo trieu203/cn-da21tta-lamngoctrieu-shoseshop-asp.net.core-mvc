@@ -3,7 +3,7 @@
 
 @{
     ViewData["Title"] = "Xóa danh mục";
-    //Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container mt-4">
@@ -27,7 +27,7 @@
             </dl>
 
             <!-- Form xóa với xác nhận JavaScript -->
-            <form asp-action="DeleteCategory" method="post" onsubmit="return confirmDelete();">
+            <form asp-action="DeleteCategory" asp-route-id="@Model.CategoryId ">
                 <input type="hidden" asp-for="CategoryId" />
                 <div class="d-flex justify-content-end">
                     <a asp-area="admin" asp-controller="HomeAdmin" asp-action="Category" class="btn btn-secondary me-2">Hủy bỏ</a>

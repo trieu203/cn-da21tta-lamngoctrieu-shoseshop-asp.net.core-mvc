@@ -3129,8 +3129,8 @@
       "PackagePath": "staticwebassets\\img\\categories\\puma.jpg"
     },
     {
-      "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\5f68693b-6eba-4c82-a98c-0c58a277bc25.jpg",
-      "PackagePath": "staticwebassets\\img\\products\\5f68693b-6eba-4c82-a98c-0c58a277bc25.jpg"
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\aa2fbebd-a7db-47e0-a283-97a7a70d0df8.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\aa2fbebd-a7db-47e0-a283-97a7a70d0df8.jpg"
     },
     {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\products\\product01_01.jpg",
@@ -3393,6 +3393,10 @@
       "PackagePath": "staticwebassets\\img\\users\\092d70e4-6568-4e38-9645-0cf569d6ffce.jpg"
     },
     {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\0b37245c-a365-4637-be5d-7562e96e4b74.jpg",
+      "PackagePath": "staticwebassets\\img\\users\\0b37245c-a365-4637-be5d-7562e96e4b74.jpg"
+    },
+    {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\1968cba3-a830-4e68-aa93-c59e2c3baef8.jpg",
       "PackagePath": "staticwebassets\\img\\users\\1968cba3-a830-4e68-aa93-c59e2c3baef8.jpg"
     },
@@ -3411,6 +3415,10 @@
     {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\5112aa80-5f60-4ea0-aa12-5ab8421e5ac7.jpg",
       "PackagePath": "staticwebassets\\img\\users\\5112aa80-5f60-4ea0-aa12-5ab8421e5ac7.jpg"
+    },
+    {
+      "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\5aa97ed7-7762-4e47-8348-9aa400ce4de5.jpg",
+      "PackagePath": "staticwebassets\\img\\users\\5aa97ed7-7762-4e47-8348-9aa400ce4de5.jpg"
     },
     {
       "Id": "D:\\DO_AN_CHUYEN_NGANH\\src_code\\chuyenNganh.websiteBanGiay\\src\\chuyenNganh.websiteBanGiay\\wwwroot\\img\\users\\9531e10a-34ce-4b8b-8a2c-b05ebb854f57.jpg",

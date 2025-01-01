@@ -23,7 +23,7 @@
     <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
         <!-- Logo -->
         <div class="col-lg-4">
-            <a href="" class="text-decoration-none">
+            <a asp-controller="Home" asp-action="Index" class="text-decoration-none">
                 <span class="h1 text-uppercase text-primary bg-dark px-2">Milion</span>
                 <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Sneaker</span>
             </a>
@@ -47,41 +47,42 @@
         <div class="col-lg-4 col-6 text-right">
             <div class="d-inline-flex align-items-center">
                 <div class="btn-group">
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <!-- Hiển thị tên và hình ảnh của người dùng -->
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">
-                            <img src="@Url.Content("~/img/users/" + (User.FindFirst("ImageUrl")?.Value ?? "user_boy.jpg"))"
-                                 alt="User Image" class="rounded-circle" width="60" height="60"
-                                 onerror="this.onerror=null;this.src='~/img/users/user_boy.jpg';" />
+                    <div class="nav-item dropdown">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">
+                                <img src="@Url.Content("~/img/users/" + (User.FindFirst("ImageUrl")?.Value ?? "user_boy.jpg"))"
+                                     alt="User Image"
+                                     class="rounded-circle"
+                                     width="60"
+                                     height="60"
+                                     onerror="this.onerror=null;this.src='~/img/users/user_boy.jpg';" />
+                                <span>@User.Identity.Name</span>
+                            </button>
 
-                            <span>@User.Identity.Name</span>
-                        </button>
-
-
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a asp-controller="Users" asp-action="DangXuat" class="dropdown-item">Đăng xuất</a>
-                            @if (User.IsInRole("Admin"))
-                            {
-                                <a asp-controller="Admin" asp-action="Index" class="dropdown-item">Quản lý</a>
-                            }
-                            else
-                            {
-                                <a asp-controller="Users" asp-action="Details" class="dropdown-item">Thông tin cá nhân</a>
-                            }
-                        </div>
-                    }
-                    else
-                    {
-                        <!-- Hiển thị nếu chưa đăng nhập -->
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">
-                            Đăng nhập/Đăng ký
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a asp-controller="Users" asp-action="Dangnhap" class="dropdown-item">Đăng nhập</a>
-                            <a asp-controller="Users" asp-action="DangKy" class="dropdown-item">Đăng ký</a>
-                        </div>
-                    }
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a asp-controller="Users" asp-action="DangXuat" class="dropdown-item">Đăng xuất</a>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <a asp-controller="Admin" asp-action="Index" class="dropdown-item">Quản lý</a>
+                                }
+                                else
+                                {
+                                    <a asp-controller="Users" asp-action="Details" class="dropdown-item">Thông tin cá nhân</a>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">
+                                Đăng nhập/Đăng ký
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a asp-controller="Users" asp-action="Dangnhap" class="dropdown-item">Đăng nhập</a>
+                                <a asp-controller="Users" asp-action="DangKy" class="dropdown-item">Đăng ký</a>
+                            </div>
+                        }
+                    </div>
 
                 </div>
             </div>

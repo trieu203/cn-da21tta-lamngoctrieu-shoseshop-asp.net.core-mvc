@@ -199,7 +199,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
 
 
         //Delete Category
-        [Route("DeleteCategory/{id:int}")]
+        [Route("DeleteCategory")]
         [HttpGet]
         public async Task<IActionResult> DeleteCategory(int id)
         {
@@ -215,7 +215,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             return View(category);
         }
 
-        [Route("DeleteCategory/{id:int}")]
+        [Route("DeleteCategory")]
         [HttpPost, ActionName("DeleteCategory")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -462,6 +462,17 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                 existingProduct.ImageUrl = fileName;
             }
 
+            // Cập nhật danh mục
+            if (updatedProduct.CategoryId.HasValue && updatedProduct.CategoryId != existingProduct.CategoryId)
+            {
+                var newCategory = await _context.Categories.FirstOrDefaultAsync(c => c.CategoryId == updatedProduct.CategoryId.Value);
+                if (newCategory != null)
+                {
+                    existingProduct.CategoryId = newCategory.CategoryId;
+                    existingProduct.Category = newCategory;
+                }
+            }
+
             // Lưu cập nhật vào CSDL
             _context.Products.Update(existingProduct);
             await _context.SaveChangesAsync();
@@ -470,12 +481,14 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
         }
 
         // Delete Product
-        [Route("DeleteProduct/{id:int}")]
+        [Route("DeleteProduct")]
         [HttpGet]
         public async Task<IActionResult> DeleteProduct(int id)
         {
-            // Tìm sản phẩm theo ID
-            var product = await _context.Products.FindAsync(id);
+            // Tìm sản phẩm theo ID và bao gồm thông tin danh mục
+            var product = await _context.Products
+                                         .Include(p => p.Category) // Bao gồm thông tin danh mục
+                                         .FirstOrDefaultAsync(p => p.ProductId == id);
 
             if (product == null)
             {
@@ -486,7 +499,8 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             return View(product);
         }
 
-        [Route("DeleteProduct/{id:int}")]
+
+        [Route("DeleteProduct")]
         [HttpPost, ActionName("DeleteProduct")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteProductConfirmed(int id)
@@ -494,7 +508,9 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             try
             {
                 // Truy vấn sản phẩm từ CSDL
-                var product = await _context.Products.FindAsync(id);
+                var product = await _context.Products
+                    .Include(p => p.Category)
+                    .FirstOrDefaultAsync(p => p.ProductId == id);
 
                 if (product == null)
                 {
@@ -512,11 +528,27 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                     }
                 }
 
+                // Lấy danh mục liên quan (nếu có)
+                var category = product.Category;
+
                 // Xóa sản phẩm khỏi CSDL
                 _context.Products.Remove(product);
                 await _context.SaveChangesAsync();
 
-                TempData["Message"] = "Sản phẩm đã được xóa thành công.";
+                // Kiểm tra và xóa danh mục nếu không còn sản phẩm liên kết
+                if (category != null)
+                {
+                    bool hasOtherProducts = await _context.Products.AnyAsync(p => p.CategoryId == category.CategoryId);
+
+                    if (!hasOtherProducts)
+                    {
+                        _context.Categories.Remove(category);
+                        await _context.SaveChangesAsync();
+                        TempData["Message"] += $" Danh mục '{category.CategoryName}' đã được xóa vì không còn sản phẩm liên kết.";
+                    }
+                }
+
+                TempData["Message"] += " Sản phẩm đã được xóa thành công.";
                 return RedirectToAction("Product");
             }
             catch (Exception ex)
@@ -527,6 +559,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                 return RedirectToAction("Product");
             }
         }
+
 
 
         // GET: Admin/Home/ProductSize
@@ -570,7 +603,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
         }
 
         // Edit ProductSize
-        [Route("EditProductSize/{id:int}")]
+        [Route("EditProductSize")]
         [HttpGet]
         public async Task<IActionResult> EditProductSize(int id)
         {
@@ -609,7 +642,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             }
         }
 
-        [Route("EditProductSize/{id:int}")]
+        [Route("EditProductSize")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditProductSize(int id, ProductSize updatedProductSize)
@@ -666,7 +699,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
 
 
         //Delete ProductSize
-        [Route("DeleteProductSize/{id:int}")]
+        [Route("DeleteProductSize")]
         [HttpGet]
         public async Task<IActionResult> DeleteProductSize(int id)
         {
@@ -684,7 +717,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             return View(productSize);
         }
 
-        [Route("DeleteProductSize/{id:int}")]
+        [Route("DeleteProductSize")]
         [HttpPost, ActionName("DeleteProductSize")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteProductSizeConfirmed(int id)
@@ -876,7 +909,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
 
         //Delete Review
         [HttpGet]
-        [Route("deleteReview/{id:int}")]
+        [Route("deleteReview")]
         public async Task<IActionResult> DeleteReview(int id)
         {
             try
@@ -906,7 +939,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
 
 
         [HttpPost]
-        [Route("deleteReview/{id:int}")]
+        [Route("deleteReview")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteReviewConfirmed(int id)
         {
@@ -994,7 +1027,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
 
         //Delete User
         [HttpGet]
-        [Route("deleteUser/{id:int}")]
+        [Route("deleteUser")]
         public async Task<IActionResult> DeleteUser(int id)
         {
             // Tìm người dùng theo ID
@@ -1011,7 +1044,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
 
 
         [HttpPost]
-        [Route("deleteUser/{id:int}")]
+        [Route("deleteUser")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteUserConfirmed(int id)
         {
@@ -1074,7 +1107,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
         }
 
         // Detail Order
-        [Route("order/detail")]
+        [Route("orderdetail")]
         public async Task<IActionResult> DetailOrder(int id)
         {
             try
@@ -1100,7 +1133,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
         }
 
         // Edit Order
-        [Route("order/edit/{id:int}")]
+        [Route("orderedit")]
         [HttpGet]
         public async Task<IActionResult> EditOrder(int id)
         {
@@ -1123,7 +1156,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             }
         }
 
-        [Route("order/edit/{id:int}")]
+        [Route("orderedit")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditOrder(int id, Order updatedOrder)
@@ -1155,7 +1188,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
 
 
         // Delete Order
-        [Route("order/delete/{id:int}")]
+        [Route("orderdelete")]
         [HttpGet]
         public async Task<IActionResult> DeleteOrder(int id)
         {
@@ -1182,7 +1215,8 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             }
         }
 
-        [Route("order/delete/{id:int}")]
+        
+        [Route("orderdelete")]
         [HttpPost, ActionName("DeleteOrder")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteOrderConfirmed(int id)
@@ -1212,6 +1246,163 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             }
         }
 
-        
+
+        // Số đánh giá theo sản phẩm
+        [HttpGet]
+        [Route("statistics/reviews/product")]
+        public async Task<IActionResult> ReviewStatisticsByProduct()
+        {
+            try
+            {
+                var reviewStats = await _context.Reviews
+                    .Where(r => r.ProductId.HasValue)
+                    .GroupBy(r => r.ProductId)
+                    .Select(g => new
+                    {
+                        ProductId = g.Key,
+                        ReviewCount = g.Count()
+                    })
+                    .ToListAsync();
+
+                return Json(reviewStats); // Trả về dữ liệu JSON
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi thống kê đánh giá theo sản phẩm.");
+                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
+            }
+        }
+
+
+        //Số lượng đánh giá theo tháng
+        [Route("statistics/reviews/month")]
+        public async Task<IActionResult> ReviewStatisticsByMonth(int year)
+        {
+            try
+            {
+                var monthlyReviews = await _context.Reviews
+                    .Where(r => r.ReviewDate.HasValue && r.ReviewDate.Value.Year == year)
+                    .GroupBy(r => r.ReviewDate.Value.Month)
+                    .Select(g => new
+                    {
+                        Month = g.Key,
+                        ReviewCount = g.Count()
+                    })
+                    .OrderBy(r => r.Month)
+                    .ToListAsync();
+
+                return Json(monthlyReviews); // Trả về dữ liệu dưới dạng JSON
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi thống kê số lượng đánh giá theo tháng.");
+                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
+            }
+        }
+
+        //Số lượng người dùng theo vai trò
+        [Route("statistics/users/roles")]
+        public async Task<IActionResult> UserRoleStatistics()
+        {
+            try
+            {
+                var userRoleStats = await _context.Users
+                    .GroupBy(u => u.Role)
+                    .Select(g => new
+                    {
+                        Role = g.Key,
+                        UserCount = g.Count()
+                    })
+                    .ToListAsync();
+
+                return Json(userRoleStats); // Trả về dữ liệu dưới dạng JSON
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi thống kê số lượng người dùng theo vai trò.");
+                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
+            }
+        }
+
+        //Số người dùng đăng ký theo tháng
+        [HttpGet]
+        [Route("statistics/users/registrations")]
+        public async Task<IActionResult> UserRegistrations(int year)
+        {
+            try
+            {
+                var userRegistrations = await _context.Users
+                    .Where(u => u.CreatedDate.HasValue && u.CreatedDate.Value.Year == year)
+                    .GroupBy(u => u.CreatedDate.Value.Month)
+                    .Select(g => new
+                    {
+                        Month = g.Key,
+                        UserCount = g.Count()
+                    })
+                    .OrderBy(r => r.Month)
+                    .ToListAsync();
+
+                return Json(userRegistrations); // Trả về dữ liệu dưới dạng JSON
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi thống kê số lượng người dùng đăng ký theo tháng.");
+                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
+            }
+        }
+
+        //Tổng doanh thu theo tháng
+        [HttpGet]
+        [Route("statistics/orders/monthly-revenue")]
+        public async Task<IActionResult> MonthlyRevenue(int year)
+        {
+            try
+            {
+                var monthlyRevenue = await _context.Orders
+                    .Where(o => o.OrderDate.HasValue && o.OrderDate.Value.Year == year)
+                    .GroupBy(o => o.OrderDate.Value.Month)
+                    .Select(g => new
+                    {
+                        Month = g.Key,
+                        TotalRevenue = g.Sum(o => o.TotalAmount)
+                    })
+                    .OrderBy(r => r.Month)
+                    .ToListAsync();
+
+                return Json(monthlyRevenue); // Trả về JSON cho JavaScript
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi thống kê tổng doanh thu theo tháng.");
+                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
+            }
+        }
+
+
+        //Tổng số đơn hàng theo trạng thái
+        [Route("statistics/orders/status")]
+        public async Task<IActionResult> OrderStatusStatistics()
+        {
+            try
+            {
+                var orderStatusStats = await _context.Orders
+                    .GroupBy(o => o.OrderStatus)
+                    .Select(g => new
+                    {
+                        Status = g.Key,
+                        Count = g.Count()
+                    })
+                    .ToListAsync();
+
+                return Json(orderStatusStats); // Trả về dữ liệu dưới dạng JSON
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi thống kê số lượng đơn hàng theo trạng thái.");
+                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
+            }
+        }
+
+
     }
 }

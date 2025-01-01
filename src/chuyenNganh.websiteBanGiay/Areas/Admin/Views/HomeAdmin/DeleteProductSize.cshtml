@@ -3,7 +3,7 @@
 
 @{
     ViewData["Title"] = "Xóa Kích Thước Sản Phẩm";
-    //Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container mt-5">
@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <form asp-action="DeleteProductSize" method="post" class="mt-4" onsubmit="return confirm('Bạn có chắc chắn muốn xóa kích thước sản phẩm này?')">
+    <form asp-action="DeleteProductSize" asp-route-id="@Model.ProductSizeId" class="mt-4" onsubmit="return confirm('Bạn có chắc chắn muốn xóa kích thước sản phẩm này?')">
         <input type="hidden" asp-for="ProductSizeId" />
         <div class="d-flex justify-content-between">
             <a asp-area="admin" asp-controller="HomeAdmin" asp-action="ProductSize" class="btn btn-secondary">Quay lại</a>
