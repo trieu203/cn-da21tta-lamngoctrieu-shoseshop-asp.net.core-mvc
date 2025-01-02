@@ -34,7 +34,7 @@
             <dd class="col-sm-9">@Html.DisplayFor(model => model.User.UserName)</dd>
         </dl>
 
-        <form asp-action="DeleteOrder" asp-route-id="@Model.OrderId">
+        <form asp-action="DeleteOrder" asp-route-id="@Model.OrderId" method="post">
             <input type="hidden" asp-for="OrderId" />
             <div class="d-flex justify-content-between">
                 <input type="submit" value="Xóa" class="btn btn-danger" />

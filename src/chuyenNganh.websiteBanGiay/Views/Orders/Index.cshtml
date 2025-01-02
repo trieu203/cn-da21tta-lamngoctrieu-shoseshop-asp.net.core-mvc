@@ -1,24 +1,79 @@
 ﻿@model IEnumerable<chuyenNganh.websiteBanGiay.Data.Order>
 
 @{
-    ViewData["Title"] = "Đặt hàng thành công";
+    ViewData["Title"] = "Lịch sử mua hàng";
     Layout = "_Product";
 }
 
-<div class="container text-center mt-5">
-    <div class="alert alert-success" role="alert">
-        <h1 class="display-4">🎉 Đặt hàng thành công! 🎉</h1>
-        <p class="lead">Cảm ơn bạn đã mua hàng tại cửa hàng của chúng tôi.</p>
-        <hr>
-        <p class="mb-3">
-            Mã đơn hàng của bạn: <strong>@ViewData["OrderId"]</strong><br>
-            Thời gian đặt hàng: <strong>@ViewData["OrderDate"]</strong>
-        </p>
-        <p>
-            Đơn hàng sẽ được giao đến địa chỉ: <strong>@ViewData["ShippingAddress"]</strong><br>
-            Nếu có bất kỳ thắc mắc nào, vui lòng liên hệ với chúng tôi qua hotline: <strong>1800-1234</strong>.
-        </p>
-        <a href="@Url.Action("Index", "Products")" class="btn btn-primary btn-lg mt-4">Tiếp tục mua sắm</a>
-    </div>
+<div class="container mt-5">
+    <h1 class="text-center text-primary">Lịch sử mua hàng</h1>
+    <hr />
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning text-center">
+            <h5>Bạn chưa có đơn hàng nào.</h5>
+            <a asp-controller="Products" asp-action="Index" class="btn btn-primary mt-3">Quay lại mua sắm</a>
+        </div>
+    }
+    else
+    {
+        <table class="table table-hover table-bordered mt-4">
+            <thead class="table-dark text-center">
+                <tr>
+                    <th>Ngày đặt</th>
+                    <th>Tổng tiền (VNĐ)</th>
+                    <th>Trạng thái</th>
+                    <th>Địa chỉ giao hàng</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Người dùng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-center">
+                            @item.OrderDate?.ToString("dd/MM/yyyy")
+                        </td>
+                        <td class="text-end">
+                            @string.Format("{0:N0}", item.TotalAmount)
+                        </td>
+                        <td>
+                            @if (item.OrderStatus == "Pending")
+                            {
+                                <span class="badge bg-warning">Đang chờ</span>
+                            }
+                            else if (item.OrderStatus == "Completed")
+                            {
+                                <span class="badge bg-success">Hoàn thành</span>
+                            }
+                            else if (item.OrderStatus == "Cancelled")
+                            {
+                                <span class="badge bg-danger">Đã hủy</span>
+                            }
+                            else
+                            {
+                                @Html.DisplayFor(modelItem => item.OrderStatus)
+                            }
+                        </td>
+                        <td>
+                            @item.ShippingAddress
+                        </td>
+                        <td>
+                            @item.Email
+                        </td>
+                        <td>
+                            @item.PhoneNumber
+                        </td>
+                        <td>
+                            @item.User?.UserName
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
 </div>
 

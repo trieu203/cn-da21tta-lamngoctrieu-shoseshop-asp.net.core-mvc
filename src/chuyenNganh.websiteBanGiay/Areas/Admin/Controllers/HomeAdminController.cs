@@ -1188,15 +1188,15 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
 
 
         // Delete Order
-        [Route("orderdelete")]
+        [Route("deleteorder")]
         [HttpGet]
         public async Task<IActionResult> DeleteOrder(int id)
         {
             try
             {
-                // Tìm đơn hàng dựa trên ID
+                // Truy vấn đơn hàng từ CSDL
                 var order = await _context.Orders
-                    .Include(o => o.User) // Bao gồm thông tin người dùng để hiển thị (nếu cần)
+                    .Include(o => o.OrderItems) // Bao gồm các sản phẩm trong đơn hàng
                     .FirstOrDefaultAsync(o => o.OrderId == id);
 
                 if (order == null)
@@ -1205,47 +1205,55 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                     return RedirectToAction("Order");
                 }
 
-                // Trả về View xác nhận xóa
                 return View(order);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi khi truy cập xóa đơn hàng với ID: {Id}", id);
+                _logger.LogError(ex, "Lỗi khi truy vấn đơn hàng với ID: {Id}", id);
                 return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
             }
         }
 
-        
-        [Route("orderdelete")]
+        [Route("deleteorder")]
         [HttpPost, ActionName("DeleteOrder")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteOrderConfirmed(int id)
         {
             try
             {
-                // Tìm đơn hàng dựa trên ID
-                var order = await _context.Orders.FindAsync(id);
+                var order = await _context.Orders
+                    .Include(o => o.OrderItems)
+                    .FirstOrDefaultAsync(o => o.OrderId == id);
 
                 if (order == null)
                 {
+                    _logger.LogWarning("Không tìm thấy đơn hàng với ID: {Id}", id);
                     TempData["Message"] = "Đơn hàng không tồn tại.";
                     return RedirectToAction("Order");
                 }
 
-                // Chỉ xóa đơn hàng, không xóa người dùng
+                _logger.LogInformation("Tìm thấy đơn hàng với ID: {Id}. Số lượng sản phẩm: {Count}", id, order.OrderItems.Count);
+
+                if (order.OrderItems != null && order.OrderItems.Any())
+                {
+                    _context.OrderItems.RemoveRange(order.OrderItems);
+                    _logger.LogInformation("Đã xóa tất cả sản phẩm liên quan đến đơn hàng {Id}.", id);
+                }
+
                 _context.Orders.Remove(order);
                 await _context.SaveChangesAsync();
+                _logger.LogInformation("Đã xóa đơn hàng thành công với ID: {Id}", id);
 
-                TempData["Message"] = "Đã xóa đơn hàng thành công.";
+                TempData["Message"] = "Đơn hàng đã được xóa thành công.";
                 return RedirectToAction("Order");
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi khi xóa đơn hàng với ID: {Id}", id);
-                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
+                TempData["Message"] = "Đã xảy ra lỗi khi xóa đơn hàng.";
+                return RedirectToAction("Order");
             }
         }
-
 
         // Số đánh giá theo sản phẩm
         [HttpGet]
