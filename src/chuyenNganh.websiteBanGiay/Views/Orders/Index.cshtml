@@ -1,79 +1,86 @@
 ﻿@model IEnumerable<chuyenNganh.websiteBanGiay.Data.Order>
 
 @{
-    ViewData["Title"] = "Lịch sử mua hàng";
+    ViewData["Title"] = "Đặt hàng thành công";
     Layout = "_Product";
 }
 
-<div class="container mt-5">
-    <h1 class="text-center text-primary">Lịch sử mua hàng</h1>
-    <hr />
-
-    @if (!Model.Any())
-    {
-        <div class="alert alert-warning text-center">
-            <h5>Bạn chưa có đơn hàng nào.</h5>
-            <a asp-controller="Products" asp-action="Index" class="btn btn-primary mt-3">Quay lại mua sắm</a>
-        </div>
-    }
-    else
-    {
-        <table class="table table-hover table-bordered mt-4">
-            <thead class="table-dark text-center">
-                <tr>
-                    <th>Ngày đặt</th>
-                    <th>Tổng tiền (VNĐ)</th>
-                    <th>Trạng thái</th>
-                    <th>Địa chỉ giao hàng</th>
-                    <th>Email</th>
-                    <th>Số điện thoại</th>
-                    <th>Người dùng</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td class="text-center">
-                            @item.OrderDate?.ToString("dd/MM/yyyy")
-                        </td>
-                        <td class="text-end">
-                            @string.Format("{0:N0}", item.TotalAmount)
-                        </td>
-                        <td>
-                            @if (item.OrderStatus == "Pending")
-                            {
-                                <span class="badge bg-warning">Đang chờ</span>
-                            }
-                            else if (item.OrderStatus == "Completed")
-                            {
-                                <span class="badge bg-success">Hoàn thành</span>
-                            }
-                            else if (item.OrderStatus == "Cancelled")
-                            {
-                                <span class="badge bg-danger">Đã hủy</span>
-                            }
-                            else
-                            {
-                                @Html.DisplayFor(modelItem => item.OrderStatus)
-                            }
-                        </td>
-                        <td>
-                            @item.ShippingAddress
-                        </td>
-                        <td>
-                            @item.Email
-                        </td>
-                        <td>
-                            @item.PhoneNumber
-                        </td>
-                        <td>
-                            @item.User?.UserName
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    }
+<div class="success-container">
+    <div class="success-message">
+        <h1>Đơn hàng của bạn đã được đặt mua thành công</h1>
+        <h2 class="thank-you">
+            CẢM ƠN! <span><a asp-controller="Products" asp-action="Index" class="btn btn-primary mt-3">Tiếp tục mua sắm</a></span>
+        </h2>
+    </div>
+    <div class="confetti"></div>
 </div>
 
+<style>
+    .success-container {
+        text-align: center;
+        margin-top: 50px;
+        font-family: Arial, sans-serif;
+    }
+
+    .success-message h1 {
+        font-size: 24px;
+        color: #333;
+    }
+
+    .thank-you {
+        font-size: 48px;
+        font-weight: bold;
+        color: #ff6600;
+        position: relative;
+    }
+
+        .thank-you span {
+            display: block;
+            font-size: 20px;
+            color: #666;
+        }
+
+    /* Confetti effect */
+    .confetti {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 999;
+    }
+
+    .confetti-piece {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #ff6600;
+        opacity: 0.8;
+        animation: fall 3s linear infinite;
+    }
+
+    @@keyframes fall {
+        0% {
+            transform: translateY(0) rotate(0deg);
+        }
+
+        100% {
+            transform: translateY(100vh) rotate(360deg);
+        }
+    }
+</style>
+
+<script>
+    // Create confetti effect
+    const confettiContainer = document.querySelector('.confetti');
+    for (let i = 0; i < 100; i++) {
+        const confettiPiece = document.createElement('div');
+        confettiPiece.classList.add('confetti-piece');
+        confettiPiece.style.left = `${Math.random() * 100}vw`;
+        confettiPiece.style.backgroundColor =
+            `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confettiPiece.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        confettiContainer.appendChild(confettiPiece);
+    }
+</script>

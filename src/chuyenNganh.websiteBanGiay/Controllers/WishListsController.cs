@@ -58,7 +58,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             if (existingWishList != null)
             {
                 TempData["ErrorMessage"] = "Sản phẩm đã có trong danh sách yêu thích của bạn.";
-                return RedirectToAction("Details", "Products", new { id = productId });
+                return RedirectToAction("Index", "WishLists", new { id = productId });
             }
 
             // Nếu sản phẩm chưa có trong danh sách yêu thích, thêm vào
@@ -75,7 +75,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
 
             // Hiển thị thông báo thành công
             TempData["SuccessMessage"] = "Sản phẩm đã được thêm vào danh sách yêu thích!";
-            return RedirectToAction("Details", "Products", new { id = productId });
+            return RedirectToAction("Index", "WishLists", new { id = productId });
         }
 
 

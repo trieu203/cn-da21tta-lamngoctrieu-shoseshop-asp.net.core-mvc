@@ -112,13 +112,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\style.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"4dbjy22pia"},{"Name":"integrity","Value":"sha256-SMpmIzQ422IpWB3o7cht0wT6FAUqbuzLHTr6p5zaq5E="},{"Name":"label","Value":"_content/chuyenNganh.websiteBanGiay/css/style.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"177435"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022SMpmIzQ422IpWB3o7cht0wT6FAUqbuzLHTr6p5zaq5E=\u0022"},{"Name":"Last-Modified","Value":"Sun, 15 Dec 2024 17:26:56 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"177435"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022SMpmIzQ422IpWB3o7cht0wT6FAUqbuzLHTr6p5zaq5E=\u0022"},{"Name":"Last-Modified","Value":"Sat, 04 Jan 2025 14:24:43 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/chuyenNganh.websiteBanGiay/css/style.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\style.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-SMpmIzQ422IpWB3o7cht0wT6FAUqbuzLHTr6p5zaq5E="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"177435"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022SMpmIzQ422IpWB3o7cht0wT6FAUqbuzLHTr6p5zaq5E=\u0022"},{"Name":"Last-Modified","Value":"Sun, 15 Dec 2024 17:26:56 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"177435"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022SMpmIzQ422IpWB3o7cht0wT6FAUqbuzLHTr6p5zaq5E=\u0022"},{"Name":"Last-Modified","Value":"Sat, 04 Jan 2025 14:24:43 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/chuyenNganh.websiteBanGiay/css/style.min.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\style.min.css'))</AssetFile>

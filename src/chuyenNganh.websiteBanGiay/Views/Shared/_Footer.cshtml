@@ -11,7 +11,19 @@
         <div class="col-lg-4 col-md-6 mb-5">
             <h5 class="text-secondary text-uppercase mb-4">Thông Tin Cửa Hàng</h5>
             <div class="d-flex flex-column justify-content-start">
-                <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Giới thiệu về hãng giày</a>
+                <a class="text-secondary mb-2" data-toggle="collapse" href="#shoeBrandList" role="button" aria-expanded="false" aria-controls="shoeBrandList">
+                    <i class="fa fa-angle-right mr-2"></i>Giới thiệu về hãng giày
+                </a>
+                <div class="collapse ml-4" id="shoeBrandList">
+                    <ul class="list-unstyled">
+                        <li><a title="Click để xem chi tiết" href="@Url.Action("Details", "Categories", new { id = 1 })" class="text-white">Nike</a></li>
+                        <li><a title="Click để xem chi tiết" href="@Url.Action("Details", "Categories", new { id = 2 })" class="text-white">Adidas</a></li>
+                        <li><a title="Click để xem chi tiết" href="@Url.Action("Details", "Categories", new { id = 5 })" class="text-white">Puma</a></li>
+                        <li><a title="Click để xem chi tiết" href="@Url.Action("Details", "Categories", new { id = 4 })" class="text-white">Onitsuka</a></li>
+                        <li><a title="Click để xem chi tiết" href="@Url.Action("Details", "Categories", new { id = 3 })" class="text-white">New Balance</a></li>
+                    </ul>
+                </div>
+
                 <a asp-controller="Products" asp-action="Index" class="text-secondary mb-2"><i class="fa fa-angle-right mr-2"></i>Cửa hàng</a>
             </div>
         </div>
@@ -32,7 +44,6 @@
                         <a class="text-secondary mb-2" asp-controller="Users" asp-action="DangXuat"><i class="fa fa-angle-right mr-2"></i>Đăng xuất</a>
                         <a class="text-secondary mb-2" asp-controller="Users" asp-action="Details"><i class="fa fa-angle-right mr-2"></i>Thông tin tài khoản</a>
                         <a class="text-secondary mb-2" asp-controller="Carts" asp-action="Index"><i class="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
-                        <a class="text-secondary mb-2" asp-action="Index" asp-controller="Orders"><i class="fa fa-angle-right mr-2"></i>Đơn hàng</a>
                         <a class="text-secondary mb-2" asp-controller="WishLists" asp-action="Index"><i class="fa fa-angle-right mr-2"></i>Danh sách yêu thích</a>
                     }
                 }

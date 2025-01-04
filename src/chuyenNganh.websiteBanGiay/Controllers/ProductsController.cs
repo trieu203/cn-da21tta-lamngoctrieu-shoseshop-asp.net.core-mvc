@@ -49,7 +49,11 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                         ProductName = p.ProductName,
                         Price = p.Price,
                         Discount = p.Discount,
-                        ImageUrl = p.ImageUrl
+                        ImageUrl = p.ImageUrl,
+                        Rating = _context.Reviews
+                                    .Where(r => r.ProductId == p.ProductId)
+                                    .Select(r => r.Rating)
+                                    .FirstOrDefault()
                     })
                     .ToListAsync();
 
@@ -166,7 +170,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             }
         }
 
-
+        //Review
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]

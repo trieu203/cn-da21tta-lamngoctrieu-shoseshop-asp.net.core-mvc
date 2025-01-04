@@ -757,7 +757,6 @@ D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websit
 D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\obj\Debug\net9.0\compressed\tp96g94hyi-25gemed5hp.gz
 D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\obj\Debug\net9.0\compressed\twhbmail9n-rkgype8dnj.gz
 D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\obj\Debug\net9.0\compressed\gp9hgkvj21-c2tiyv64ts.gz
-D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\obj\Debug\net9.0\compressed\178be4z4r3-4dbjy22pia.gz
 D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\obj\Debug\net9.0\compressed\t3h7c125iz-wqo2eyjvfm.gz
 D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\obj\Debug\net9.0\compressed\d0t51lyu7y-61n19gt1b8.gz
 D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\obj\Debug\net9.0\compressed\iqg6grt77v-f6ozz250gy.gz
@@ -991,3 +990,4 @@ D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websit
 D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\obj\Debug\net9.0\chuyenNganh.websiteBanGiay.pdb
 D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\obj\Debug\net9.0\chuyenNganh.websiteBanGiay.genruntimeconfig.cache
 D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\obj\Debug\net9.0\ref\chuyenNganh.websiteBanGiay.dll
+D:\DO_AN_CHUYEN_NGANH\src_code\chuyenNganh.websiteBanGiay\src\chuyenNganh.websiteBanGiay\obj\Debug\net9.0\compressed\178be4z4r3-4dbjy22pia.gz
