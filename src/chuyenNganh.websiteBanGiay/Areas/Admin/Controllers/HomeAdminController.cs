@@ -1255,162 +1255,20 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             }
         }
 
+
         // Số đánh giá theo sản phẩm
         [HttpGet]
         [Route("statistics/reviews/product")]
         public async Task<IActionResult> ReviewStatisticsByProduct()
         {
-            try
-            {
-                var reviewStats = await _context.Reviews
-                    .Where(r => r.ProductId.HasValue)
-                    .GroupBy(r => r.ProductId)
-                    .Select(g => new
-                    {
-                        ProductId = g.Key,
-                        ReviewCount = g.Count()
-                    })
-                    .ToListAsync();
-
-                return Json(reviewStats); // Trả về dữ liệu JSON
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi thống kê đánh giá theo sản phẩm.");
-                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
-            }
+           return View();
         }
 
-
-        //Số lượng đánh giá theo tháng
-        [Route("statistics/reviews/month")]
-        public async Task<IActionResult> ReviewStatisticsByMonth(int year)
-        {
-            try
-            {
-                var monthlyReviews = await _context.Reviews
-                    .Where(r => r.ReviewDate.HasValue && r.ReviewDate.Value.Year == year)
-                    .GroupBy(r => r.ReviewDate.Value.Month)
-                    .Select(g => new
-                    {
-                        Month = g.Key,
-                        ReviewCount = g.Count()
-                    })
-                    .OrderBy(r => r.Month)
-                    .ToListAsync();
-
-                return Json(monthlyReviews); // Trả về dữ liệu dưới dạng JSON
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi thống kê số lượng đánh giá theo tháng.");
-                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
-            }
-        }
-
-        //Số lượng người dùng theo vai trò
-        [Route("statistics/users/roles")]
-        public async Task<IActionResult> UserRoleStatistics()
-        {
-            try
-            {
-                var userRoleStats = await _context.Users
-                    .GroupBy(u => u.Role)
-                    .Select(g => new
-                    {
-                        Role = g.Key,
-                        UserCount = g.Count()
-                    })
-                    .ToListAsync();
-
-                return Json(userRoleStats); // Trả về dữ liệu dưới dạng JSON
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi thống kê số lượng người dùng theo vai trò.");
-                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
-            }
-        }
-
-        //Số người dùng đăng ký theo tháng
         [HttpGet]
-        [Route("statistics/users/registrations")]
-        public async Task<IActionResult> UserRegistrations(int year)
+        [Route("statistics/discount/product")]
+        public async Task<IActionResult> Discount()
         {
-            try
-            {
-                var userRegistrations = await _context.Users
-                    .Where(u => u.CreatedDate.HasValue && u.CreatedDate.Value.Year == year)
-                    .GroupBy(u => u.CreatedDate.Value.Month)
-                    .Select(g => new
-                    {
-                        Month = g.Key,
-                        UserCount = g.Count()
-                    })
-                    .OrderBy(r => r.Month)
-                    .ToListAsync();
-
-                return Json(userRegistrations); // Trả về dữ liệu dưới dạng JSON
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi thống kê số lượng người dùng đăng ký theo tháng.");
-                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
-            }
+            return View();
         }
-
-        //Tổng doanh thu theo tháng
-        [HttpGet]
-        [Route("statistics/orders/monthly-revenue")]
-        public async Task<IActionResult> MonthlyRevenue(int year)
-        {
-            try
-            {
-                var monthlyRevenue = await _context.Orders
-                    .Where(o => o.OrderDate.HasValue && o.OrderDate.Value.Year == year)
-                    .GroupBy(o => o.OrderDate.Value.Month)
-                    .Select(g => new
-                    {
-                        Month = g.Key,
-                        TotalRevenue = g.Sum(o => o.TotalAmount)
-                    })
-                    .OrderBy(r => r.Month)
-                    .ToListAsync();
-
-                return Json(monthlyRevenue); // Trả về JSON cho JavaScript
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi thống kê tổng doanh thu theo tháng.");
-                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
-            }
-        }
-
-
-        //Tổng số đơn hàng theo trạng thái
-        [Route("statistics/orders/status")]
-        public async Task<IActionResult> OrderStatusStatistics()
-        {
-            try
-            {
-                var orderStatusStats = await _context.Orders
-                    .GroupBy(o => o.OrderStatus)
-                    .Select(g => new
-                    {
-                        Status = g.Key,
-                        Count = g.Count()
-                    })
-                    .ToListAsync();
-
-                return Json(orderStatusStats); // Trả về dữ liệu dưới dạng JSON
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi thống kê số lượng đơn hàng theo trạng thái.");
-                return StatusCode(500, "Đã xảy ra lỗi, vui lòng thử lại sau.");
-            }
-        }
-
-
     }
 }

@@ -311,6 +311,8 @@ wwwroot\img\products\producttiger09_01.jpg
 wwwroot\img\products\producttiger10_01.jpg
 wwwroot\img\sale\new.jpg
 wwwroot\img\sale\sale.jpg
+wwwroot\img\statistical\discount.jpg
+wwwroot\img\statistical\rating.jpg
 wwwroot\img\users\004b290e-a943-4bfb-a7e3-8be0cbdcdf8e.jpg
 wwwroot\img\users\0228eafa-995b-4a92-a541-01dd681953e6.jpg
 wwwroot\img\users\092d70e4-6568-4e38-9645-0cf569d6ffce.jpg

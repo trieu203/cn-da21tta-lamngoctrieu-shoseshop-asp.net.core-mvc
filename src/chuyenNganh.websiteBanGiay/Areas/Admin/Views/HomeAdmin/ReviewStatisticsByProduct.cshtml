@@ -1,54 +1,14 @@
-﻿@model IEnumerable<chuyenNganh.websiteBanGiay.Data.Review>
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "ReviewStatisticsByProduct";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-
-    // Chuẩn bị dữ liệu từ model
-    var reviewData = Model
-        .Where(r => r.ProductId.HasValue)
-        .GroupBy(r => r.ProductId)
-        .Select(g => new { ProductId = g.Key, ReviewCount = g.Count() })
-        .ToList();
 }
 
-<h2>@ViewData["Title"]</h2>
+<div class="chart-container" style="text-align: center;">
+    <h2>Biểu đồ thống kê Rating</h2>
+    <!-- Hiển thị hình ảnh biểu đồ -->
+    <img src="~/img/statistical/rating.jpg" alt="Biểu đồ Rating" style="max-width: 1000px; height: auto; margin: 50px 0;">
 
-<div>
-    <canvas id="reviewChart" width="800" height="400"></canvas>
+    <center> <a asp-action="Index" class="btn btn-primary btn-lg px-4 py-2 rounded-pill shadow">Quay lại</a></center>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        fetch('/admin/home/statistics/reviews/product') // URL của API
-            .then(response => response.json())
-            .then(data => {
-                const labels = data.map(item => `Product ${item.productId}`);
-                const reviewCounts = data.map(item => item.reviewCount);
 
-                const ctx = document.getElementById('reviewChart').getContext('2d');
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Số lượng đánh giá',
-                            data: reviewCounts,
-                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
-                    }
-                });
-            })
-            .catch(error => console.error('Error:', error));
-    });
-</script>
