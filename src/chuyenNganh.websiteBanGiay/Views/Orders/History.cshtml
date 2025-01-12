@@ -1,0 +1,79 @@
+﻿@model List<chuyenNganh.websiteBanGiay.ViewModels.OrderHistoryViewModel>
+
+@{
+    ViewData["Title"] = "Lịch sử mua hàng";
+    Layout = "_Product";
+}
+
+<div class="container">
+    <h2>Lịch sử mua hàng</h2>
+
+    @if (!Model.Any())
+    {
+        <p class="text-muted">Bạn chưa có đơn hàng nào.</p>
+    }
+    else
+    {
+        @foreach (var order in Model)
+        {
+            <div class="card mb-3">
+                <div class="card-header">
+                    <strong>Đơn hàng #@order.OrderId</strong> - Ngày: @order.OrderDate
+                    <span class="badge badge-primary">@order.OrderStatus</span>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        @foreach (var item in order.OrderItems)
+                        {
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <strong>@item.ProductName</strong> - Kích thước: @item.Size
+                                    </div>
+                                    <div>
+                                        @item.Quantity x @string.Format("{0:N0} VNĐ", item.Price)
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-between">
+                        <span><strong>Tổng cộng:</strong> @string.Format("{0:N0} VNĐ", order.TotalAmount)</span>
+                        <div>
+                            @switch (order.OrderStatus)
+                            {
+                                case "Pending":
+                                    <div>
+                                        <span class="badge bg-warning text-dark">Đang chờ xử lý</span>
+                                        <form asp-action="CancelOrder" method="post" style="display: inline;">
+                                            <input type="hidden" name="orderId" value="@order.OrderId" />
+                                            <button type="submit" class="btn btn-danger btn-sm">Hủy đơn hàng</button>
+                                        </form>
+                                    </div>
+                                    break;
+                                case "Completed":
+                                    <span class="badge bg-success">Hoàn thành</span>
+                                    break;
+                                case "Cancelled":
+                                    <span class="badge bg-danger">Đã hủy</span>
+                                    break;
+                                case "Confirmed":
+                                    <span class="badge bg-primary">Đã xác nhận</span>
+                                    break;
+                                case "Shipped":
+                                    <span class="badge bg-info">Đã giao hàng</span>
+                                    break;
+                                default:
+                                    <span class="badge bg-secondary">Không rõ trạng thái</span>
+                                    break;
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

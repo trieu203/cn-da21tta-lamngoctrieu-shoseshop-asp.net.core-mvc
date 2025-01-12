@@ -3,6 +3,7 @@ using chuyenNganh.websiteBanGiay.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Drawing;
 using System.Security.Claims;
 
 namespace chuyenNganh.websiteBanGiay.Controllers
@@ -53,9 +54,8 @@ namespace chuyenNganh.websiteBanGiay.Controllers
         }
 
 
-
         // Kiểm tra và thêm sản phẩm vào giỏ hàng
-        public async Task<IActionResult> AddToCart(int id, int quantity = 1)
+        public async Task<IActionResult> AddToCart(int id, int quantity = 1, int size = 0)
         {
             // Lấy ID người dùng từ Claims trong Cookie Authentication
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -66,16 +66,25 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                 return RedirectToAction("Dangnhap", "Users");
             }
 
-            // Lấy thông tin sản phẩm và size
+            var userIdInt = int.Parse(userId); // Chuyển đổi từ string sang int
+
+            // Kiểm tra kích thước hợp lệ
+            if (size == 0)
+            {
+                TempData["Message"] = "Vui lòng chọn kích thước sản phẩm.";
+                return RedirectToAction("Details", "Products", new { id });
+            }
+
+            // Lấy thông tin sản phẩm và kích thước
             var productSize = await _context.ProductSizes
                 .Include(ps => ps.Product)
-                .FirstOrDefaultAsync(ps => ps.ProductId == id);
+                .FirstOrDefaultAsync(ps => ps.ProductId == id && ps.Size == size.ToString()); // Chuyển size sang string
 
-            // Kiểm tra sản phẩm có tồn tại hay không
+            // Kiểm tra sản phẩm và kích thước có tồn tại không
             if (productSize == null)
             {
-                TempData["Message"] = "Sản phẩm không hợp lệ.";
-                return RedirectToAction("Index", "Products");
+                TempData["Message"] = "Kích thước sản phẩm không hợp lệ.";
+                return RedirectToAction("Details", "Products", new { id });
             }
 
             // Kiểm tra số lượng hợp lệ
@@ -85,12 +94,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                 return RedirectToAction("Details", "Products", new { id });
             }
 
-            if (quantity > 20)
-            {
-                TempData["Message"] = "Số lượng không hợp lệ. Vui lòng nhập số lượng ít hơn hoặc bằng 20.";
-                return RedirectToAction("Details", "Products", new { id });
-            }
-
+            // Kiểm tra số lượng tồn kho
             if (quantity > productSize.Quantity)
             {
                 TempData["Message"] = $"Số lượng yêu cầu vượt quá số lượng tồn kho. Chỉ còn {productSize.Quantity} sản phẩm.";
@@ -100,14 +104,14 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             // Kiểm tra giỏ hàng hiện tại của người dùng
             var cart = await _context.Carts
                 .Include(c => c.CartItems)
-                .FirstOrDefaultAsync(c => c.UserId == int.Parse(userId) && c.IsActive);
+                .FirstOrDefaultAsync(c => c.UserId == userIdInt && c.IsActive);
 
             // Nếu người dùng chưa có giỏ hàng, tạo mới
             if (cart == null)
             {
                 cart = new Cart
                 {
-                    UserId = int.Parse(userId),
+                    UserId = userIdInt,
                     CreatedDate = DateTime.Now,
                     IsActive = true
                 };
@@ -116,17 +120,18 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             }
 
             // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
-            var cartItem = cart.CartItems.FirstOrDefault(ci => ci.ProductId == id && ci.Size == productSize.Size);
+            var cartItem = cart.CartItems.FirstOrDefault(ci => ci.ProductId == id && ci.Size == size.ToString()); // Chuyển size sang string
 
             if (cartItem != null)
             {
                 // Nếu sản phẩm đã tồn tại, cập nhật số lượng
-                cartItem.Quantity += quantity;
-                if (cartItem.Quantity > productSize.Quantity)
+                var updatedQuantity = cartItem.Quantity + quantity;
+                if (updatedQuantity > productSize.Quantity)
                 {
-                    TempData["Message"] = $"Không đủ hàng trong kho. Chỉ còn {productSize.Quantity} sản phẩm.";
+                    TempData["Message"] = $"Không đủ hàng trong kho. Số lượng tối đa bạn có thể thêm là {productSize.Quantity - cartItem.Quantity}.";
                     return RedirectToAction("Details", "Products", new { id });
                 }
+                cartItem.Quantity = updatedQuantity;
             }
             else
             {
@@ -138,7 +143,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                     Quantity = quantity,
                     ProductName = productSize.Product.ProductName,
                     PriceAtTime = productSize.Product.Price,
-                    Size = productSize.Size,
+                    Size = size.ToString(), // Chuyển size sang string
                     ImageUrl = productSize.Product.ImageUrl
                 };
                 _context.CartItems.Add(cartItem);
@@ -150,7 +155,6 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             TempData["Message"] = "Sản phẩm đã được thêm vào giỏ hàng.";
             return RedirectToAction("Index");
         }
-
 
 
         [HttpPost]
@@ -183,8 +187,56 @@ namespace chuyenNganh.websiteBanGiay.Controllers
 
             return RedirectToAction("Index");
         }
-        //Checkout
 
+
+        //Cập nhât số lượng
+        [HttpPost]
+        public async Task<IActionResult> UpdateQuantity(int cartItemId, int quantity)
+        {
+            if (quantity <= 0)
+            {
+                return Json(new { success = false, message = "Số lượng phải lớn hơn 0." });
+            }
+
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Json(new { success = false, message = "Bạn cần đăng nhập để thực hiện thao tác này." });
+            }
+
+            var cartItem = await _context.CartItems
+                .Include(ci => ci.Cart)
+                .FirstOrDefaultAsync(ci => ci.CartItemId == cartItemId && ci.Cart.UserId == int.Parse(userId) && ci.Cart.IsActive);
+
+            if (cartItem == null)
+            {
+                return Json(new { success = false, message = "Không tìm thấy sản phẩm trong giỏ hàng." });
+            }
+
+            // Kiểm tra số lượng tồn kho
+            var productSize = await _context.ProductSizes.FirstOrDefaultAsync(ps => ps.ProductId == cartItem.ProductId && ps.Size == cartItem.Size);
+            if (productSize == null || quantity > productSize.Quantity)
+            {
+                return Json(new { success = false, message = $"Không đủ hàng trong kho. Chỉ còn {productSize?.Quantity ?? 0} sản phẩm." });
+            }
+
+            // Cập nhật số lượng trong giỏ hàng
+            cartItem.Quantity = quantity;
+            await _context.SaveChangesAsync();
+
+            // Tính lại tổng tiền
+            var totalPrice = cartItem.Quantity * cartItem.PriceAtTime;
+            var cartTotal = await _context.CartItems
+                .Where(ci => ci.Cart.UserId == int.Parse(userId) && ci.Cart.IsActive)
+                .SumAsync(ci => ci.Quantity * ci.PriceAtTime);
+
+            return Json(new { success = true, totalPrice, cartTotal });
+        }
+
+
+
+        //Checkout
         [HttpGet]
         public IActionResult Checkout()
         {
@@ -197,7 +249,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
 
             var cart = _context.Carts
                 .Include(c => c.CartItems)
-                .ThenInclude(ci => ci.Product) // Bao gồm thông tin sản phẩm
+                .ThenInclude(ci => ci.Product)
                 .FirstOrDefault(c => c.UserId == int.Parse(userId) && c.IsActive);
 
             if (cart == null || !cart.CartItems.Any())
@@ -206,17 +258,29 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                 return RedirectToAction("Index", "Carts");
             }
 
-            // Kiểm tra dữ liệu null trước khi ánh xạ
+            // Tính tổng tiền trước giảm giá
+            var subtotal = cart.CartItems.Sum(ci => ci.PriceAtTime * ci.Quantity);
+
+            // Tính tổng giảm giá từ sản phẩm
+            var totalDiscount = cart.CartItems.Sum(ci =>
+                (ci.PriceAtTime * ci.Quantity * ci.Product.Discount) / 100);
+
+            // Tổng tiền sau khi áp dụng giảm giá
+            var shippingFee = 50000;
+            var total = subtotal - totalDiscount + shippingFee;
+
+            // Chuẩn bị ViewModel
             var model = new CheckoutViewModel
             {
                 CartItems = cart.CartItems
-                    .Where(ci => ci.Product != null) // Lọc ra các mục không hợp lệ
                     .Select(ci => new CartItemViewModel
                     {
-                        ProductName = ci.Product.ProductName ?? "Không có tên sản phẩm",
+                        ProductName = ci.Product.ProductName,
                         Quantity = ci.Quantity,
-                        PriceAtTime = ci.PriceAtTime
+                        PriceAtTime = ci.PriceAtTime,
+                        Discount = ci.Product.Discount // Lấy giá trị giảm giá từ Product
                     }).ToList(),
+                DiscountAmount = (int)totalDiscount, // Tổng giảm giá
             };
 
             return View(model);
@@ -225,37 +289,71 @@ namespace chuyenNganh.websiteBanGiay.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Checkout(CheckoutViewModel model)
+        public IActionResult Checkout(CheckoutViewModel model)
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                // Lấy lại thông tin giỏ hàng để hiển thị khi có lỗi xác thực
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+                if (!string.IsNullOrEmpty(userId))
+                {
+                    var cart = _context.Carts
+                        .Include(c => c.CartItems)
+                        .ThenInclude(ci => ci.Product)
+                        .FirstOrDefault(c => c.UserId == int.Parse(userId) && c.IsActive);
+
+                    if (cart != null)
+                    {
+                        model.CartItems = cart.CartItems
+                            .Select(ci => new CartItemViewModel
+                            {
+                                ProductName = ci.Product.ProductName,
+                                Quantity = ci.Quantity,
+                                PriceAtTime = ci.PriceAtTime,
+                                Discount = ci.Product.Discount // Lấy giá trị giảm giá từ sản phẩm
+                            }).ToList();
+                    }
+                }
+
+                return View(model); // Trả lại View cùng lỗi xác thực và thông tin giỏ hàng
             }
 
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var userIdValidated = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-            if (string.IsNullOrEmpty(userId))
+            if (string.IsNullOrEmpty(userIdValidated))
             {
                 return RedirectToAction("Dangnhap", "Users");
             }
 
-            // Lấy giỏ hàng
-            var cart = await _context.Carts
+            var cartValidated = _context.Carts
                 .Include(c => c.CartItems)
-                .FirstOrDefaultAsync(c => c.UserId == int.Parse(userId) && c.IsActive);
+                .ThenInclude(ci => ci.Product)
+                .FirstOrDefault(c => c.UserId == int.Parse(userIdValidated) && c.IsActive);
 
-            if (cart == null || !cart.CartItems.Any())
+            if (cartValidated == null || !cartValidated.CartItems.Any())
             {
                 TempData["ErrorMessage"] = "Giỏ hàng của bạn đang trống.";
                 return RedirectToAction("Index", "Carts");
             }
 
-            // Tạo đơn hàng
+            // Tính tổng tiền trước giảm giá
+            var subtotal = cartValidated.CartItems.Sum(ci => ci.PriceAtTime * ci.Quantity);
+
+            // Tính tổng giảm giá từ sản phẩm
+            var totalDiscount = cartValidated.CartItems.Sum(ci =>
+                (ci.PriceAtTime * ci.Quantity * ci.Product.Discount) / 100);
+
+            // Tổng tiền sau khi áp dụng giảm giá
+            var shippingFee = 50000;
+            var total = subtotal - totalDiscount + shippingFee;
+
+            // Lưu thông tin đơn hàng
             var order = new Order
             {
-                UserId = int.Parse(userId),
+                UserId = int.Parse(userIdValidated),
                 OrderDate = DateTime.Now,
-                TotalAmount = cart.CartItems.Sum(ci => ci.PriceAtTime * ci.Quantity) + 50000,
+                TotalAmount = total,
                 OrderStatus = "Pending",
                 ShippingAddress = model.ShippingAddress,
                 Email = model.Email,
@@ -263,34 +361,51 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             };
 
             _context.Orders.Add(order);
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
 
-            // Thêm các sản phẩm vào OrderItems
-            foreach (var cartItem in cart.CartItems)
+            // Lưu các sản phẩm trong đơn hàng và trừ số lượng trong kho
+            foreach (var item in cartValidated.CartItems)
             {
+                // Tìm sản phẩm trong kho
+                var productSize = _context.ProductSizes
+                    .FirstOrDefault(ps => ps.ProductId == item.ProductId && ps.Size == item.Size);
+
+                if (productSize != null)
+                {
+                    // Kiểm tra tồn kho
+                    if (productSize.Quantity < item.Quantity)
+                    {
+                        TempData["ErrorMessage"] = $"Sản phẩm {item.Product.ProductName} không đủ số lượng trong kho.";
+                        return RedirectToAction("Index", "Carts");
+                    }
+
+                    // Trừ số lượng tồn kho
+                    productSize.Quantity -= item.Quantity;
+                    _context.ProductSizes.Update(productSize);
+                }
+
+                // Thêm vào OrderItems
                 var orderItem = new OrderItem
                 {
                     OrderId = order.OrderId,
-                    ProductId = cartItem.ProductId,
-                    Quantity = cartItem.Quantity,
-                    Price = cartItem.PriceAtTime,
-                    Size = cartItem.Size
+                    ProductId = item.ProductId,
+                    Quantity = item.Quantity,
+                    Price = item.PriceAtTime,
+                    Size = item.Size
                 };
                 _context.OrderItems.Add(orderItem);
             }
 
-            // Xóa các mục trong giỏ hàng
-            _context.CartItems.RemoveRange(cart.CartItems);
-
-            // Cập nhật trạng thái giỏ hàng
-            cart.IsActive = false;
-            _context.Carts.Update(cart);
-
-            await _context.SaveChangesAsync();
+            // Xóa các sản phẩm khỏi giỏ hàng
+            _context.CartItems.RemoveRange(cartValidated.CartItems);
+            cartValidated.IsActive = false;
+            _context.Carts.Update(cartValidated);
+            _context.SaveChanges();
 
             TempData["SuccessMessage"] = "Đơn hàng của bạn đã được tạo thành công.";
             return RedirectToAction("Index", "Orders");
         }
+
 
 
 

@@ -16,9 +16,11 @@
             <div class="mb-3">
                 <label asp-for="OrderStatus" class="form-label">Trạng thái đơn hàng</label>
                 <select asp-for="OrderStatus" class="form-select">
-                    <option value="Pending">Đang chờ</option>
-                    <option value="Completed">Hoàn thành</option>
+                    <option value="Pending">Đang chờ xử lý</option>
+                    <option value="Confirmed">Đã xác nhận</option>
+                    <option value="Shipped">Đã giao hàng</option>
                     <option value="Cancelled">Đã hủy</option>
+                    <option value="Completed">Hoàn thành</option>
                 </select>
                 <span asp-validation-for="OrderStatus" class="text-danger"></span>
             </div>

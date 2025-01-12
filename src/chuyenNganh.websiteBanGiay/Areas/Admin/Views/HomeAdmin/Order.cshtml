@@ -42,19 +42,27 @@
                 <td>
                     @if (item.OrderStatus == "Pending")
                     {
-                        <span class="badge bg-warning">Đang chờ</span>
+                        <span class="badge status-pending">Đang chờ</span>
                     }
                     else if (item.OrderStatus == "Completed")
                     {
-                        <span class="badge bg-success">Hoàn thành</span>
+                        <span class="badge status-completed">Hoàn thành</span>
                     }
                     else if (item.OrderStatus == "Cancelled")
                     {
-                        <span class="badge bg-danger">Đã hủy</span>
+                        <span class="badge status-cancelled">Đã hủy</span>
+                    }
+                    else if (item.OrderStatus == "Confirmed")
+                    {
+                        <span class="badge status-confirmed">Đã xác nhận</span>
+                    }
+                    else if (item.OrderStatus == "Shipped")
+                    {
+                        <span class="badge status-shipped">Đã giao hàng</span>
                     }
                     else
                     {
-                        @Html.DisplayFor(modelItem => item.OrderStatus)
+                        <span class="badge status-default">@Html.DisplayFor(modelItem => item.OrderStatus)</span>
                     }
                 </td>
                 <td>
@@ -78,3 +86,42 @@
         }
     </tbody>
 </table>
+
+<style>
+    .status-pending {
+        background-color: #ffc107; /* Màu vàng */
+        color: #000; /* Chữ đen */
+    }
+
+    .status-completed {
+        background-color: #28a745; /* Màu xanh lá */
+        color: #fff; /* Chữ trắng */
+    }
+
+    .status-cancelled {
+        background-color: #dc3545; /* Màu đỏ */
+        color: #fff; /* Chữ trắng */
+    }
+
+    .status-confirmed {
+        background-color: #007bff; /* Màu xanh dương */
+        color: #fff; /* Chữ trắng */
+    }
+
+    .status-shipped {
+        background-color: #17a2b8; /* Màu xanh nhạt */
+        color: #fff; /* Chữ trắng */
+    }
+
+    .status-default {
+        background-color: #6c757d; /* Màu xám */
+        color: #fff; /* Chữ trắng */
+    }
+
+    .badge {
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.9em;
+    }
+</style>
+

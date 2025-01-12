@@ -84,11 +84,12 @@
 
                 </div>
                 <h3 class="font-weight-semi-bold mb-4">@Model.Price.ToString("N0") VND</h3>
-                <div class="d-flex mb-3">
-                    <strong class="text-dark mr-3">Sizes:</strong>
-                    <form id="sizeForm">
+                <!-- Chọn kích thước -->
+                <form asp-action="AddToCart" asp-controller="Carts" asp-route-id="@Model.ProductId" method="post" id="addToCartForm">
+                    <div class="d-flex mb-3">
+                        <strong class="text-dark mr-3">Sizes:</strong>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-1" name="size" value="39">
+                            <input type="radio" class="custom-control-input" id="size-1" name="size" value="39" required>
                             <label class="custom-control-label" for="size-1">39</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
@@ -99,11 +100,7 @@
                             <input type="radio" class="custom-control-input" id="size-3" name="size" value="41">
                             <label class="custom-control-label" for="size-3">41</label>
                         </div>
-                    </form>
-                </div>
-
-                <!-- Chọn số lượng và nút Thêm vào Giỏ hàng -->
-                <form asp-action="AddToCart" asp-controller="Carts" asp-route-id="@Model.ProductId" method="post" id="addToCartForm">
+                    </div>
                     <div class="d-flex align-items-center mb-4">
                         <div class="input-group quantity mr-3" style="width: 130px;">
                             <button type="button" class="btn btn-warning btn-minus">
@@ -120,11 +117,19 @@
                     </div>
                 </form>
 
+                @if (TempData["Message"] != null)
+                {
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        @TempData["Message"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+
             </div>
         </div>
     </div>
 
-    <!--Mô ả và-->
+    <!--Mô tả và đánh giá-->
     <div class="row px-xl-5">
         <div class="col">
             <div class="bg-light p-30">
@@ -194,8 +199,8 @@
                                             @for (int i = 1; i <= 5; i++)
                                             {
                                                 <label for="rating-@i" class="star">
-                                                    <input type="radio" id="rating-@i" name="rating" value="@i" class="d-none">
-                                                    <i class="far fa-star"></i>
+                                                    <input type="radio" id="rating-@i" name="rating" value="@i" class="d-none" onclick="highlightStars(@i)">
+                                                    <i class="far fa-star" data-star="@i"></i>
                                                 </label>
                                             }
                                         </div>
@@ -230,44 +235,34 @@
     </div>
 
 </div>
-<!-- Shop Detail End -->
+
 @section Scripts {
     <script>
-        document.getElementById("addToCartForm").addEventListener("submit", function (event) {
-            // Kiểm tra xem có size nào được chọn chưa
-            const sizeChecked = document.querySelector('input[name="size"]:checked');
-            if (!sizeChecked) {
-                // Ngăn form submit
-                event.preventDefault();
-                alert("Vui lòng chọn size trước khi thêm vào giỏ hàng!");
+        function highlightStars(rating) {
+            // Reset tất cả sao về trạng thái ban đầu
+            const stars = document.querySelectorAll(".star-rating .fa-star");
+            stars.forEach(star => {
+                star.classList.remove("fas"); // Ngôi sao đầy
+                star.classList.add("far");   // Ngôi sao rỗng
+            });
+
+            // Làm nổi bật các sao từ 1 đến số sao được chọn
+            for (let i = 1; i <= rating; i++) {
+                const star = document.querySelector(`.star-rating .fa-star[data-star="${i}"]`);
+                if (star) {
+                    star.classList.remove("far");
+                    star.classList.add("fas");
+                }
+            }
+        }
+
+        // Xử lý khi load trang nếu có sao được chọn trước đó
+        document.addEventListener("DOMContentLoaded", function () {
+            const selectedRating = document.querySelector('.star-rating input[name="rating"]:checked');
+            if (selectedRating) {
+                highlightStars(selectedRating.value);
             }
         });
-
-        // Kiểm tra số lượng khi người dùng submit form
-            document.getElementById('addToCartForm').addEventListener('submit', function(event) {
-                var quantity = parseInt(document.querySelector('input[name="quantity"]').value);
-
-                if (quantity > 19) {
-                    // Hiển thị thông báo nếu số lượng vượt quá 19
-                    alert('Số lượng sản phẩm không được vượt quá 19.');
-                    event.preventDefault();
-                }
-            });
-
-                        document.addEventListener("DOMContentLoaded", function () {
-                const stars = document.querySelectorAll(".star input[type='radio']");
-                stars.forEach(star => {
-                    star.addEventListener("change", function () {
-                        const allStars = document.querySelectorAll(".star i");
-                        allStars.forEach(starIcon => starIcon.className = "far fa-star"); // Đặt lại sao trống
-                        const rating = this.value;
-                        for (let i = 1; i <= rating; i++) {
-                            document.querySelector(`#rating-${i} ~ i`).className = "fas fa-star"; // Đặt sao đầy
-                        }
-                    });
-                });
-            });
-
-
     </script>
 }
+
