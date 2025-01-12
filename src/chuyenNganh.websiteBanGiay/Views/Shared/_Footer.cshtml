@@ -11,7 +11,7 @@
         <div class="col-lg-4 col-md-6 mb-5">
             <h5 class="text-secondary text-uppercase mb-4">Thông Tin Cửa Hàng</h5>
             <div class="d-flex flex-column justify-content-start">
-                <a class="text-secondary mb-2" data-toggle="collapse" href="#shoeBrandList" role="button" aria-expanded="false" aria-controls="shoeBrandList">
+                <a class="text-secondary mb-2 toggle-collapse" data-toggle="collapse" href="#shoeBrandList" role="button" aria-expanded="false" aria-controls="shoeBrandList">
                     <i class="fa fa-angle-right mr-2"></i>Giới thiệu về hãng giày
                 </a>
                 <div class="collapse ml-4" id="shoeBrandList">
@@ -59,3 +59,22 @@
     </div>
 </div>
 <!-- Footer End -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleLinks = document.querySelectorAll('.toggle-collapse');
+
+        toggleLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('fa-angle-right')) {
+                    icon.classList.remove('fa-angle-right');
+                    icon.classList.add('fa-angle-down');
+                } else {
+                    icon.classList.remove('fa-angle-down');
+                    icon.classList.add('fa-angle-right');
+                }
+            });
+        });
+    });
+</script>

@@ -315,14 +315,16 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                     }
                 }
 
-                var existingUser = await _context.Users
+                // Kiểm tra trùng tên hoặc email
+                var existingUserWithSameEmailOrUsername = await _context.Users
                     .FirstOrDefaultAsync(u => (u.UserName == model.UserName || u.Email == model.Email) && u.UserId != model.UserId);
-                if (existingUser != null)
+                if (existingUserWithSameEmailOrUsername != null)
                 {
                     ModelState.AddModelError(string.Empty, "Tên người dùng hoặc email đã tồn tại.");
                     return View(model);
                 }
 
+                // Kiểm tra định dạng email
                 var emailRegex = @"^[^\s@]+@[^\s@]+\.[^\s@]+$";
                 if (!Regex.IsMatch(model.Email, emailRegex))
                 {
@@ -330,9 +332,9 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                     return View(model);
                 }
 
-                string imageFileName = model.ImageUrl;
+                string imageFileName;
 
-                if (model.Image != null)
+                if (model.Image != null) // Nếu có hình ảnh mới
                 {
                     var fileExtension = Path.GetExtension(model.Image.FileName);
                     imageFileName = Guid.NewGuid().ToString() + fileExtension;
@@ -343,6 +345,15 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                     {
                         await model.Image.CopyToAsync(stream);
                     }
+                }
+                else // Nếu không chọn hình ảnh, giữ nguyên ảnh cũ
+                {
+                    var userInDb = await _context.Users.FindAsync(id); // Đổi tên biến
+                    if (userInDb == null)
+                    {
+                        return NotFound();
+                    }
+                    imageFileName = userInDb.ImageUrl;
                 }
 
                 try
@@ -391,6 +402,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
 
             return View(model);
         }
+
 
 
         // GET: Users/Delete/5

@@ -1,11 +1,9 @@
 ﻿@model chuyenNganh.websiteBanGiay.ViewModels.PaginatedList<chuyenNganh.websiteBanGiay.ViewModels.ProductVM>
 
 @{
-    ViewData["Title"] = "Search";
+    ViewData["Title"] = "Tìm kiếm sản phẩm";
     Layout = "_Product";
 }
-
-
 
 <!-- Shop Start -->
 <div class="container-fluid">
@@ -37,15 +35,42 @@
                     <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
                         <div class="product-item bg-light mb-4">
                             <div class="product-img position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="@Url.Content("~/img/products/" + item.ImageUrl + ".jpg")" alt="@item.ProductName">
+                                @{
+                                    // Lấy ImageUrl từ item, đảm bảo không null
+                                    var imageUrl = item.ImageUrl?.ToString() ?? "";
+
+                                    // Kiểm tra nếu thiếu phần mở rộng (".jpg") thì thêm vào
+                                    var imageFile = string.IsNullOrEmpty(System.IO.Path.GetExtension(imageUrl))
+                                    ? imageUrl + ".jpg"
+                                    : imageUrl;
+
+                                    // Đường dẫn đến ảnh
+                                    var imagePath = Url.Content("~/img/products/" + imageFile);
+                                }
+
+                                <a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProductId">
+                                    <img class="img-fluid w-100" src="@imagePath" alt="@item.ProductName"
+                                         onerror="this.onerror=null; this.src='/img/products/default.jpg';" />
+                                </a>
+
                                 <div class="product-action">
-                                    <a class="btn btn-outline-dark btn-square" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a class="btn btn-outline-dark btn-square" href="#"><i class="far fa-heart"></i></a>
+                                    <!-- Thêm vào giỏ hàng -->
+                                    <a title="Thêm vào giỏ hàng" asp-action="Details" asp-controller="Products" asp-route-id="@item.ProductId" class="btn btn-outline-dark btn-square">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </a>
+
+                                    <!-- Thêm vào danh sách yêu thích -->
+                                    <form method="post" asp-action="AddToWishList" asp-controller="WishLists" asp-route-productId="@item.ProductId" class="d-inline-block">
+                                        <button type="submit" class="btn btn-outline-dark btn-square" title="Thêm vào danh sách yêu thích">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                    </form>
                                 </div>
+
                             </div>
 
                             <div class="text-center py-4">
-                                <a class="h6 text-decoration-none" style="display: block; white-space: normal;" href="#">@item.ProductName</a>
+                                <a title="Click để xem chi tiết sản phẩm" class="h6 text-decoration-none" style="display: block; white-space: normal;" asp-controller="Products" asp-action="Details" asp-route-id="@item.ProductId">@item.ProductName</a>
                                 <div class="d-flex align-items-center justify-content-center mt-2">
                                     <h5>@item.Price.ToString("N0") VND</h5>
                                     @if (item.Discount > 0)
@@ -59,7 +84,7 @@
                                     <small class="fa fa-star text-primary mr-1"></small>
                                     <small class="fa fa-star text-primary mr-1"></small>
                                     <small class="fa fa-star text-primary mr-1"></small>
-                                    <small>(@item.Rating ?? 0)</small>
+                                    <small>(@item.Rating)</small>
                                 </div>
                             </div>
                         </div>

@@ -1836,6 +1836,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\users\9531e10a-34ce-4b8b-8a2c-b05ebb854f57.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\users\995bc4e1-2988-4ba9-9ad6-50e96fca6c7e.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>chuyenNganh.websiteBanGiay</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/chuyenNganh.websiteBanGiay</BasePath>
+      <RelativePath>img/users/995bc4e1-2988-4ba9-9ad6-50e96fca6c7e.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>w7n0gm0aqe</Fingerprint>
+      <Integrity>dOL64mmrrXCZaW+UEF5Q34LS4E4SfMkEMhpR+LF3Nks=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\users\995bc4e1-2988-4ba9-9ad6-50e96fca6c7e.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\users\9adff2d0-482c-4a59-b24a-9793a3dd7c5a.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>chuyenNganh.websiteBanGiay</SourceId>
