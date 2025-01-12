@@ -7,6 +7,7 @@ namespace chuyenNganh.websiteBanGiay.ViewModels
         [Required(ErrorMessage = "Vui lòng nhập họ và tên.")]
         public string? FullName { get; set; }
 
+       
         [Required(ErrorMessage = "Vui lòng nhập email.")]
         [RegularExpression(@"^[a-zA-Z0-9._%+-]+@gmail\.com$", ErrorMessage = "Email phải thuộc miền @gmail.com.")]
         public string? Email { get; set; }

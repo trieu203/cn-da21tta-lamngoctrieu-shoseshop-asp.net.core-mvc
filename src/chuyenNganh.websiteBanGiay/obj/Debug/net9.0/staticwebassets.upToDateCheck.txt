@@ -248,7 +248,6 @@ wwwroot\img\categories\newbalance.jpg
 wwwroot\img\categories\nike.jpg
 wwwroot\img\categories\ontiger.jpg
 wwwroot\img\categories\puma.jpg
-wwwroot\img\products\aa2fbebd-a7db-47e0-a283-97a7a70d0df8.jpg
 wwwroot\img\products\product01_01.jpg
 wwwroot\img\products\product02_01.jpg
 wwwroot\img\products\product03_01.jpg
