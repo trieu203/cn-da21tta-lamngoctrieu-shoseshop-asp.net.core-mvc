@@ -137,7 +137,7 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                 await _context.SaveChangesAsync();
 
                 TempData["SuccessMessage"] = "Đăng ký thành công!";
-                return RedirectToAction("DangKy");
+                return RedirectToAction("Dangnhap");
             }
 
             return View(model);

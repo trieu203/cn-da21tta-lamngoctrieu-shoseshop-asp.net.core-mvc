@@ -1050,8 +1050,12 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
         {
             try
             {
-                // Tìm người dùng trong cơ sở dữ liệu
-                var user = await _context.Users.FindAsync(id);
+                var user = await _context.Users
+                                         .Include(u => u.Carts)
+                                         .Include(u => u.Orders)
+                                         .Include(u => u.Reviews)
+                                         .Include(u => u.WishLists)
+                                         .FirstOrDefaultAsync(u => u.UserId == id);
 
                 if (user == null)
                 {
@@ -1059,12 +1063,28 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                     return RedirectToAction("Index");
                 }
 
+                // Xóa dữ liệu liên quan
+                _context.Carts.RemoveRange(user.Carts);
+                _context.Orders.RemoveRange(user.Orders);
+                _context.Reviews.RemoveRange(user.Reviews);
+                _context.WishLists.RemoveRange(user.WishLists);
+
+                // Xóa hình ảnh nếu có
+                if (!string.IsNullOrEmpty(user.ImageUrl))
+                {
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "users", user.ImageUrl);
+                    if (System.IO.File.Exists(filePath))
+                    {
+                        System.IO.File.Delete(filePath);
+                    }
+                }
+
                 // Xóa người dùng
                 _context.Users.Remove(user);
                 await _context.SaveChangesAsync();
 
                 TempData["Message"] = "Người dùng đã được xóa thành công.";
-                return RedirectToAction("User"); // Chuyển hướng về danh sách người dùng
+                return RedirectToAction("User");
             }
             catch (Exception ex)
             {
@@ -1073,6 +1093,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
         }
+
 
 
         // Order Controller Methods

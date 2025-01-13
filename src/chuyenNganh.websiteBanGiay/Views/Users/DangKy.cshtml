@@ -30,7 +30,8 @@
 
             <div class="mb-3">
                 <label for="UserName">Tên đăng nhập</label>
-                <input type="text" class="form-control" id="UserName" name="UserName" required />
+                <input asp-for="UserName" class="form-control" id="UserName" name="UserName" required />
+                <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
 
             <div class="mb-3">

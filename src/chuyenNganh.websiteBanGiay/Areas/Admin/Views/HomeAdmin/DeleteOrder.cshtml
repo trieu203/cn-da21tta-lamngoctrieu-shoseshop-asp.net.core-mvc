@@ -34,7 +34,7 @@
             <dd class="col-sm-9">@Html.DisplayFor(model => model.User.UserName)</dd>
         </dl>
 
-        <form asp-action="DeleteOrder" asp-route-id="@Model.OrderId" method="post">
+        <form asp-action="DeleteOrder" asp-route-id="@Model.OrderId" method="post" onsubmit="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này?. Hành động này không thể hoàn tác')">
             <input type="hidden" asp-for="OrderId" />
             <div class="d-flex justify-content-between">
                 <input type="submit" value="Xóa" class="btn btn-danger" />

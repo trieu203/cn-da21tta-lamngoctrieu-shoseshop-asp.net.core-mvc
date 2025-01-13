@@ -37,8 +37,12 @@
                         <td>@user.Role</td>
                         <td>@user.CreatedDate?.ToString("dd/MM/yyyy")</td>
                         <td class="text-center">
-                            <a asp-area="admin" asp-action="DetailUser" asp-route-id="@user.UserId" class="btn btn-info btn-sm">Chi Tiết</a>
-                            <a asp-area="admin" asp-action="DeleteUser" asp-route-id="@user.UserId" class="btn btn-danger btn-sm">Xóa</a>
+                            <a class="btn btn-info btn-sm" asp-area="admin" asp-action="DetailUser" asp-route-id="@user.UserId">
+                                <i class="fa fa-info-circle"></i> Chi Tiết
+                            </a>
+                            <a class="btn btn-danger btn-sm" asp-area="admin" asp-action="DeleteUser" asp-route-id="@user.UserId">
+                                <i class="fa fa-trash"></i> Xóa
+                            </a>
                         </td>
                     </tr>
                 }

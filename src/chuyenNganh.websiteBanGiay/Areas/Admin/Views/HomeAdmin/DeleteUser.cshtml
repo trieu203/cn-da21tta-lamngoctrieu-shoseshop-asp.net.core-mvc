@@ -84,12 +84,12 @@
             </dl>
         </div>
         <div class="card-footer d-flex justify-content-between">
-            <form asp-action="DeleteUser" asp-route-id="@Model.UserId" class="text-center mt-4">
+            <form asp-action="DeleteUser" asp-route-id="@Model.UserId" class="text-center mt-4" onsubmit="return confirm('Bạn có chắc chắn muốn xóa người dùng này?. Hành động này không thể hoàn tác')">
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-danger me-2">Xóa</button>
                 </div>
             </form>
-            <a asp-action="User" class="btn btn-secondary">Quay lại danh sách</a>
+            <a asp-action="User" class="btn btn-secondary me-2">Quay lại</a>
         </div>
     </div>
 </div>

@@ -64,7 +64,7 @@
             </div>
 
             <div class="mt-4 d-flex justify-content-between">
-                <form asp-action="DeleteProduct" asp-route-id="@Model.ProductId" onsubmit="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')">
+                <form asp-action="DeleteProduct" asp-route-id="@Model.ProductId" onsubmit="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?. Hành động này không thể hoàn tác')">
                     <input type="hidden" asp-for="ProductId" />
                     <button type="submit" class="btn btn-danger">Xóa</button>
                 </form>

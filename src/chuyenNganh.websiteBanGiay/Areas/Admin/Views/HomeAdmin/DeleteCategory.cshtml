@@ -25,7 +25,13 @@
                 <dd class="col-sm-9">@Model.CreatedDate?.ToString("dd/MM/yyyy")</dd>
 
             </dl>
-
+            @if (TempData["Message"] != null)
+            {
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <span>@TempData["Message"]</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
             <!-- Form xóa với xác nhận JavaScript -->
             <form asp-action="DeleteCategory" asp-route-id="@Model.CategoryId ">
                 <input type="hidden" asp-for="CategoryId" />

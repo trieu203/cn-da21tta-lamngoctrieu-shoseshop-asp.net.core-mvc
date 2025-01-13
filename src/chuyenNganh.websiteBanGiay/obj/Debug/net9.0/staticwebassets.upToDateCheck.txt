@@ -243,6 +243,7 @@ wwwroot\img\categories\1039e725-02b0-4ada-8506-5b992534336f.jpg
 wwwroot\img\categories\96fd3193-914b-4206-b0e4-0e5a769bf882.jpg
 wwwroot\img\categories\9bc97b9c-6b5e-42ef-8bef-5f3b8e58dac6.jpg
 wwwroot\img\categories\9dfce318-598c-4b12-a89c-f9e84205a099.jpg
+wwwroot\img\categories\a9cb6490-8184-4c83-9152-82495a2968c6.jpg
 wwwroot\img\categories\addias.jpg
 wwwroot\img\categories\newbalance.jpg
 wwwroot\img\categories\nike.jpg
@@ -329,8 +330,8 @@ wwwroot\img\users\a299f077-add6-46e6-999b-1be95632e1fd.jpg
 wwwroot\img\users\a8b15223-e8f7-4a24-ad5c-5498fdfdf5d6.jpg
 wwwroot\img\users\af29b564-cc89-4599-af17-5ac4b94f87c5.jpg
 wwwroot\img\users\afa9f6bd-9160-4fce-8313-9faece656909.jpg
-wwwroot\img\users\be0f5fd8-0a40-45cd-adb9-50458129cd93.jpg
 wwwroot\img\users\d218f8d7-20aa-41e7-af26-8be4f447ae68.jpg
+wwwroot\img\users\d6266f4e-4674-4d84-8197-c66e16185133.jpg
 wwwroot\img\users\d801bf32-9bea-4beb-9c3e-44e5a6b54a95.jpg
 wwwroot\img\users\d915de4f-bf72-4057-8003-bed57225d0f6.jpg
 wwwroot\img\users\e2c5bbd7-f5cd-4af3-98cb-51bc678db217.jpg

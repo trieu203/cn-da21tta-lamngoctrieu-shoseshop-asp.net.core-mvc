@@ -36,8 +36,12 @@
                         <td>@Html.DisplayFor(modelItem => item.Product.ProductName)</td>
                         <td>@Html.DisplayFor(modelItem => item.User.UserName)</td>
                         <td class="text-center">
-                            <a asp-action="DetailReview" asp-route-id="@item.ReviewId" class="btn btn-info btn-sm">Chi Tiết</a>
-                            <a asp-area="admin" asp-action="DeleteReview" asp-route-id="@item.ReviewId" class="btn btn-danger btn-sm">Xóa</a>
+                            <a class="btn btn-info btn-sm" asp-area="admin" asp-action="DetailReview" asp-route-id="@item.ReviewId">
+                                <i class="fa fa-info-circle"></i> Chi Tiết
+                            </a>
+                            @* <a class="btn btn-danger btn-sm" asp-area="admin" asp-action="DeleteReview" asp-route-id="@item.ReviewId">
+                                <i class="fa fa-trash"></i> Xóa
+                            </a> *@
                         </td>
                     </tr>
                 }

@@ -54,12 +54,14 @@
 
                         <td>@(item.Category?.CategoryName ?? "Chưa có danh mục")</td>
                         <td class="text-center">
-                            <a asp-area="admin" asp-action="EditProduct" asp-route-id="@item.ProductId" class="btn btn-sm btn-warning">Sửa</a>
-                            <a asp-area="admin" asp-action="DetailProduct" asp-route-id="@item.ProductId" class="btn btn-info btn-sm text-white">
-                                Chi Tiết
+                            <a class="btn btn-primary btn-sm" asp-area="admin" asp-action="EditProduct" asp-route-id="@item.ProductId">
+                                <i class="fa fa-edit"></i> Sửa
                             </a>
-                            <a asp-area="admin" asp-action="DeleteProduct" asp-route-id="@item.ProductId" class="btn btn-sm btn-warning">
-                                Xóa
+                            <a class="btn btn-info btn-sm" asp-area="admin" asp-action="DetailProduct" asp-route-id="@item.ProductId">
+                                <i class="fa fa-info-circle"></i> Chi Tiết
+                            </a>
+                            <a class="btn btn-danger btn-sm" asp-area="admin" asp-action="DeleteProduct" asp-route-id="@item.ProductId">
+                                <i class="fa fa-trash"></i> Xóa
                             </a>
                         </td>
                     </tr>
