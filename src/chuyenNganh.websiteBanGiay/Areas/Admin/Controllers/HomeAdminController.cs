@@ -338,7 +338,13 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             // Kiểm tra xem các trường bắt buộc đã được nhập hay chưa
             if (string.IsNullOrEmpty(product.ProductName) || string.IsNullOrEmpty(product.Description))
             {
-                ModelState.AddModelError("", "Tên danh mục và Mô tả không được để trống.");
+                ModelState.AddModelError("", "Tên sản phẩm và Mô tả không được để trống.");
+            }
+
+            // Kiểm tra giá trị Discount
+            if (product.Discount > 100 || product.Discount < 0)
+            {
+                ModelState.AddModelError("Discount", "Giá giảm phải nằm trong khoảng từ 0 đến 100.");
             }
 
             // Kiểm tra ModelState
@@ -381,7 +387,10 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                 return RedirectToAction("Product");
             }
 
-            return View(product);
+            // Cung cấp lại danh sách danh mục để hiển thị trong View
+            ViewBag.CategoryName = new SelectList(await _context.Categories.ToListAsync(), "CategoryId", "CategoryName");
+
+            return View(product); // Trả lại View với dữ liệu người dùng đã nhập và danh mục
         }
 
 
@@ -413,6 +422,18 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            // Kiểm tra giá trị Discount
+            if (updatedProduct.Discount > 100 || updatedProduct.Discount < 0)
+            {
+                ModelState.AddModelError("Discount", "Giá giảm phải nằm trong khoảng từ 0 đến 100.");
+            }
+
+            // Kiểm tra ModelState
+            if (!ModelState.IsValid)
+            {
+                return View(updatedProduct); // Trả lại view với thông báo lỗi
+            }
+
             // Kiểm tra giá trị nhập vào, nếu rỗng thì giữ lại giá trị cũ
             existingProduct.ProductName = string.IsNullOrEmpty(updatedProduct.ProductName)
                 ? existingProduct.ProductName
@@ -425,6 +446,9 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             existingProduct.Price = updatedProduct.Price > 0
                 ? updatedProduct.Price
                 : existingProduct.Price;
+
+            // Cập nhật giá giảm
+            existingProduct.Discount = updatedProduct.Discount;
 
             // Xử lý hình ảnh
             if (ImageFile != null && ImageFile.Length > 0)
@@ -485,7 +509,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> DeleteProduct(int id)
         {
-            // Tìm sản phẩm theo ID và bao gồm thông tin danh mục
+            // Tìm sản phẩm theo ID
             var product = await _context.Products
                                          .Include(p => p.Category) // Bao gồm thông tin danh mục
                                          .FirstOrDefaultAsync(p => p.ProductId == id);
@@ -510,11 +534,20 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                 // Truy vấn sản phẩm từ CSDL
                 var product = await _context.Products
                     .Include(p => p.Category)
+                    .Include(p => p.ProductSizes) // Bao gồm thông tin kích thước
                     .FirstOrDefaultAsync(p => p.ProductId == id);
 
                 if (product == null)
                 {
                     TempData["Message"] = "Sản phẩm không tồn tại.";
+                    return RedirectToAction("Product");
+                }
+
+                // Kiểm tra tổng số lượng sản phẩm
+                int totalQuantity = product.ProductSizes?.Sum(ps => ps.Quantity) ?? 0;
+                if (totalQuantity > 0)
+                {
+                    TempData["Message"] = "Không thể xóa sản phẩm vì vẫn còn số lượng trong kho.";
                     return RedirectToAction("Product");
                 }
 
@@ -528,27 +561,11 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                     }
                 }
 
-                // Lấy danh mục liên quan (nếu có)
-                var category = product.Category;
-
                 // Xóa sản phẩm khỏi CSDL
                 _context.Products.Remove(product);
                 await _context.SaveChangesAsync();
 
-                // Kiểm tra và xóa danh mục nếu không còn sản phẩm liên kết
-                if (category != null)
-                {
-                    bool hasOtherProducts = await _context.Products.AnyAsync(p => p.CategoryId == category.CategoryId);
-
-                    if (!hasOtherProducts)
-                    {
-                        _context.Categories.Remove(category);
-                        await _context.SaveChangesAsync();
-                        TempData["Message"] += $" Danh mục '{category.CategoryName}' đã được xóa vì không còn sản phẩm liên kết.";
-                    }
-                }
-
-                TempData["Message"] += " Sản phẩm đã được xóa thành công.";
+                TempData["Message"] = "Sản phẩm đã được xóa thành công.";
                 return RedirectToAction("Product");
             }
             catch (Exception ex)
@@ -649,8 +666,9 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
         {
             try
             {
-                // Tìm ProductSize hiện tại
-                var existingProductSize = await _context.ProductSizes.FindAsync(id);
+                // Tìm ProductSize hiện tại trong cơ sở dữ liệu
+                var existingProductSize = await _context.ProductSizes
+                    .FirstOrDefaultAsync(ps => ps.ProductSizeId == id);
 
                 if (existingProductSize == null)
                 {
@@ -659,26 +677,27 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                     return RedirectToAction("ProductSize");
                 }
 
-                // Ghi log trước khi cập nhật
+                // Ghi log trạng thái trước khi cập nhật
                 _logger.LogInformation("Trước cập nhật: {existingProductSize}", existingProductSize);
 
-                // Cập nhật thuộc tính
+                // Cập nhật các thuộc tính từ `updatedProductSize`
                 existingProductSize.ProductId = updatedProductSize.ProductId ?? existingProductSize.ProductId;
                 existingProductSize.Size = string.IsNullOrEmpty(updatedProductSize.Size)
                     ? existingProductSize.Size
                     : updatedProductSize.Size;
-                existingProductSize.Quantity = updatedProductSize.Quantity > 0
+                existingProductSize.Quantity = updatedProductSize.Quantity >= 0
                     ? updatedProductSize.Quantity
                     : existingProductSize.Quantity;
                 existingProductSize.PriceAtTime = updatedProductSize.PriceAtTime > 0
                     ? updatedProductSize.PriceAtTime
                     : existingProductSize.PriceAtTime;
 
-                // Ghi log sau khi cập nhật
+                // Ghi log trạng thái sau khi cập nhật
                 _logger.LogInformation("Sau cập nhật: {existingProductSize}", existingProductSize);
 
-                // Lưu thay đổi vào cơ sở dữ liệu
-                await _context.SaveChangesAsync();
+                // Lưu các thay đổi vào cơ sở dữ liệu
+                _context.ProductSizes.Update(existingProductSize); // Đánh dấu thực thể là đã thay đổi
+                await _context.SaveChangesAsync(); // Lưu vào cơ sở dữ liệu
 
                 TempData["Message"] = "Cập nhật kích thước sản phẩm thành công.";
                 return RedirectToAction("ProductSize");
@@ -686,16 +705,17 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
             catch (DbUpdateException dbEx)
             {
                 _logger.LogError(dbEx, "Lỗi khi lưu dữ liệu vào cơ sở dữ liệu.");
-                TempData["Message"] = "Có lỗi xảy ra khi lưu dữ liệu.";
-                return RedirectToAction("ProductSize");
+                TempData["Message"] = "Có lỗi xảy ra khi lưu dữ liệu. Vui lòng thử lại.";
+                return RedirectToAction("EditProductSize", new { id });
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi không xác định khi cập nhật ProductSize với ID: {Id}", id);
-                TempData["Message"] = "Đã xảy ra lỗi khi chỉnh sửa kích thước sản phẩm.";
-                return RedirectToAction("ProductSize");
+                TempData["Message"] = "Đã xảy ra lỗi khi chỉnh sửa kích thước sản phẩm. Vui lòng thử lại.";
+                return RedirectToAction("EditProductSize", new { id });
             }
         }
+
 
 
         //Delete ProductSize
@@ -1050,12 +1070,8 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
         {
             try
             {
-                var user = await _context.Users
-                                         .Include(u => u.Carts)
-                                         .Include(u => u.Orders)
-                                         .Include(u => u.Reviews)
-                                         .Include(u => u.WishLists)
-                                         .FirstOrDefaultAsync(u => u.UserId == id);
+                // Tìm người dùng trong cơ sở dữ liệu
+                var user = await _context.Users.FindAsync(id);
 
                 if (user == null)
                 {
@@ -1063,40 +1079,21 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                     return RedirectToAction("Index");
                 }
 
-                // Xóa dữ liệu liên quan
-                _context.Carts.RemoveRange(user.Carts);
-                _context.Orders.RemoveRange(user.Orders);
-                _context.Reviews.RemoveRange(user.Reviews);
-                _context.WishLists.RemoveRange(user.WishLists);
-
-                // Xóa hình ảnh nếu có
-                if (!string.IsNullOrEmpty(user.ImageUrl))
-                {
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "users", user.ImageUrl);
-                    if (System.IO.File.Exists(filePath))
-                    {
-                        System.IO.File.Delete(filePath);
-                    }
-                }
-
                 // Xóa người dùng
                 _context.Users.Remove(user);
                 await _context.SaveChangesAsync();
 
                 TempData["Message"] = "Người dùng đã được xóa thành công.";
-                return RedirectToAction("User");
+                return RedirectToAction("User"); // Chuyển hướng về danh sách người dùng
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi xảy ra khi xóa người dùng với ID: {Id}", id);
                 TempData["Message"] = "Đã xảy ra lỗi khi xóa người dùng.";
-                return RedirectToAction("Index");
+                return RedirectToAction("User");
             }
         }
 
-
-
-        // Order Controller Methods
 
         // Index Order
         [Route("order")]

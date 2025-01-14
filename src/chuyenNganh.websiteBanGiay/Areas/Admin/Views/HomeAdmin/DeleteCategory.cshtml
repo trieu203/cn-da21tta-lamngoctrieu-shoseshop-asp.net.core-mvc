@@ -33,7 +33,7 @@
                 </div>
             }
             <!-- Form xóa với xác nhận JavaScript -->
-            <form asp-action="DeleteCategory" asp-route-id="@Model.CategoryId ">
+            <form asp-action="DeleteCategory" asp-route-id="@Model.CategoryId" onsubmit="return confirm('Bạn có chắc chắn muốn xóa danh mục này?. Hành động này không thể hoàn tác')">
                 <input type="hidden" asp-for="CategoryId" />
                 <div class="d-flex justify-content-end">
                     <a asp-area="admin" asp-controller="HomeAdmin" asp-action="Category" class="btn btn-secondary me-2">Hủy bỏ</a>

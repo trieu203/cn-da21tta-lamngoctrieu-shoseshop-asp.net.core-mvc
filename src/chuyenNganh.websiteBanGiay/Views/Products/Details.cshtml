@@ -89,15 +89,18 @@
                     <div class="d-flex mb-3">
                         <strong class="text-dark mr-3">Sizes:</strong>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-1" name="size" value="39" required>
+                            <input type="radio" class="custom-control-input" id="size-1" name="size" value="39"
+                            @(TempData["SelectedSize"] != null && (int)TempData["SelectedSize"] == 39 ? "checked" : "") required>
                             <label class="custom-control-label" for="size-1">39</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-2" name="size" value="40">
+                            <input type="radio" class="custom-control-input" id="size-2" name="size" value="40"
+                            @(TempData["SelectedSize"] != null && (int)TempData["SelectedSize"] == 40 ? "checked" : "")>
                             <label class="custom-control-label" for="size-2">40</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-3" name="size" value="41">
+                            <input type="radio" class="custom-control-input" id="size-3" name="size" value="41"
+                            @(TempData["SelectedSize"] != null && (int)TempData["SelectedSize"] == 41 ? "checked" : "")>
                             <label class="custom-control-label" for="size-3">41</label>
                         </div>
                     </div>
@@ -106,7 +109,9 @@
                             <button type="button" class="btn btn-warning btn-minus">
                                 <i class="fa fa-minus"></i>
                             </button>
-                            <input type="text" class="form-control bg-secondary text-center quantity-input" name="quantity" value="1" style="max-width: 50px;" />
+                            <input type="text" class="form-control bg-secondary text-center quantity-input" name="quantity"
+                                   value="@(TempData["SelectedQuantity"] != null ? TempData["SelectedQuantity"] : 1)"
+                                   style="max-width: 50px;" />
                             <button type="button" class="btn btn-warning btn-plus">
                                 <i class="fa fa-plus"></i>
                             </button>

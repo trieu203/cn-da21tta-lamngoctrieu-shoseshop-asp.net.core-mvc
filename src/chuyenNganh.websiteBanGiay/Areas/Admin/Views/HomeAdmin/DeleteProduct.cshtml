@@ -9,6 +9,12 @@
 <div class="container mt-5">
     <h1 class="text-center text-danger">Xóa sản phẩm</h1>
     <hr />
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-danger text-center" role="alert">
+            @TempData["Message"]
+        </div>
+    }
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="alert alert-warning text-center" role="alert">

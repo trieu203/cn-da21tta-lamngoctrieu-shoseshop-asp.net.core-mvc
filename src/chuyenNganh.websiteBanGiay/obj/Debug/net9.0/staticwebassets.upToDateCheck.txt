@@ -240,6 +240,7 @@ wwwroot\img\admin\review.jpg
 wwwroot\img\admin\size.jpg
 wwwroot\img\admin\user.jpg
 wwwroot\img\categories\1039e725-02b0-4ada-8506-5b992534336f.jpg
+wwwroot\img\categories\2277315e-69c5-4937-9d6b-db012f84f02f.jpg
 wwwroot\img\categories\96fd3193-914b-4206-b0e4-0e5a769bf882.jpg
 wwwroot\img\categories\9bc97b9c-6b5e-42ef-8bef-5f3b8e58dac6.jpg
 wwwroot\img\categories\9dfce318-598c-4b12-a89c-f9e84205a099.jpg
@@ -249,6 +250,7 @@ wwwroot\img\categories\newbalance.jpg
 wwwroot\img\categories\nike.jpg
 wwwroot\img\categories\ontiger.jpg
 wwwroot\img\categories\puma.jpg
+wwwroot\img\products\0aaa146e-bde5-4dd4-ba8a-82b8e886b57c.jpg
 wwwroot\img\products\product01_01.jpg
 wwwroot\img\products\product02_01.jpg
 wwwroot\img\products\product03_01.jpg
@@ -317,6 +319,7 @@ wwwroot\img\users\004b290e-a943-4bfb-a7e3-8be0cbdcdf8e.jpg
 wwwroot\img\users\0228eafa-995b-4a92-a541-01dd681953e6.jpg
 wwwroot\img\users\092d70e4-6568-4e38-9645-0cf569d6ffce.jpg
 wwwroot\img\users\0b37245c-a365-4637-be5d-7562e96e4b74.jpg
+wwwroot\img\users\146269df-6d6e-4c0b-a1be-2e5e260da246.jpg
 wwwroot\img\users\1968cba3-a830-4e68-aa93-c59e2c3baef8.jpg
 wwwroot\img\users\1cf45173-89f3-4d67-ad1a-93659b8c765b.jpg
 wwwroot\img\users\23def7ba-8548-41d7-827d-0a1be72cb2d0.jpg

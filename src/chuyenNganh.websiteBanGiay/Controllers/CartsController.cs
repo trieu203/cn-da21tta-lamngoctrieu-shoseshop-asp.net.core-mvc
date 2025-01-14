@@ -72,6 +72,8 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             if (size == 0)
             {
                 TempData["Message"] = "Vui lòng chọn kích thước sản phẩm.";
+                TempData["SelectedSize"] = size; // Lưu lại kích cỡ đã chọn
+                TempData["SelectedQuantity"] = quantity; // Lưu lại số lượng đã nhập
                 return RedirectToAction("Details", "Products", new { id });
             }
 
@@ -84,6 +86,8 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             if (productSize == null)
             {
                 TempData["Message"] = "Kích thước sản phẩm không hợp lệ.";
+                TempData["SelectedSize"] = size; // Lưu lại kích cỡ đã chọn
+                TempData["SelectedQuantity"] = quantity; // Lưu lại số lượng đã nhập
                 return RedirectToAction("Details", "Products", new { id });
             }
 
@@ -91,6 +95,8 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             if (quantity <= 0)
             {
                 TempData["Message"] = "Số lượng không hợp lệ. Vui lòng nhập số lượng lớn hơn 0.";
+                TempData["SelectedSize"] = size; // Lưu lại kích cỡ đã chọn
+                TempData["SelectedQuantity"] = quantity; // Lưu lại số lượng đã nhập
                 return RedirectToAction("Details", "Products", new { id });
             }
 
@@ -98,6 +104,8 @@ namespace chuyenNganh.websiteBanGiay.Controllers
             if (quantity > productSize.Quantity)
             {
                 TempData["Message"] = $"Số lượng yêu cầu vượt quá số lượng tồn kho. Chỉ còn {productSize.Quantity} sản phẩm.";
+                TempData["SelectedSize"] = size; // Lưu lại kích cỡ đã chọn
+                TempData["SelectedQuantity"] = quantity; // Lưu lại số lượng đã nhập
                 return RedirectToAction("Details", "Products", new { id });
             }
 
@@ -129,6 +137,8 @@ namespace chuyenNganh.websiteBanGiay.Controllers
                 if (updatedQuantity > productSize.Quantity)
                 {
                     TempData["Message"] = $"Không đủ hàng trong kho. Số lượng tối đa bạn có thể thêm là {productSize.Quantity - cartItem.Quantity}.";
+                    TempData["SelectedSize"] = size; // Lưu lại kích cỡ đã chọn
+                    TempData["SelectedQuantity"] = quantity; // Lưu lại số lượng đã nhập
                     return RedirectToAction("Details", "Products", new { id });
                 }
                 cartItem.Quantity = updatedQuantity;
