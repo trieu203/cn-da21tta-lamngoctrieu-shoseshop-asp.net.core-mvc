@@ -239,13 +239,8 @@ wwwroot\img\admin\product.jpg
 wwwroot\img\admin\review.jpg
 wwwroot\img\admin\size.jpg
 wwwroot\img\admin\user.jpg
-wwwroot\img\categories\1039e725-02b0-4ada-8506-5b992534336f.jpg
-wwwroot\img\categories\2277315e-69c5-4937-9d6b-db012f84f02f.jpg
-wwwroot\img\categories\96fd3193-914b-4206-b0e4-0e5a769bf882.jpg
-wwwroot\img\categories\9bc97b9c-6b5e-42ef-8bef-5f3b8e58dac6.jpg
-wwwroot\img\categories\9dfce318-598c-4b12-a89c-f9e84205a099.jpg
-wwwroot\img\categories\a9cb6490-8184-4c83-9152-82495a2968c6.jpg
 wwwroot\img\categories\addias.jpg
+wwwroot\img\categories\new.jpg
 wwwroot\img\categories\newbalance.jpg
 wwwroot\img\categories\nike.jpg
 wwwroot\img\categories\ontiger.jpg

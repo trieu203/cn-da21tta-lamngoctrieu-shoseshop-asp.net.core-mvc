@@ -101,7 +101,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                 else
                 {
                     // Nếu không chọn hình, gán hình ảnh mặc định
-                    category.ImageUrl = "ahin.jpg";
+                    category.ImageUrl = "new.jpg";
                 }
 
                 // Thêm CreatedDate mặc định là ngày hiện tại
@@ -244,9 +244,24 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                 if (!string.IsNullOrEmpty(category.ImageUrl))
                 {
                     var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "categories", category.ImageUrl);
-                    if (System.IO.File.Exists(filePath))
+
+                    try
                     {
-                        System.IO.File.Delete(filePath);
+                        if (System.IO.File.Exists(filePath))
+                        {
+                            System.IO.File.Delete(filePath);
+                            _logger.LogInformation($"Đã xóa hình ảnh: {filePath}");
+                        }
+                        else
+                        {
+                            _logger.LogWarning($"Hình ảnh không tồn tại: {filePath}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, $"Lỗi khi xóa hình ảnh: {filePath}");
+                        TempData["Message"] = "Danh mục đã được xóa, nhưng có lỗi khi xóa hình ảnh.";
+                        return RedirectToAction("Category");
                     }
                 }
 
@@ -265,6 +280,7 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                 return RedirectToAction("Category");
             }
         }
+
 
         //Detail Categry
         [Route("DetailCategory")]
@@ -576,7 +592,6 @@ namespace chuyenNganh.websiteBanGiay.Areas.Admin.Controllers
                 return RedirectToAction("Product");
             }
         }
-
 
 
         // GET: Admin/Home/ProductSize

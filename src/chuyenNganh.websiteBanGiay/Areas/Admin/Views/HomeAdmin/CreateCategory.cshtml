@@ -32,6 +32,12 @@
                     <textarea asp-for="Description" class="form-control" rows="3" placeholder="Nhập mô tả danh mục..."></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
+                
+                <!-- hình ảnh -->
+                <div class="mb-3">
+                    <label class="form-label">Hình ảnh danh mục</label>
+                    <input type="file" name="ImageFile" class="form-control" />
+                </div>
 
                 <!-- Nút hành động -->
                 <div class="text-end">

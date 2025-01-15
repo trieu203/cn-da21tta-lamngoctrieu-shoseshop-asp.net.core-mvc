@@ -99,13 +99,17 @@
                             @if (Model.HasPreviousPage)
                             {
                                 <li class="page-item">
-                                    <a class="page-link" href="@Url.Action("Index", new { page = Model.CurrentPage - 1, Category = ViewBag.CurrentCategory })">Back</a>
+                                    <a class="page-link" href="@Url.Action("Index", new { page = Model.CurrentPage - 1, Category = ViewBag.CurrentCategory })">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
                                 </li>
                             }
                             else
                             {
                                 <li class="page-item disabled">
-                                    <span class="page-link">Back</span>
+                                    <span class="page-link">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </span>
                                 </li>
                             }
 
@@ -130,13 +134,17 @@
                             @if (Model.HasNextPage)
                             {
                                 <li class="page-item">
-                                    <a class="page-link" href="@Url.Action("Index", new { page = Model.CurrentPage + 1, Category = ViewBag.CurrentCategory })">Next</a>
+                                    <a class="page-link" href="@Url.Action("Index", new { page = Model.CurrentPage + 1, Category = ViewBag.CurrentCategory })">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
                                 </li>
                             }
                             else
                             {
                                 <li class="page-item disabled">
-                                    <span class="page-link">Next</span>
+                                    <span class="page-link">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </span>
                                 </li>
                             }
                         </ul>
